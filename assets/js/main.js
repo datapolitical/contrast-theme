@@ -1,11 +1,13 @@
 // Static comments
 // from: https://github.com/eduardoboucas/popcorn/blob/gh-pages/js/main.js
 (function ($) {
+  console.log('On page load code ran');
   var $comments = $('.js-comments');
 
-  $('.js-form').submit(function () {
+  $('#new-comment.js-form').submit(function () {
+    console.log('js-form.onsubmit code ran');
+    event.preventDefault();
     var form = this;
-
 
     $("#comment-form-submit").html(
       '<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending...'
@@ -18,6 +20,7 @@
       data: $(this).serialize(),
       contentType: 'application/x-www-form-urlencoded',
       success: function (data) {
+        console.log('Comment ajax success');
         showModal('Comment submitted', 'Thanks! Your comment is <a href="https://github.com/datapolitical/chrisfnicholson.github.io/pulls">pending</a>. It will appear when approved.');
 
         $("#comment-form-submit")
