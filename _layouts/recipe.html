@@ -21,7 +21,7 @@ layout: page
 		"url": "{{page.source_url}}"
 		{% endif  %}
 	},
-	"description": "A recipe for {{page.name}}, with my rating and potentially some notes. Adapted from: {{page.source_url}}",
+	"description": "A recipe for {{page.title}}, with my rating and potentially some notes. Adapted from: {{page.source_url}}",
 	"image": "{{site.baseurl}}/assets/{{page.image_url | replace:'.jpg','.webp'}}",
 	"url": "{{page.url}}",
 	{% if page.servings != "" %}
@@ -67,8 +67,7 @@ layout: page
 
 <article class="post">
 	<meta property="og:title" content="{{page.source}}" />
-	<meta property="og:image" content="https://www.chrisfnicholson.com/assets/{{ page.image_url | replace:'.jpg','.webp' }}" />
-	{% picture {{  page.image_url  }} 1:1 --alt {{ page.name }} %}
+	{% picture {{  page.image_url  }} 1:1 --alt {{ page.title }} %}
 	<ul id="recipe" class="recipe-overview">
 		{% if page.servings != "" %}
 		<li title="Servings">{% include recipe-icon.html icon="quantity" %}<span>{{ page.servings }}</span></li>
