@@ -8,7 +8,10 @@ layout: page
 
 <article class="post">
 	<div class="image">
-		{% picture images/drinks/{{  page.image  }} 1:1 --alt {{ page.name }} %}
+		{% if page.image and page.image != "" %} 
+			{% picture images/drinks/{{  page.image  }} 1:1 --alt {{ page.name }} %}
+		{% endif %}
+
 	</div>
 
 	<div class="recipe-contents">

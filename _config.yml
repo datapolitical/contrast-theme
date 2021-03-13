@@ -43,7 +43,7 @@ plugins:
   - jekyll-paginate
   - jekyll-datapage-generator
 #  - jekyll-responsive-image
-  - jekyll-webp
+#  - jekyll-webp
   - jekyll-sitemap
   - jekyll-seo-tag
 #  - jekyll-pwa-workbox
@@ -125,7 +125,7 @@ reCaptcha:
 # Site configuration for the WebP Generator Plugin
 # The values here represent the defaults if nothing is set
 webp:
-  enabled: true
+  enabled: false
 
   # The quality of the webp conversion 0 to 100 (where 100 is least lossy)
   quality: 75
