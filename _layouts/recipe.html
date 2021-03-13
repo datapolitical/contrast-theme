@@ -68,7 +68,7 @@ layout: page
 <article class="post">
 	<meta property="og:title" content="{{page.source}}" />
 	<meta property="og:image" content="https://www.chrisfnicholson.com/assets/{{ page.image_url | replace:'.jpg','.webp' }}" />
-	<img class="photo" src="../assets/{{ page.image_url | replace:'.jpg','.webp' }}" alt="{{ page.name }}">
+	{% picture {{  page.image_url  }} 1:1 --alt {{ page.name }} %}
 	<ul id="recipe" class="recipe-overview">
 		{% if page.servings != "" %}
 		<li title="Servings">{% include recipe-icon.html icon="quantity" %}<span>{{ page.servings }}</span></li>
