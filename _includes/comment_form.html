@@ -31,16 +31,9 @@
       </label>
     </div>
 
-<<<<<<< HEAD
-    <button class="button g-recaptcha" id="comment-form-submit"
-        data-sitekey="{{ site.reCaptcha.siteKey }}"
-        data-callback='onSubmit'
-        data-action='submit'>
-=======
     {% if site.reCaptcha.enabled %} <div id="reCaptcha" class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}"></div>{% endif %}
 
     <button class="button" id="comment-form-submit">
->>>>>>> recaptcha-v2
       Submit
     </button>
 
