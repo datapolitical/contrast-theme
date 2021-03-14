@@ -6,7 +6,6 @@ layout: page
 			<link rel="stylesheet" media="print" href="{{ site.url }}/assets/css/print.css">
 		{% endif %}
 		<link rel="stylesheet" media="screen" href="{{ site.url }}/assets/css/recipe-list.css">
-		<script src="{{ site.url }}/assets/js/lazysizes.min.js" async=""></script>
 
         <div class="image-grid">
         {% for i in (0..5) reversed %}
@@ -25,3 +24,4 @@ layout: page
           {% endfor %}
         {% endfor %}
         </div>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.3.1/dist/lazyload.min.js"></script>
