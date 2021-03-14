@@ -237,3 +237,32 @@ ol li + li {
 .rating{
 	color: #c9f227;
 }
+
+div.stars {
+  width: 300px;
+  display: inline-block;
+	float: left;
+	padding: 5em;
+}
+
+input.star { display: none; }
+
+label.star {
+  float: right;
+  padding: 2px;
+  font-size: 20px;
+  color: #fff;
+  transition: all .2s;
+}
+
+input.star:checked ~ label.star {
+  color: #FD4;
+  transition: all .25s;
+}
+
+input.star-5:checked ~ label.star {
+  color: #FE7;
+  text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked ~ label.star { color: #F62; }

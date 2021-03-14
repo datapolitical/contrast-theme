@@ -16,10 +16,17 @@
       {%- endif -%}
     </span>
   </div>
+  {%- if include.message -%}
+    <div class="comment__body">
+      {{ include.message | strip_html | markdownify }}
+    </div>
+  {%- endif -%}
 
-  <div class="comment__body">
-    {{ include.message | strip_html | markdownify }}
-  </div>
+  {%- if include.rating -%}
+    <div class="comment__body">
+      Rating: {{ include.rating | strip_html | markdownify }} stars
+    </div>
+  {%- endif -%}
 
 {% if include.is_reply %}
 </article>
@@ -38,9 +45,10 @@
     {%- assign url         = reply.url -%}
     {%- assign date        = reply.date -%}
     {%- assign message     = reply.message -%}
+    {%- assign rating     = reply.rating -%}
     {%- assign uid         = reply._id -%}
 
-    {% include comment.html is_reply=true uid=uid email=email name=name url=url date=date message=message %}
+    {% include comment.html is_reply=true uid=uid email=email rating=rating name=name url=url date=date message=message %}
   {% endfor %}
 
   <hr style="border-top: 1px solid #ccc; background: transparent; margin-bottom: 10px;">
