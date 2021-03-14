@@ -3,8 +3,6 @@
   <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
   <input type="hidden" id="comment-replying-to-uid" name="fields[replying_to_uid]" value="">
   <input type="hidden" name="options[slug]" value="{{ page.url | remove:'.html' | remove_first:'/' }}">
-  <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">
-  <input type="hidden" name="options[reCaptcha][secret]"  value="{{ site.reCaptcha.secret }}">
   <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}">
 
 
@@ -47,8 +45,6 @@
         <input class="textfield__input" name="fields[hp]" id="hp" type="text" placeholder="Leave blank">
       </label>
     </div>
-
-    {% if site.reCaptcha.enabled %} <div id="reCaptcha" class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}"></div>{% endif %}
 
     <button class="button" id="comment-form-submit">
       Submit
