@@ -38,22 +38,6 @@
 {% if site.comments.disqus_shortname and page.layout == "post" %}<script src="//{{ site.comments.disqus_shortname }}.disqus.com/embed.js" async></script>{% endif %}
 {% if site.comments.isso_domain and page.layout == "post" %}<script data-isso="http://{{ site.comments.isso_domain }}" src="//{{ site.comments.isso_domain }}/assets/js/embed.min.js"></script>{% endif %}
 
-{% if page.in_trash == false and site.pwa.enabled == true %}
-<!-- this tests if it is a recipe because only recipes have an in_trash attribute -->
-    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
-    <script>
-      window.OneSignal = window.OneSignal || [];
-      OneSignal.push(function() {
-        OneSignal.init({
-          appId: "39bbb9f5-ab3a-4992-a99c-a85ec0d66391",
-          safari_web_id: "web.onesignal.auto.3c5e9739-5d2f-4f69-94b2-78aed3043174",
-          notifyButton: {
-            enable: true,
-        });
-      });
-    </script>
-{% endif %}
-
 {% seo %}
 </head>
 <body>
