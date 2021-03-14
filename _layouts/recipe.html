@@ -57,9 +57,9 @@ layout: page
 }
 </script>
 
-<link rel="stylesheet" media="screen" href="{{ site.url }}/assets/css/screen.css">
+<link rel="stylesheet" media="screen" href="{{ site.baseurl }}/assets/css/screen.css">
 {% if page.print_stylesheet %}
-	<link rel="stylesheet" media="print" href="{{ site.url }}/assets/css/print.css">
+	<link rel="stylesheet" media="print" href="{{ site.baseurl }}/assets/css/print.css">
 {% endif %}
 
 {% capture image_path %}
@@ -68,9 +68,11 @@ layout: page
 
 <article class="post">
 	<meta property="og:title" content="{{page.source}}" />
-	{% if page.image_url and page.image_url != "" %}
-		{% picture {{  page.image_url  }} 1:1 --alt "{{ page.title }}" %}
-	{% endif %}
+	<div class="photo">
+		{% if page.image_url and page.image_url != "" %}
+			{% picture {{  page.image_url  }} 1:1 --alt {{ page.title }} %}
+		{% endif %}
+	</div>
 	<ul id="recipe" class="recipe-overview">
 		{% if page.servings != "" %}
 		<li title="Servings">{% include recipe-icon.html icon="quantity" %}<span>{{ page.servings }}</span></li>
