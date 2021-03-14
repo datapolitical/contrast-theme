@@ -4,8 +4,8 @@
 }
 
 .photo {
-    max-width: 280px;
-    max-height: 280px;
+    max-width: 100%;
+    max-height: auto;
     width: auto;
 		height: auto;
 }
@@ -239,8 +239,12 @@ ol li + li {
 }
 
 div.stars {
-  width: 300px;
+  width: 200px;
   display: inline-block;
+}
+
+div.star-buttons {
+	float: left;
 }
 
 input.star { display: none; }
