@@ -3,13 +3,11 @@
   <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
   <input type="hidden" id="comment-replying-to-uid" name="fields[replying_to_uid]" value="">
   <input type="hidden" name="options[slug]" value="{{ page.url | remove:'.html' | remove_first:'/' }}">
-  <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ site.reCaptcha.siteKey }}">
-  <input type="hidden" name="options[reCaptcha][secret]"  value="{{ site.reCaptcha.secret }}">
   <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}">
 
 
   <div class="stars">
-    <label for="comment-form-rating"><h2>Rate this recipe! <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2>
+    <label for="comment-form-rating"><h2>Rate this recipe! <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2></label>
       <div class="star-buttons">
         <input class="radio__input star star-5" id="star-5" type="radio" value="5" name="fields[rating]" placeholder="Your recipe rating (optional)"/>
         <label class="radio__label star star-5" for="star-5">★</label>
@@ -22,7 +20,6 @@
         <input class="radio__input star star-1" id="star-1" type="radio" value="1" name="fields[rating]" placeholder="Your recipe rating (optional)"/>
         <label class="radio__label star star-1" for="star-1">★</label>
       </div>
-    </label>
   </div>
 
   <div class="textfield">
@@ -48,8 +45,6 @@
         <input class="textfield__input" name="fields[hp]" id="hp" type="text" placeholder="Leave blank">
       </label>
     </div>
-
-    {% if site.reCaptcha.enabled %} <div id="reCaptcha" class="g-recaptcha" data-sitekey="{{ site.reCaptcha.siteKey }}"></div>{% endif %}
 
     <button class="button" id="comment-form-submit">
       Submit
