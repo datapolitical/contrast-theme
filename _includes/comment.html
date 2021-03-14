@@ -23,8 +23,8 @@
   {%- endif -%}
 
   {%- if include.rating -%}
-    <div class="comment__body">
-      Rating: {{ include.rating | strip_html | markdownify }} stars
+    <div class="rating">
+      Rating: {{ include.rating }} stars
     </div>
   {%- endif -%}
 
