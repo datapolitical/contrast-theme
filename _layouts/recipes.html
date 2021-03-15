@@ -22,7 +22,7 @@ layout: page
 										{% endif %}
                 		<div class="bottom-left"><h3 class="text-hover"><b>{{ recipe.name }}</b></h3></div>
             			</a>
-									{% increment counter %}
+									{% assign counter = counter | plus: 1 %}
                 {% endif %}
               {% endfor %}
     		    {% endif %}
