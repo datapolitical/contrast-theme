@@ -10,7 +10,7 @@
     var form = this;
 
     $("#comment-form-submit").html(
-      '<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending...'
+      '<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending (wait 10 seconds)...'
     );
     $(form).addClass('disabled');
 
@@ -28,7 +28,7 @@
 
         $(form)[0].reset();
         $(form).removeClass('disabled');
-        grecaptcha.reset();
+        // grecaptcha.reset();
       },
       error: function (err) {
         console.log(err);
@@ -36,7 +36,7 @@
         showModal('Error', 'An error occured.<br>[' + ecode + ']');
         $("#comment-form-submit").html("Submit")
         $(form).removeClass('disabled');
-        grecaptcha.reset();
+        // grecaptcha.reset();
       }
     });
     return false;
