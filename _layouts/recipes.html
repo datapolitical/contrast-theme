@@ -16,7 +16,7 @@ layout: page
               	{% if category == "Web" %}
             			<a class="image-container" href="{{ recipe.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: ","  }}.html">
 										{%if counter < 2 %}
-											{% picture {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
+											{% picture lazy {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
 										{% else %}
 											{% picture lazy {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
 										{% endif %}
