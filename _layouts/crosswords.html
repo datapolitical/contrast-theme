@@ -1,9 +1,8 @@
 ---
-layout: default
+layout: page
 ---
 
 <article>
-  {% include meta.html post=page %}
   {% for puzzle in site.data.puzzles %}
     <a href="{{ puzzle.link}}" target="puzzle">{{ puzzle.name }}</a>{% unless forloop.last %} | {% endunless %}
   {% endfor %}
