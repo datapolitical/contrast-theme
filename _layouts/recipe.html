@@ -106,10 +106,10 @@ layout: page
 			<h2>Ingredients</h2>
             <ul>
             {% for item in page.ingredients %}
-							{% assign item_slice = item | slice: 0,1 %}
+							{% assign item_slice = item | slice: 0,2 %}
 							{{ item_slice }}
 							{% if item_slice == "**" %}
-								{{ item | markdownify }}
+								{{ item | markdownify | remove: '<p>' | remove: '</p>' }}
 							{% else %}
 	            	<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
 							{% else %}
