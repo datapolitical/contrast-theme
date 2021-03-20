@@ -75,7 +75,7 @@ layout: page
 	</div>
 	{% for category in page.categories %}
 		{% if category == "Writeup" %}
-			{% capture my_include %}{% include_relative	{{ page.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: "," | replace: ".html", ".md"}} %}{% endcapture %}
+			{% capture my_include %}{% include	writeups/{{ page.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: "," | replace: ".html", ".md"}} %}{% endcapture %}
 			{% my_include | | markdownify %}
 		{% endif %}
 	{% endfor %}
