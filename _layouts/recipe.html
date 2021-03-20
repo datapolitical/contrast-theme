@@ -76,6 +76,7 @@ layout: page
 	{% for category in page.categories %}
 		{% if category == "Writeup" %}
 			{% capture my_include %}{% include writeups/{{ page.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: "," | replace: ".html", ".md"}} %}{% endcapture %}
+			{% my_include | markdownify %}
 		{% endif %}
 	{% endfor %}
 	<ul id="recipe" class="recipe-overview">
