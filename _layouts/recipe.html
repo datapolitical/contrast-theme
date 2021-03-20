@@ -76,7 +76,7 @@ layout: page
 	{% capture article_slug %}
 		_pages/{{ page.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: ","}}.md
 	{% endcapture %}
-	{% for category in recipe.categories %}
+	{% for category in page.categories %}
 		{% if category == "Writeup" %}
 			{% include article_slug %}
 		{% endif %}
