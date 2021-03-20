@@ -75,7 +75,7 @@ layout: page
 	</div>
 	{% for category in page.categories %}
 		{% if category == "Writeup" %}
-			{% include	../_pages/{{ page.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: ","}}.md %}
+			{% include_relative	../_pages/{{ page.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: "," | replace: ".html", ".md" | markdownify}} %}
 		{% endif %}
 	{% endfor %}
 	<ul id="recipe" class="recipe-overview">
