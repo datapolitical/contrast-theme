@@ -108,7 +108,7 @@ layout: page
             {% for item in page.ingredients %}
 							{% assign item_slice = item | slice: 0,2 %}
 							{% if item_slice == "**" %}
-								{{ item | markdownify | remove: '<p>' | remove: '</p>' }}
+								{{ item | markdownify }}
 							{% else %}
 	            	<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li
 							{% endif %}
@@ -122,7 +122,7 @@ layout: page
             {% for item in page.directions %}
 							{% assign item_slice = item | slice: 0,2 %}
 							{% if item_slice == "**" %}
-								{{ item | markdownify | remove: '<p>' | remove: '</p>' }}
+								{{ item | markdownify }}
 							{% else %}
 								<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
 							{% endif %}
