@@ -73,6 +73,12 @@ layout: page
 			{% picture {{  page.image_url  }} 1:1 --alt {{ page.title }} %}
 		{% endif %}
 	</div>
+	{% for category in page.categories %}
+		{% if category == "Writeup" %}
+			{% capture my_include %}{% include writeups/{{ page.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: "," | replace: ".html", ".md"}} %}{% endcapture %}
+			{{ my_include | replace: '"<img', '<img' | replace: '""', '"' | replace: 'img>"', 'img>' | markdownify }}
+		{% endif %}
+	{% endfor %}
 	<ul id="recipe" class="recipe-overview">
 		{% if page.servings != "" %}
 		<li title="Servings">{% include recipe-icon.html icon="quantity" %}<span>{{ page.servings }}</span></li>
@@ -100,7 +106,12 @@ layout: page
 			<h2>Ingredients</h2>
             <ul>
             {% for item in page.ingredients %}
-            <li>{{ item }}</li>
+							{% assign item_slice = item | slice: 0,2 %}
+							{% if item_slice == "**" %}
+								<br>{{ item | markdownify }}
+							{% else %}
+	            	<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+							{% endif %}
             {% endfor %}
             </ul>
 		</div>
@@ -109,7 +120,12 @@ layout: page
 			<h2>Directions</h2>
             <ol>
             {% for item in page.directions %}
-            <li>{{ item }}</li>
+							{% assign item_slice = item | slice: 0,2 %}
+							{% if item_slice == "**" %}
+								<br>{{ item | markdownify }}
+							{% else %}
+								<li>{{ item | markdownify }}</li>
+							{% endif %}
             {% endfor %}
             </ol>
 		</div>
