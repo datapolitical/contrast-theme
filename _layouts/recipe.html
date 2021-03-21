@@ -110,8 +110,7 @@ layout: page
 							{% if item_slice == "**" %}
 								{{ item | markdownify | remove: '<p>' | remove: '</p>' }}
 							{% else %}
-	            	<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
-							{% else %}
+	            	<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li
 							{% endif %}
             {% endfor %}
             </ul>
@@ -121,7 +120,12 @@ layout: page
 			<h2>Directions</h2>
             <ol>
             {% for item in page.directions %}
-            <li>{{ item }}</li>
+							{% assign item_slice = item | slice: 0,2 %}
+							{% if item_slice == "**" %}
+								{{ item | markdownify | remove: '<p>' | remove: '</p>' }}
+							{% else %}
+								<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+							{% endif %}
             {% endfor %}
             </ol>
 		</div>
