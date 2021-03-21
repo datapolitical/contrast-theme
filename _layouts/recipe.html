@@ -110,7 +110,7 @@ layout: page
 							{% if item_slice == "**" %}
 								<br>{{ item | markdownify }}
 							{% else %}
-	            	<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li
+	            	<li>{{ item | markdownify }}</li
 							{% endif %}
             {% endfor %}
             </ul>
@@ -124,7 +124,7 @@ layout: page
 							{% if item_slice == "**" %}
 								<br>{{ item | markdownify }}
 							{% else %}
-								<li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
+								<li>{{ item | markdownify }}</li>
 							{% endif %}
             {% endfor %}
             </ol>
