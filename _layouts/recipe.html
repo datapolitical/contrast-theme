@@ -101,6 +101,13 @@ layout: page
 			{% endif %}
 		</li>
 	</ul>
+	<ul class="recipe-overview">
+		{% if site.data.recipes_nutrition[page.uid]['calories'] %}
+			<li>
+				Calories per serving: {{site.data.recipes_nutrition[page.uid]['calories'] | divided_by: site.data.recipes_nutrition[page.uid]['yield'] | round }}
+			</li>
+		{% endif %}
+	</ul>
 	<div class="recipe-contents">
 		<div class="ingredients">
 			<h2>Ingredients</h2>
