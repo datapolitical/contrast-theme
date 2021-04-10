@@ -107,7 +107,7 @@ layout: page
 		{% for item in myvariable %}
   			{% assign isnum = item | json %}
 			{% if isnum > 0 and finished == false %}
-    				{% assign total_servings = item | times: 1 }}
+    				{% assign total_servings = item | times: 1 %}
 				{% assign finished = true %}
   			{% endif %}
 		{% endfor %}
