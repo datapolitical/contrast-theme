@@ -102,9 +102,21 @@ layout: page
 		</li>
 	</ul>
 	<ul class="recipe-overview">
+		{% assign myvariable = page.servings | split: " " %}
+		{% assign finished = false %}
+		{% for item in myvariable %}
+  			{% assign isnum = item | json %}
+			{% if isnum > 0 and finished == false %}
+    				{% assign total_servings = item | times: 1 }}
+				{% assign finished = true %}
+  			{% endif %}
+		{% endfor %}
+		{% if finished == false %}
+			{% assign total_servings = 1 %}
+		{% endif %}
 		{% if site.data.recipes_nutrition[page.uid]['calories'] %}
 			<li>
-				Calories per serving: {{site.data.recipes_nutrition[page.uid]['calories'] | divided_by: site.data.recipes_nutrition[page.uid]['yield'] | round }}
+				Calories per serving: {{site.data.recipes_nutrition[page.uid]['calories'] | divided_by: total_servings | round }}
 			</li>
 		{% endif %}
 	</ul>
