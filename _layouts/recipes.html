@@ -6,8 +6,9 @@ layout: page
 
         <div class="image-grid">
 				{% assign counter = 0 %}
+				{% assign sortedRecipes = site.data.recipes | sort: "created" | reverse %}
         {% for i in (0..5) reversed %}
-        	{% for recipe in site.data.recipes %}
+        	{% for recipe in sortedRecipes %}
             {% if recipe.rating == i and recipe.image_url %}
             	{% for category in recipe.categories %}
               	{% if category == "Web" %}
