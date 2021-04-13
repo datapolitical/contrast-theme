@@ -114,7 +114,7 @@ layout: page
 		{% if finished == false %}
 			{% assign total_servings = 1 %}
 		{% endif %}
-		{% if site.data.recipes_nutrition[page.uid]['calories'] %}
+		{% if site.data.recipes_nutrition[page.uid]['calories'] and site.show_nutrition %}
 			<li>
 				Calories per serving: {{site.data.recipes_nutrition[page.uid]['calories'] | divided_by: total_servings | round }}
 			</li>
