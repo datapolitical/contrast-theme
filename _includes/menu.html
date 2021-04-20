@@ -1,10 +1,22 @@
 <nav>
-{%- for item in include.menu -%}
-  {%- assign node = site.pages | where: "name", item.file | first -%}
-  {%- assign url = item.url | default: node.url -%}
-  {%- assign title = item.title | default: node.title -%}
-  <a href="{{ url | relative_url }}" {% if url == page.url %}class="selected"{% endif %}>
-    {%- if item.icon -%}<svg aria-label="{{ title }}" class="icon"><use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ item.icon }}"></use></svg>{%- else -%}{{ title }}{%- endif -%}
-  </a>
-{%- endfor -%}
+    <a href="/recipes/">
+        <svg aria-label="Recipes" class="icon">
+            <use xlink:href="/assets/fontawesome/icons.svg#utensils"></use>
+        </svg>
+    </a>
+    <a href="/drinks/">
+        <svg aria-label="Cocktails" class="icon">
+            <use xlink:href="/assets/fontawesome/icons.svg#glass-martini-alt"></use>
+        </svg>
+    </a>
+    <a href="/crosswords.html">
+        <svg aria-label="Crosswords" class="icon">
+            <use xlink:href="/assets/fontawesome/icons.svg#crossword"></use>
+        </svg>
+    </a>
+    <a href="/grady.html">
+        <svg aria-label="Grady" class="icon">
+            <use xlink:href="/assets/fontawesome/icons.svg#dragon"></use>
+        </svg>
+    </a>
 </nav>

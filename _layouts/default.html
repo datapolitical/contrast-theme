@@ -59,12 +59,13 @@
 {% else %}
 <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
 {% endif %}
-{% if site.external %}
 <footer>
+  {% project_version %}
+  {% if site.external %}
   <div>{{ site.description | default: site.title }}</div>
   {% include menu.html menu=site.external %}
+  {% endif %}
 </footer>
-{% endif %}
 {% if site.pwa.enabled == true %}<script src="{{site.url}}/assets/js/pwa-1.0.min.js"></script>{% endif %}
 {% include analytics.html %}
 </body>
