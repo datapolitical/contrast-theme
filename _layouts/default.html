@@ -17,7 +17,7 @@
    |               /    /
   /______wwww  wwww  __/ -->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-<!-- {% project_version %} -->
+<!-- {% project_version | strip_html %} -->
 <head>
   <style>
   {% capture sass_critical %}
