@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!--
+<!--[if RABBIT]>
        /\      |\
       |  \    / |
       |   \  |  /
@@ -15,7 +15,8 @@
   \    \            //   |
    |     \ ____  __//    |
    |               /    /
-  /______wwww  wwww  __/ -->
+  /______wwww  wwww  __/
+<![endif]-->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <!-- {% project_version | strip_html %} -->
 <head>
@@ -27,6 +28,7 @@
   </style>
   <link rel="manifest" href="{{site.url}}/manifest.json">
   <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
+  <meta name="version" content="{% project_version | strip_html %}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1C1D22"/>
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
