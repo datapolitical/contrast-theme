@@ -21,6 +21,7 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <!-- {% project_version %} -->
 <head>
+  <meta charset="{{ site.encoding }}">
   <style>
   {% capture sass_critical %}
   {% include critical.scss %}
@@ -32,8 +33,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1C1D22"/>
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
-  <title>{% if page.title %}{{ page.title | escape }} | {% endif %}{{ site.title | escape }}</title>
-  <meta charset="{{ site.encoding }}">
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 {% if site.plugins contains "jekyll-feed" %}<link rel="alternate" href="{{ site.feed.path | default: "/feed.xml" | relative_url }}" type="application/atom+xml" title="{{ site.title }}">{% endif %}
@@ -71,7 +70,7 @@
     {% endif %}
   </footer>
 {% endif %}
-{% if site.pwa.enabled == true %}<script src="{{site.url}}/assets/js/pwa-1.0.min.js"></script>{% endif %}
+{% if site.pwa.enabled == true %}<script src="{{site.url}}/assets/js/pwa-1.0.min.js type="text/javascript""></script>{% endif %}
 {% include analytics.html %}
 </body>
 </html>
