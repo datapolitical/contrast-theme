@@ -12,7 +12,7 @@ layout: page
             {% if recipe.rating == i and recipe.image_url %}
             	{% for category in recipe.categories %}
               	{% if category == "Web" %}
-            			<a class="image-container" href="{{ recipe.name | downcase | replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove: "[" | remove: "]" | remove: "'" | remove: "&" | remove: "!" | remove: "’" | remove: ","  }}.html">
+            			<a class="image-container" href="{{ recipe.name | datapage_url:'.' }}">
 										{%if counter < 2 %}
 											{% picture lazy {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
 										{% else %}
