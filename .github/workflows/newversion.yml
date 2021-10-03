@@ -6,9 +6,8 @@ name: Manual workflow
 # or API.
 on:
   push:
-    branches:
-      - recaptcha-v2  # Here source code branch is `master`, it could be other branch
-    # Inputs the workflow accepts.
+    tags:
+      - '*'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
