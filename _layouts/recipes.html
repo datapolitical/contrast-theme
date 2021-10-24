@@ -16,7 +16,7 @@ layout: page
 										{%if counter < 2 %}
 											{% picture lazy {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
 										{% else %}
-											{% picture lazy {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
+											{% picture lazy {{ recipe.image_url  }} 1:1 --img loading="lazy" --alt {{ recipe.name }} %}
 										{% endif %}
                 		<div class="bottom-left"><h3 class="text-hover"><b>{{ recipe.name }}</b></h3></div>
             			</a>
