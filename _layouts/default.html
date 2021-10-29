@@ -35,29 +35,21 @@
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-{% if site.plugins contains "jekyll-feed" %}<link rel="alternate" href="{{ site.feed.path | default: "/feed.xml" | relative_url }}" type="application/atom+xml" title="{{ site.title }}">{% endif %}
 
 {% seo %}
 </head>
 <body>
 
-{% if site.navigation %}
-  {% assign pages = site.navigation %}
-{% else %}
-  {% assign pages = site.pages | where_exp: "item", "item.title and item.sitemap != false" | sort: "order" %}
-{% endif %}
-
-
 <header>
   <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
-  {% include_cached menu.html menu=pages text=false icon=true %}
+  {% include_cached menu.html %}
 </header>
 
 {{ content }}
 
 <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
 
-{% if site.pwa.enabled == true %}<script data-cfasync="false" src="{{site.url}}/assets/js/pwa-1.0.min.js" type="text/javascript"></script>{% endif %}
+<script data-cfasync="false" src="{{site.url}}/assets/js/pwa-1.0.min.js" type="text/javascript"></script>
 {% include_cached analytics.html %}
 </body>
 </html>
