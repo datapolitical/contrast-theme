@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "contrast"
-  spec.version       = "3.0.22"
+  spec.version       = "3.0.25-beta1"
   spec.authors       = ["Chris Nicholson"]
   spec.email         = ["datapolitical@gmail.com"]
 
