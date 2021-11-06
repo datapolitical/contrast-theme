@@ -27,7 +27,7 @@ var addComment = function() {
     event.preventDefault();
 
     submitButton.innerHTML =
-      '<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending...';
+      '<svg class="icon spin"><use xlink:href="#icon-loading"></use></svg> Sending...(wait 10 seconds)';
 
     var errorHandler = function(title, err) {
       console.log(err);
