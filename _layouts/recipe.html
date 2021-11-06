@@ -28,7 +28,7 @@ layout: page
 	"recipeYield": "{{ page.servings }}",
 	{% endif %}
 	{% if page.prep_time != "" %}
-	"prepTime": "{{ page.prep_time}}",
+	"prepTime": "{{ page.prep_time | date: '%T' }}",
 	{% endif %}
 	{% if page.cook_time != "" %}
 	"cookTime": "{{ page.cook_time}}",
