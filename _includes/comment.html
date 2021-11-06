@@ -7,7 +7,7 @@
 <article id="{{ comment_id }}" class="{{ article_class }}" uid="{{ include.uid }}">
 
   <div class="comment__author">
-    {{- include.name | strip_html -}},
+    {{- include.name | strip_html -}} —
     <span class="comment__date">
       {%- if include.date -%}
         <a href="#{{ comment_id}}" title="Permalink to this comment">
