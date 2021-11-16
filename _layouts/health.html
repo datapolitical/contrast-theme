@@ -4,16 +4,35 @@ layout: default
 
 <article>
   {% include meta.html post=page %}
-  <svg viewBox="0 0 1000 100" class="chart">
-  <polyline
-     fill="none"
-     stroke="#000000"
-     stroke-width="1"
-     points="
-     {% for step in site.data.steps %}
-       {{step.index}},{{step['Value']}}
-     {% endfor %}
-     "/>
+  {{ content }}
+
+  <h2> My Steps </h2>
+  <svg width="300" height="170" viewBox="0 0 300 170" class="chart">
+    <g class="grid x-grid" id="xGrid">
+      <line x1="0" x2="0" y1="0" y2="151" stroke="#DDDDDD" stroke-width=".5"></line>
+    </g>
+    <g class="grid y-grid" id="yGrid">
+      <line x1="0" x2="300" y1="151" y2="151" stroke="#DDDDDD" stroke-width=".5"></line>
+    </g>
+    <g class="grid y-grid" id="yMark">
+      <line x1="0" x2="5" y1="0" y2="0" stroke="#DDDDDD" stroke-width=".5"></line>
+    </g>
+    <g class="labels y-labels">
+      <text x="5" y="15" fill="#BBBBBB" font-size=".8em">15,000 steps</text>
+      <text x="5" y="163" fill="#BBBBBB" font-size=".8em">{{site.data.steps | size}} days</text>
+    </g>
+    <g class="chartpoint  id="chartpoints">
+      <polyline
+         fill="none"
+         stroke="#FFFFFF"
+         stroke-width="1"
+         points="
+         {% for step in site.data.steps %}
+         {{forloop.index0 | times: 5| plus: 15}}, {{step[1]['Value'] | divided_by: 100 | minus: 150 | times: -1 }}
+         {% endfor %}
+         "/>
+      </g>
 </svg>
+
 
 </article>
