@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article>
+  {% include meta.html post=page %}
+  <svg viewBox="0 0 1000 100" class="chart">
+  <polyline
+     fill="none"
+     stroke="#000000"
+     stroke-width="1"
+     points="
+     {% for step in site.data.steps %}
+       {{step.index}},{{step['Value']}}
+     {% endfor %}
+     "/>
+</svg>
+
+</article>
