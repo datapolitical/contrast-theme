@@ -43,9 +43,8 @@
 
   <!-- New comment form -->
   <div id="respond" class="comment__new">
-    {% include comment_form.html %}
+    {% include_cached comment_form.html url=page.url %}
   </div>
 </section>
 
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script defer src="{{ '/assets/js/main.js' | relative_url }}"></script>

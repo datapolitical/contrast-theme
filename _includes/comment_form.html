@@ -1,13 +1,13 @@
 <form class="js-form form" id="new-comment" method="post" action="{{ site.staticman_url }}">
-  <input type="hidden" name="options[origin]" value="{{ page.url | absolute_url }}">
-  <input type="hidden" name="options[parent]" value="{{ page.url | absolute_url }}">
+  <input type="hidden" name="options[origin]" value="{{ include.url | absolute_url }}">
+  <input type="hidden" name="options[parent]" value="{{ include.url | absolute_url }}">
   <input type="hidden" id="comment-replying-to-uid" name="fields[replying_to_uid]" value="">
-  <input type="hidden" name="options[slug]" value="{{ page.url | remove:'.html' | remove_first:'/' }}">
-  <input type="hidden" name="options[redirect]" value="{{ page.url | absolute_url }}">
+  <input type="hidden" name="options[slug]" value="{{ include.url | remove:'.html' | remove_first:'/' }}">
+  <input type="hidden" name="options[redirect]" value="{{ include.url | absolute_url }}">
 
 
   <div class="stars">
-    <label for="comment-form-rating"><h2>Rate this recipe! <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ page.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2></label>
+    <label for="comment-form-rating"><h2>Rate this recipe! <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ include.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2></label>
       <div class="star-buttons">
         <input class="radio__input star star-5" id="star-5" type="radio" value="5" name="fields[rating]" placeholder="Your recipe rating (optional)"/>
         <label class="radio__label star star-5" for="star-5">★</label>
@@ -45,6 +45,10 @@
         <input class="textfield__input" name="fields[hp]" id="hp" type="text" placeholder="Leave blank">
       </label>
     </div>
+
+    <button type="button" class="button" id="cancel-comment-reply-link" style="display: none">
+       Cancel Reply
+    </button>
 
     <button class="button" id="comment-form-submit">
       Submit
