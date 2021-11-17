@@ -14,12 +14,15 @@ layout: default
     <g class="grid y-grid" id="yGrid">
       <line x1="0" x2="300" y1="151" y2="151" stroke="#DDDDDD" stroke-width=".5"></line>
     </g>
-    <g class="grid y-grid" id="yMark">
-      <line x1="0" x2="5" y1="0" y2="0" stroke="#DDDDDD" stroke-width=".5"></line>
+    <g class="grid y-grid" id="yMarks">
+      <line x1="0" x2="5" y1="20" y2="20" stroke="#DDDDDD" stroke-width=".5"></line>
+      <line x1="0" x2="5" y1="70" y2="70" stroke="#BBBBBB" stroke-width=".25"></line>
+      <line x1="0" x2="5" y1="120" y2="120" stroke="#BBBBBB" stroke-width=".25"></line>
     </g>
     <g class="labels y-labels">
-      <text x="5" y="15" fill="#BBBBBB" font-size=".8em">15,000 steps</text>
-      <text x="5" y="163" fill="#BBBBBB" font-size=".8em">{{site.data.steps | size}} days</text>
+      <text x="5" y="20" fill="#BBBBBB" font-size=".8em">15,000 steps</text>
+      <text x="5" y="163" fill="#BBBBBB" font-size=".8em">{{site.data.steps[0].Date[0]| slice: 0, 10 | date_add: 2, "day" | date: "%b %e" | downcase }}</text>
+      <text x="270" y="163" fill="#BBBBBB" font-size=".8em">today</text>
     </g>
     <g class="chartpoint  id="chartpoints">
       <polyline
