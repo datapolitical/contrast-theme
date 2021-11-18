@@ -4,6 +4,7 @@
 .sass-cache
 Gemfile.lock
 _site
+critical
 *.gem
 _data/drinks/*
 _data/recipes.yaml
