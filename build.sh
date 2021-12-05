@@ -9,7 +9,7 @@ ls -l
 git clone https://github.com/datapolitical/chrisfnicholson.github.io
 ls -l
 cd chrisfnicholson.github.io
-ls -l ../repo
+ls -l /opt/buildhome/repo
 bundle config local.contrast /opt/buildhome/repo
 bundle install
 bundle exec jekyll build
