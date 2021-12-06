@@ -83,6 +83,8 @@ input[type="radio"] {
 [value="Drink"]:checked ~ .filters [for="Drink"] {
   background: transparent;
   color: var(--white);
+  border-bottom: 4px solid #DCE0E6;
+  margin-bottom: 0.5rem;
 }
 
 [value="All"]:checked ~ .image-grid [data-category] {
