@@ -8,5 +8,7 @@ cd chrisfnicholson.github.io
 bundle install --redownload
 gem query --local
 gem -i jekyll-include-cache
+gem install jekyll-include-cache --source http://rubygems.org
+gem install jekyll_picture_tag --source http://rubygems.org
 gem install --local $HOME/repo/*.gem
 bundle exec jekyll build
