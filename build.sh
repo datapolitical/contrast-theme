@@ -13,7 +13,7 @@ ls -l
 cd chrisfnicholson.github.io
 cat .bundle/config
 ls -l /opt/buildhome/repo
-bundle config local.contrast /opt/buildhome/repo
+bundle config set local.contrast /opt/buildhome/repo
 cat $HOME/.bundle/config
-bundle install # --redownload
+bundle install --redownload
 bundle exec jekyll build
