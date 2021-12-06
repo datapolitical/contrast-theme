@@ -5,7 +5,7 @@ echo $GEM_PATH
 gem sources
 gem environment
 git branch
-cat layouts/recipes.html
+cat _layouts/recipes.html
 git checkout $CF_PAGES_BRANCH
 bundle config set disable_local_branch_check true
 gem build contrast-theme.gemspec
