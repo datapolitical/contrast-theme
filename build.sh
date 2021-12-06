@@ -23,5 +23,5 @@ echo $GEM_HOME
 # gem install --verbose --install-dir /opt/buildhome/.rvm/gems/ruby-2.7.1/ $HOME/repo/contrast*.gem 
 # echo $GEM_PATH
 bundle config set local.contrast-theme $HOME/repo
-GEMFILE=Gemfile-dev bundle exec jekyll build --config _config.yml,_config_dev.yml
+BUNDLE_GEMFILE=Gemfile-dev bundle exec jekyll build --config _config.yml,_config_dev.yml
 cp -r gh-pages $HOME/repo/gh-pages
