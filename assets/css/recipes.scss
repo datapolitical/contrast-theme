@@ -62,21 +62,3 @@ a {
     width: 70%;
     height: auto;
   }
-
-/* FILTERING RULES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-[value="All"]:checked ~ .filters [for="All"],
-[value="Food"]:checked ~ .filters [for="Food"],
-[value="Drinks"]:checked ~ .filters [for="Drinks"] {
-  background: var(--green);
-  color: var(--white);
-}
-
-[value="All"]:checked ~ .posts [data-category] {
-  display: block;
-}
-
-[value="Food"]:checked ~ .posts .post:not([data-category~="Food"]),
-[value="Drinks"]:checked ~ .posts .post:not([data-category~="Drinks"]) {
-  display: none;
-}

@@ -5,17 +5,17 @@ layout: page
 		<link rel="preload" as="script" href="https://cdn.jsdelivr.net">
 
 		<input type="radio" id="All" name="categories" value="All" checked>
-		<input type="radio" id="Food" name="categories" value="Food">
-		<input type="radio" id="Drinks" name="categories" value="Drinks">
+		<input type="radio" id="Made-at-307" name="categories" value="Made-at-307">
+		<input type="radio" id="Drink" name="categories" value="Drink">
 		<ol class="filters">
 		  <li>
 		    <label for="All">All</label>
 		  </li>
 		  <li>
-		    <label for="Food">Food</label>
+		    <label for="Made-at-307">Made at 307</label>
 		  </li>
 		  <li>
-		    <label for="Drinks">Drinks</label>
+		    <label for="Drink">Drinks</label>
 		  </li>
 		</ol>
 
@@ -27,7 +27,8 @@ layout: page
             {% if recipe.rating == i and recipe.image_url %}
 							{% assign recipeCategories = "" %}
             	{% for category in recipe.categories %}
-								{% assign recipeCategories = recipeCategories | append: " " | append: category %}
+								{% assign categoryNoSpace = category | replace: " ", "-" %}
+								{% assign recipeCategories = recipeCategories | append: " " | append: categoryNoSpace %}
 							{% endfor %}
             	{% if recipeCategories contains "Web" %}
           			<a class="image-container" data-category="{{ recipeCategories }}" href="{{ recipe.name | datapage_url:'.' }}">
