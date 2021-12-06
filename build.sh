@@ -1,6 +1,7 @@
 #!/bin/bash
 source ~/.rvm/scripts/rvm
 rvm 2.7.1 --default
+echo $GEM_PATH
 gem sources
 gem environment
 bundle config set disable_local_branch_check true
@@ -17,4 +18,5 @@ gem query --local
 # gem install jekyll-pwa-workbox --source http://rubygems.org
 # gem install jekyll-sitemap --source http://rubygems.org
 gem install $HOME/repo/*.gem
+echo $GEM_PATH
 bundle exec jekyll build
