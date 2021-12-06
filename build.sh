@@ -17,7 +17,8 @@ gem query --local
 # gem install jekyll_picture_tag --source http://rubygems.org
 # gem install jekyll-pwa-workbox --source http://rubygems.org
 # gem install jekyll-sitemap --source http://rubygems.org
-bundle config set local.contrast-theme $HOME/repo
+bundle config set local.contrast-theme-dev $HOME/repo
+gem install --local contrast-theme-dev
 echo $GEM_PATH
-bundle exec jekyll build
+bundle exec jekyll build --config _config.yml,_config_dev.yml
 cp -r gh-pages $HOME/repo/gh-pages
