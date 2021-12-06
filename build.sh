@@ -5,8 +5,9 @@ echo $GEM_PATH
 gem sources
 gem environment
 # git pull
-# git checkout $CF_PAGES_BRANCH
-bundle config set disable_local_branch_check true
+git branch master
+git checkout master
+# bundle config set disable_local_branch_check true
 # gem build contrast-theme.gemspec
 cd ..
 git clone https://github.com/datapolitical/chrisfnicholson.github.io
@@ -23,5 +24,5 @@ echo $GEM_HOME
 # gem install --verbose --install-dir /opt/buildhome/.rvm/gems/ruby-2.7.1/ $HOME/repo/contrast*.gem 
 # echo $GEM_PATH
 bundle config set local.contrast-theme $HOME/repo
-BUNDLE_GEMFILE=Gemfile-dev bundle exec jekyll build --config _config.yml,_config_dev.yml
+bundle exec jekyll build --config _config.yml,_config_dev.yml
 cp -r gh-pages $HOME/repo/gh-pages
