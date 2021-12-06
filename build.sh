@@ -1,5 +1,5 @@
 #!/bin/bash
-bundle clean
+gem uninstall contrast
 bundle config set disable_local_branch_check true
 gem build contrast.gemspec
 gem install contrast-3.0.28.gem
