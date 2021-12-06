@@ -1,6 +1,6 @@
 #!/bin/bash
 source ~/.rvm/scripts/rvm
-rvm 2.7.1 --default
+rvm default
 git branch master
 git checkout master
 cd ..
