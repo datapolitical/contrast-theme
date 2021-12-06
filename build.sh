@@ -11,5 +11,5 @@ ls -l
 cd chrisfnicholson.github.io
 ls -l /opt/buildhome/repo
 bundle config local.contrast /opt/buildhome/repo
-bundle install
+bundle install --redownload
 bundle exec jekyll build
