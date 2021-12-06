@@ -1,7 +1,7 @@
 #!/bin/bash
 bundle config set disable_local_branch_check true
 gem build contrast.gemspec
-gem install
+gem install contrast
 cd ..
 git clone https://github.com/datapolitical/chrisfnicholson.github.io
 cd chrisfnicholson.github.io
