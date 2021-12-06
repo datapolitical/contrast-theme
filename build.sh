@@ -12,12 +12,13 @@ git clone https://github.com/datapolitical/chrisfnicholson.github.io
 cd chrisfnicholson.github.io
 gem environment
 bundle install --verbose
+gem uninstall contrast-theme
 gem query --local
 # gem install jekyll-include-cache --source http://rubygems.org
 # gem install jekyll_picture_tag --source http://rubygems.org
 # gem install jekyll-pwa-workbox --source http://rubygems.org
 # gem install jekyll-sitemap --source http://rubygems.org
-bundle config set local.contrast-theme $HOME/repo
+gem install --local $HOME/repo/contrast*.gem 
 echo $GEM_PATH
-BUNDLE_GEMFILE=Gemfile-dev bundle exec jekyll build
+bundle exec jekyll build
 cp -r gh-pages $HOME/repo/gh-pages
