@@ -1,6 +1,6 @@
 #!/bin/bash
 source ~/.rvm/scripts/rvm
-rvm default
+rvm 2.7.1 --default
 echo $GEM_PATH
 gem sources
 gem environment
@@ -18,7 +18,7 @@ gem query --local
 # gem install jekyll_picture_tag --source http://rubygems.org
 # gem install jekyll-pwa-workbox --source http://rubygems.org
 # gem install jekyll-sitemap --source http://rubygems.org
-gem install --local $HOME/repo/contrast*.gem 
+gem install $HOME/repo/contrast*.gem 
 echo $GEM_PATH
 bundle exec jekyll build
 cp -r gh-pages $HOME/repo/gh-pages
