@@ -1,6 +1,6 @@
 #!/bin/bash
 source ~/.rvm/scripts/rvm
-rvm 2.7.1
+rvm 2.7.1 --default
 gem sources
 gem environment
 bundle config set disable_local_branch_check true
