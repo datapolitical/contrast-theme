@@ -5,6 +5,6 @@ gem build contrast-theme.gemspec
 cd ..
 git clone https://github.com/datapolitical/chrisfnicholson.github.io
 cd chrisfnicholson.github.io
-bundle install
+bundle install --redownload
 gem install --local $HOME/repo/*.gem
 bundle exec jekyll build
