@@ -13,6 +13,7 @@ cd chrisfnicholson.github.io
 gem environment
 bundle install --verbose
 gem uninstall contrast-theme
+gem cleanup contrast-theme
 gem query --local
 # gem install jekyll-include-cache --source http://rubygems.org
 # gem install jekyll_picture_tag --source http://rubygems.org
