@@ -4,6 +4,7 @@ rvm 2.7.1 --default
 echo $GEM_PATH
 gem sources
 gem environment
+git pull
 git branch
 cat _layouts/recipes.html
 git checkout $CF_PAGES_BRANCH
