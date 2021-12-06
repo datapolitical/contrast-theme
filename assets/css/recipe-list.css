@@ -54,7 +54,7 @@ input[type="radio"] {
  
 .filters {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
 }
  
 .filters * {
@@ -62,11 +62,11 @@ input[type="radio"] {
 }
  
 .filters label {
-  padding: 0.5rem 1rem;
-  /* margin-bottom: 0.25rem;
-  border-radius: 2rem; */
+  padding: 0.25rem 0.25rem;
+  margin-bottom: 0.25rem;
+  /* border-radius: 2rem;
   min-width: 50px;
-  /* line-height: normal; */
+  line-height: normal; */
   /* cursor: pointer;
   transition: all 0.1s; */
 }
@@ -84,7 +84,7 @@ input[type="radio"] {
   background: transparent;
   color: var(--white);
   border-bottom: 4px solid #DCE0E6;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 [value="All"]:checked ~ .image-grid [data-category] {
