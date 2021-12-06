@@ -1,7 +1,7 @@
 #!/bin/bash
 gem sources
 bundle config set disable_local_branch_check true
-gem install jekyll-include-cache --source http://rubygems.org
+gem source -a http://rubygems.org/
 gem build contrast-theme.gemspec
 gem install --local *.gem
 cd ..
