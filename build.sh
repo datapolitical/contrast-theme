@@ -20,3 +20,4 @@ gem query --local
 gem install $HOME/repo/*.gem
 echo $GEM_PATH
 bundle exec jekyll build
+cp _site $HOME/repo/_site
