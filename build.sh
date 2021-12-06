@@ -6,5 +6,7 @@ cd ..
 git clone https://github.com/datapolitical/chrisfnicholson.github.io
 cd chrisfnicholson.github.io
 bundle install --redownload
+gem query --local
+gem -i jekyll-include-cache
 gem install --local $HOME/repo/*.gem
 bundle exec jekyll build
