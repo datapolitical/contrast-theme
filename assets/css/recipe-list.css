@@ -41,6 +41,11 @@ img:not([src]):not([srcset]) {
   visibility: hidden;
 }
 
+input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
 :root {
   --black: #1a1a1a;
   --white: #fff;
@@ -58,16 +63,16 @@ img:not([src]):not([srcset]) {
  
 .filters label {
   padding: 0.5rem 1rem;
-  margin-bottom: 0.25rem;
-  border-radius: 2rem;
+  /* margin-bottom: 0.25rem;
+  border-radius: 2rem; */
   min-width: 50px;
-  line-height: normal;
-  cursor: pointer;
-  transition: all 0.1s;
+  /* line-height: normal; */
+  /* cursor: pointer;
+  transition: all 0.1s; */
 }
  
 .filters label:hover {
-  background: var(--green);
+  background: transparent;
   color: var(--white);
 }
 
@@ -76,7 +81,7 @@ img:not([src]):not([srcset]) {
 [value="All"]:checked ~ .filters [for="All"],
 [value="Made-at-307"]:checked ~ .filters [for="Made-at-307"],
 [value="Drink"]:checked ~ .filters [for="Drink"] {
-  background: var(--green);
+  background: transparent;
   color: var(--white);
 }
 
