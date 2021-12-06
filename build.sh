@@ -8,10 +8,10 @@ gem environment
 git clone https://github.com/datapolitical/chrisfnicholson.github.io
 cd chrisfnicholson.github.io
 gem environment
-bundle install --redownload
+bundle install --path /opt/buildhome/.rvm/gems/ruby-2.7.1
 gem query --local
-gem install jekyll-include-cache --source http://rubygems.org
-gem install jekyll_picture_tag --source http://rubygems.org
-gem install jekyll-pwa-workbox --source http://rubygems.org
+# gem install jekyll-include-cache --source http://rubygems.org
+# gem install jekyll_picture_tag --source http://rubygems.org
+# gem install jekyll-pwa-workbox --source http://rubygems.org
 gem install --local $HOME/repo/*.gem
 bundle exec jekyll build
