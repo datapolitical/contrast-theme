@@ -6,4 +6,5 @@ gem install contrast-3.0.8.gem
 cd ..
 git clone https://github.com/datapolitical/chrisfnicholson.github.io
 cd chrisfnicholson.github.io
+bundle install
 bundle exec jekyll build
