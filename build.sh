@@ -1,11 +1,10 @@
 #!/bin/bash
 gem sources
 bundle config set disable_local_branch_check true
-gem source -a http://rubygems.org/
 gem build contrast-theme.gemspec
-gem install --local *.gem
 cd ..
 git clone https://github.com/datapolitical/chrisfnicholson.github.io
 cd chrisfnicholson.github.io
 bundle install
+gem install --local $HOME/repo/*.gem
 bundle exec jekyll build
