@@ -58,7 +58,6 @@ ol.filters {
 	margin-block-end: 0px;
 	line-height: 0px;
 	margin-bottom: .25rem;
-	font-size: 4vw;
     /* @media #{$desktop} {
 		width: 50%;
 	} */
@@ -76,15 +75,17 @@ ol.filters li + li {
 }
 
 .filters span {
-	padding: 0.25rem 0.2rem .5rem .2rem;
+  padding: 0.25rem 0.2rem .5rem .2rem;
   margin-bottom: 0.25rem;
-	line-height: 1.6rem;
+  line-height: 1.6rem;
+  font-size: 4vw;
 }
 
 .filters label {
   padding: 0.25rem 0.25rem .25rem .25rem;
   margin-bottom: 0rem;
-	border-bottom: 0.25rem transparent;
+  border-bottom: 0.25rem transparent;
+  font-size: 4vw;
   /* border-radius: 2rem;
   min-width: 50px;
   line-height: normal; */
