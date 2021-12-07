@@ -44,8 +44,7 @@
     display: block;
   }
   {% for category in site.data.recipe_categories %}
-  [value="{{category.name}}"]:checked ~ .image-grid .image-container:not([data-category~="{{category.name}}"]),
-  {% unless forloop.last %},
+  [value="{{category.name}}"]:checked ~ .image-grid .image-container:not([data-category~="{{category.name}}"]){% unless forloop.last %},
   {% endunless %}{% endfor %} {
     display: none;
   }
