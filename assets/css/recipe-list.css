@@ -5,7 +5,7 @@ main .container{
 }
 
 .text-hover {
-	font-size: 14px;
+	font-size: 2vh;
 	color: white;
 	margin: 0px;
 }
@@ -14,14 +14,14 @@ main .container{
 	/* position: absolute; */
 	/* bottom: 8px; */
 	/* left: 16px; */
-	height: 30px;
+	height: 3.8vh;
 	width: 100%;
 }
 
 .image-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
-	grid-gap: 10px;
+	grid-gap: 1vh;
 	align-items: stretch;
 }
 
