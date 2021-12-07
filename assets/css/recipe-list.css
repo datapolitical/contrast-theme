@@ -51,16 +51,16 @@ input[type="radio"] {
   --white: #fff;
   --green: #49b293;
 }
- 
+
 .filters {
   text-align: center;
   margin-bottom: .5rem;
 }
- 
+
 .filters * {
   display: inline-block;
 }
- 
+
 .filters label {
   padding: 0.25rem 0.25rem;
   margin-bottom: 0.25rem;
@@ -70,29 +70,8 @@ input[type="radio"] {
   /* cursor: pointer;
   transition: all 0.1s; */
 }
- 
+
 .filters label:hover {
   background: transparent;
   color: var(--white);
 }
-
-/* FILTERING RULES
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-[value="All"]:checked ~ .filters [for="All"],
-[value="Made-at-307"]:checked ~ .filters [for="Made-at-307"],
-[value="Drink"]:checked ~ .filters [for="Drink"] {
-  background: transparent;
-  color: var(--white);
-  border-bottom: 4px solid #DCE0E6;
-  margin-bottom: 0.25rem;
-}
-
-[value="All"]:checked ~ .image-grid [data-category] {
-  display: block;
-}
-
-[value="Made-at-307"]:checked ~ .image-grid .image-container:not([data-category~="Made-at-307"]),
-[value="Drink"]:checked ~ .image-grid .image-container:not([data-category~="Drink"]) {
-  display: none;
-}
-
