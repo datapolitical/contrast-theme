@@ -27,6 +27,28 @@
   {% include_cached critical.scss %}
   {% endcapture %}
   {{ sass_critical | scssify }}
+  {% if page.url == "/recipes/" %}
+  /* FILTERING RULES
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+  [value="All"]:checked ~ .filters [for="All"],
+  {% for category in site.data.recipe_categories %}
+  [value="{{category}}"]:checked ~ .filters [for="{{category}}"]{% unless forloop.last %},
+  {% endunless %}{% endfor %} {
+    background: transparent;
+    color: var(--white);
+    border-bottom: 4px solid #DCE0E6;
+    margin-bottom: 0.25rem;
+  }
+
+  [value="All"]:checked ~ .image-grid [data-category] {
+    display: block;
+  }
+  {% for category in site.data.recipe_categories %}
+  [value="{{category}}"]:checked ~ .image-grid .image-container:not([data-category~="{{category}}"]),
+  {% unless forloop.last %},
+  {% endunless %}{% endfor %} {
+    display: none;
+  }
   </style>
   <link rel="manifest" href="{{site.url}}/manifest.json">
   <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">

@@ -5,18 +5,18 @@ layout: page
 		<link rel="preload" as="script" href="https://cdn.jsdelivr.net">
 
 		<input type="radio" id="All" name="categories" value="All" checked>
-		<input type="radio" id="Made-at-307" name="categories" value="Made-at-307">
-		<input type="radio" id="Drink" name="categories" value="Drink">
+		{% for category in site.data.recipe_categories %}
+		<input type="radio" id="{{category}}" name="categories" value="{{category}}">
+		{% endfor %}
 		<ol class="filters">
 		  <li>
 		    <label for="All">All</label>
 		  </li>
+			{% for category in site.data.recipe_categories %}
 		  <li>
-		    <label for="Made-at-307">Made at 307</label>
+		    <label for="{{category}}">{{category}}</label>
 		  </li>
-		  <li>
-		    <label for="Drink">Drinks</label>
-		  </li>
+			{% endfor %}
 		</ol>
 
         <div class="image-grid">
