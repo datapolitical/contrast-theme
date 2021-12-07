@@ -52,6 +52,12 @@ input[type="radio"] {
   --green: #49b293;
 }
 
+ol.filters {
+	padding-inline-start: 0px;
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+	line-height: 0px;
+}
 .filters {
   text-align: center;
   margin-bottom: .5rem;
