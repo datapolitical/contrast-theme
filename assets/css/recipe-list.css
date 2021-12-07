@@ -58,6 +58,10 @@ ol.filters {
 	margin-block-end: 0px;
 	line-height: 0px;
 	margin-bottom: .25rem;
+	max-width: 90%;
+    /* @media #{$desktop} {
+		width: 50%;
+	} */
 }
 ol.filters li + li {
 	margin: 10px 0px 0px 0px;
