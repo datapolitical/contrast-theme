@@ -58,7 +58,7 @@ ol.filters {
 	margin-block-end: 0px;
 	line-height: 0px;
 	margin-bottom: .25rem;
-	max-width: 90%;
+	font-size: 5vw;
     /* @media #{$desktop} {
 		width: 50%;
 	} */
