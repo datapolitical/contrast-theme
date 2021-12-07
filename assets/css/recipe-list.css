@@ -71,13 +71,15 @@ ol.filters li + li {
 }
 
 .filters span {
-	padding: 0.2rem 0.2rem;
+	padding: 0.25rem 0.2rem .5rem .2rem;
   margin-bottom: 0.25rem;
+	line-height: 1.6rem;
 }
 
 .filters label {
-  padding: 0.25rem 0.25rem;
+  padding: 0.25rem 0.25rem .25rem .25rem;
   margin-bottom: 0.25rem;
+	border-bottom: 0.25rem transparent;
   /* border-radius: 2rem;
   min-width: 50px;
   line-height: normal; */
