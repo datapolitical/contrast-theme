@@ -12,11 +12,14 @@ layout: page
 		  <li>
 		    <label for="All">All</label>
 		  </li>
+			<li><span>&bull;</span></li>
 			{% for category in site.data.recipe_categories %}
 		  <li>
 		    <label for="{{category.name}}">{{category.display}}</label>
 		  </li>
-			{% endfor %}
+			{% unless forloop.last %}
+			<li><span>&bull;</span></li>
+			{% endunless %}{% endfor %}
 		</ol>
 
         <div class="image-grid">
