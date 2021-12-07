@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name          = "contrast-theme"
-  spec.version       = "3.0.28"
+  spec.version       = "3.0.30"
   spec.authors       = ["Chris Nicholson"]
   spec.email         = ["datapolitical@gmail.com"]
 
@@ -26,6 +26,7 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jekyll-pwa-workbox'
   spec.add_runtime_dependency 'jekyll_picture_tag'
   spec.add_runtime_dependency 'jekyll-include-cache'
+  spec.add_runtime_dependency 'jekyll_version_plugin'
 
   spec.add_development_dependency "jekyll", "~> 3.3"
   spec.add_development_dependency "bundler", "~> 1.12"

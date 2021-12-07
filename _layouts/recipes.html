@@ -4,25 +4,46 @@ layout: page
 		<link rel="stylesheet" media="screen" href="{{ site.url }}/assets/css/recipe-list.css">
 		<link rel="preload" as="script" href="https://cdn.jsdelivr.net">
 
+		<input type="radio" id="All" name="categories" value="All" checked>
+		{% for category in site.data.recipe_categories %}
+		<input type="radio" id="{{category.name}}" name="categories" value="{{category.name}}">
+		{% endfor %}
+		<ol class="filters">
+		  <li>
+		    <label for="All">All</label>
+		  </li>
+			<li><span>&bull;</span></li>
+			{% for category in site.data.recipe_categories %}
+		  <li>
+		    <label for="{{category.name}}">{{category.display}}</label>
+		  </li>
+			{% unless forloop.last %}
+			<li><span>&bull;</span></li>
+			{% endunless %}{% endfor %}
+		</ol>
+
         <div class="image-grid">
 				{% assign counter = 0 %}
 				{% assign sortedRecipes = site.data.recipes | sort: "created" | reverse %}
         {% for i in (0..5) reversed %}
         	{% for recipe in sortedRecipes %}
             {% if recipe.rating == i and recipe.image_url %}
+							{% assign recipeCategories = "" %}
             	{% for category in recipe.categories %}
-              	{% if category == "Web" %}
-            			<a class="image-container" href="{{ recipe.name | datapage_url:'.' }}">
-										{%if counter < 2 %}
-											{% picture lazy {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
-										{% else %}
-											{% picture lazy {{ recipe.image_url  }} 1:1 --img loading="lazy" --alt {{ recipe.name }} %}
-										{% endif %}
-                		<div class="bottom-left"><h3 class="text-hover"><b>{{ recipe.name }}</b></h3></div>
-            			</a>
-									{% assign counter = counter | plus: 1 %}
+								{% assign categoryNoSpace = category | replace: " ", "-" %}
+								{% assign recipeCategories = recipeCategories | append: " " | append: categoryNoSpace %}
+							{% endfor %}
+            	{% if recipeCategories contains "Web" %}
+          			<a class="image-container" data-category="{{ recipeCategories }}" href="{{ recipe.name | datapage_url:'.' }}">
+									{%if counter < 2 %}
+										{% picture lazy {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
+									{% else %}
+										{% picture lazy {{ recipe.image_url  }} 1:1 --img loading="lazy" --alt {{ recipe.name }} %}
+									{% endif %}
+              		<div class="bottom-left"><h3 class="text-hover"><b>{{ recipe.name }}</b></h3></div>
+          			</a>
+								{% assign counter = counter | plus: 1 %}
                 {% endif %}
-              {% endfor %}
     		    {% endif %}
           {% endfor %}
         {% endfor %}

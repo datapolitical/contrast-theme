@@ -40,3 +40,66 @@ main .container{
 img:not([src]):not([srcset]) {
   visibility: hidden;
 }
+
+input[type="radio"] {
+  position: absolute;
+  left: -9999px;
+}
+
+:root {
+  --black: #1a1a1a;
+  --white: #fff;
+  --green: #49b293;
+}
+
+ol.filters {
+	padding-inline-start: 0px;
+	margin-block-start: 0px;
+	margin-block-end: 0px;
+	line-height: 0px;
+	margin-bottom: .25rem;
+}
+ol.filters li + li {
+	margin: 10px 0px 0px 0px;
+}
+.filters {
+  text-align: center;
+  margin-bottom: .5rem;
+}
+
+.filters * {
+  display: inline-block;
+}
+
+.filters span {
+	padding: 0.25rem 0.2rem .5rem .2rem;
+  margin-bottom: 0.25rem;
+	line-height: 1.6rem;
+}
+
+.filters label {
+  padding: 0.25rem 0.25rem .25rem .25rem;
+  margin-bottom: 0rem;
+	border-bottom: 0.25rem transparent;
+  /* border-radius: 2rem;
+  min-width: 50px;
+  line-height: normal; */
+  /* cursor: pointer; */
+  transition: all 0.5s;
+}
+
+.filters label:unchecked {
+  padding: 0.25rem 0.25rem .25rem .25rem;
+  margin-bottom: 0rem;
+	border-bottom: 0.25rem transparent;
+  /* border-radius: 2rem;
+  min-width: 50px;
+  line-height: normal; */
+  /* cursor: pointer; */
+	transition: none;
+}
+
+.filters label:hover {
+  background: transparent;
+  color: var(--white);
+}
