@@ -30,10 +30,7 @@
   {% if page.url == "/recipes/" %}
   /* FILTERING RULES
   –––––––––––––––––––––––––––––––––––––––––––––––––– */
-  [value="All"]:checked ~ .filters [for="All"],
-  {% for category in site.data.recipe_categories %}
-  [value="{{category.name}}"]:checked ~ .filters [for="{{category.name}}"]{% unless forloop.last %},
-  {% endunless %}{% endfor %} {
+  .filters input[type="radio"]:checked+label {
     background: transparent;
     color: var(--white);
     border-bottom: 0.25rem solid #DCE0E6;
@@ -44,6 +41,10 @@
   [value="All"]:checked ~ .image-grid [data-category] {
     display: block;
   }
+  /* This attribute selector below does not work
+  now that the radio button has been moved inside
+  the ordered list next to the label */
+  
   {% for category in site.data.recipe_categories %}
   [value="{{category.name}}"]:checked ~ .image-grid .image-container:not([data-category~="{{category.name}}"]){% unless forloop.last %},
   {% endunless %}{% endfor %} {

@@ -4,17 +4,10 @@ layout: page
 		<link rel="stylesheet" media="screen" href="{{ site.url }}/assets/css/recipe-list.css">
 		<link rel="preload" as="script" href="https://cdn.jsdelivr.net">
 
-		<input type="radio" id="All" name="categories" value="All" checked>
-		{% for category in site.data.recipe_categories %}
-		<input type="radio" id="{{category.name}}" name="categories" value="{{category.name}}">
-		{% endfor %}
 		<ol class="filters">
-		  <li>
-		    <label for="All">All</label>
-		  </li>
-			<li><span>&bull;</span></li>
 			{% for category in site.data.recipe_categories %}
 		  <li>
+				<input type="radio" id="{{category.name}}" name="categories" value="{{category.name}}" {% if forloop.first %}checked{% endif %}>
 		    <label for="{{category.name}}">{{category.display}}</label>
 		  </li>
 			{% unless forloop.last %}
