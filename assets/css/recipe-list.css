@@ -101,7 +101,3 @@ ol.filters li + li {
   /* cursor: pointer; */
   transition: all 0.5s;
 }
-
-.filters label:hover {
-  color: yellow;
-}
