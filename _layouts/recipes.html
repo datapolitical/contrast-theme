@@ -6,13 +6,9 @@ layout: page
 
 		<input type="radio" id="All" name="categories" value="All" checked>
 		{% for category in site.data.recipe_categories %}
-		<input type="radio" id="{{category.name}}" name="categories" value="{{category.name}}">
+		<input type="radio" id="{{category.name}}" name="categories" value="{{category.name}}" {% if forloop.first %}checked{% endif %}>
 		{% endfor %}
 		<ol class="filters">
-		  <li>
-		    <label for="All">All</label>
-		  </li>
-			<li><span>&bull;</span></li>
 			{% for category in site.data.recipe_categories %}
 		  <li>
 		    <label for="{{category.name}}">{{category.display}}</label>

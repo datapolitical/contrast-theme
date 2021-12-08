@@ -40,10 +40,14 @@ main .container{
 img:not([src]):not([srcset]) {
   visibility: hidden;
 }
-
+/*
 input[type="radio"] {
   position: absolute;
   left: -9999px;
+}
+*/
+.filters input[type="radio"] {
+  display: none;
 }
 
 :root {
@@ -73,19 +77,22 @@ ol.filters li + li {
 .filters * {
   display: inline-block;
   font-size: 4vw;
-  @media #{$desktop} {
-		font-size: 2vw;
-	} 
+}
+
+@media only screen and (min-width: 768px) {
+	.filters * {
+		font-size: 1.5vw;
+	}
 }
 
 .filters span {
-  padding: 0.25rem 0.2rem .5rem .2rem;
+  padding: 0.25rem 0.25vw 0.5rem 0.25vw;
   margin-bottom: 0.25rem;
   line-height: 1.6rem;
 }
 
 .filters label {
-  padding: 0.25rem 0.25rem .25rem .25rem;
+  padding: 0.25rem 0.25vw 0.25rem 0.25vw;
   margin-bottom: 0rem;
   border-bottom: 0.25rem transparent;
   /* border-radius: 2rem;
@@ -95,18 +102,6 @@ ol.filters li + li {
   transition: all 0.5s;
 }
 
-.filters label:unchecked {
-  padding: 0.25rem 0.25rem .25rem .25rem;
-  margin-bottom: 0rem;
-  border-bottom: 0.25rem transparent;
-  /* border-radius: 2rem;
-  min-width: 50px;
-  line-height: normal; */
-  /* cursor: pointer; */
-	transition: none;
-}
-
 .filters label:hover {
-  background: transparent;
-  color: var(--white);
+  color: yellow;
 }
