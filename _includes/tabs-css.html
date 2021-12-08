@@ -13,13 +13,13 @@
 {% for category in site.data.recipe_categories %}
 [value="{{category.name}}"]:not(:checked) ~ ol li label[for="{{category.name}}"]{% unless forloop.last %},
 {% endunless %}{% endfor %} {
-  color: grey;
+  color: #AFAFBD;
 }
 
 {% for category in site.data.recipe_categories %}
 [value="{{category.name}}"]:not(:checked) ~ ol li label:hover[for="{{category.name}}"]{% unless forloop.last %},
 {% endunless %}{% endfor %} {
-  color: yellow;
+  color: FAFA33;
 }
 
 [value="All"]:checked ~ .image-grid [data-category] {
