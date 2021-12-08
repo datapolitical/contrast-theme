@@ -40,13 +40,13 @@ main .container{
 img:not([src]):not([srcset]) {
   visibility: hidden;
 }
-/*
-input[type="radio"] {
+
+/* input[type="radio"] {
   position: absolute;
   left: -9999px;
-}
-*/
-.filters input[type="radio"] {
+} */
+
+input[type="radio"] {
   display: none;
 }
 
