@@ -11,10 +11,11 @@ layout: page
 		{% assign cocktail = file[1] %} {% assign cocktail_stub = file[0] %}  {% comment %} The assign is needed, because we have different json files!{% endcomment %}
 		<li>
 	  	<h3 class="name"><a href="{{ cocktail.name | datapage_url:'.' }}">{{ cocktail.name }}</a></h3>
-	  	<p class="description">{{ cocktail.description }}</p>
+	  	<p class="description">{{ cocktail.description }}
 	  	{% for item in cocktail.ingredients %}
-	  		<span class="ingredient"><b>{% unless item.quantity == blank %}{{ item.quantity }}{% endunless %}</b> {{item.measure}} {{item.ingredient}} </span><br />
+	  		<b>{% unless item.quantity == blank %}{{ item.quantity }}{% endunless %}</b> {{item.measure}} {{item.ingredient}} <br />
 	  	{% endfor %}
+		</p>
 		</li>
 	{% endfor %}
 	</ul>
@@ -24,7 +25,7 @@ layout: page
 
 <script>
 	var options = {
-	  valueNames: [ 'name', 'description','ingredient' ]
+	  valueNames: [ 'name', 'description' ]
 	};
 
 	var userList = new List('drinks', options);
