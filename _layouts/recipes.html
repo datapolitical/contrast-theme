@@ -2,7 +2,7 @@
 layout: page
 ---
 		<link rel="stylesheet" media="screen" href="{{ site.url }}/assets/css/recipe-list.css">
-		<link rel="preload" as="script" href="https://cdn.jsdelivr.net">
+		<link rel="preload" as="script" href="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js" integrity="sha256-chZm2VfM5r7hxFu6TGArcJmYU+Y19fT+mg58IBVCtdU=" crossorigin="anonymous">
 
 		{% for category in site.data.recipe_categories %}
 		<input type="radio" id="{{category.name}}" name="categories" value="{{category.name}}" {% if forloop.first %}checked{% endif %}>
@@ -43,4 +43,4 @@ layout: page
           {% endfor %}
         {% endfor %}
         </div>
-<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.5.0/dist/lazyload.min.js" integrity="sha256-chZm2VfM5r7hxFu6TGArcJmYU+Y19fT+mg58IBVCtdU=" type="text/javascript" crossorigin="anonymous"></script>
