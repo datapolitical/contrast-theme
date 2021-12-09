@@ -13,7 +13,9 @@ layout: page
 	  	<h3 class="name"><a href="{{ cocktail.name | datapage_url:'.' }}">{{ cocktail.name }}</a></h3>
 	  	<p class="description">{{ cocktail.description }}
 	  	{% for item in cocktail.ingredients %}
-	  		<b>{% unless item.quantity == blank %}{{ item.quantity }}{% endunless %}</b> {{item.measure}} {{item.ingredient}} <br />
+	  		{% unless item.quantity == blank %}{{ item.quantity }}{% endunless %} {{item.measure}} {{item.ingredient}}
+	  		
+	  		
 	  	{% endfor %}
 		</p>
 		</li>
