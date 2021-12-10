@@ -3,8 +3,6 @@
   <input type="hidden" name="options[parent]" value="{{ include.url | absolute_url }}">
   <input type="hidden" id="comment-replying-to-uid" name="fields[replying_to_uid]" value="">
   <input type="hidden" name="options[slug]" value="{{ include.url | remove:'.html' | remove_first:'/' }}">
-  <input type="hidden" name="options[redirect]" value="{{ include.url | absolute_url }}">
-
 
   <div class="stars">
     <label for="comment-form-rating"><h2>Rate this recipe! <small><a rel="nofollow" id="cancel-comment-reply-link" href="{{ include.url | absolute_url }}#respond" style="display:none;">(cancel reply)</a></small></h2></label>
