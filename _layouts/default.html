@@ -27,8 +27,9 @@
   {% include_cached critical.scss %}
   {% endcapture %}
   {{ sass_critical | scssify }}
-  {% if page.url == "/recipes/" %}{% include tabs-css.html %}{% endif %}
+  {% if page.url == "/recipes/" %}<link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">{% endif %}
   </style>
+  <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
   <link rel="manifest" href="{{site.url}}/manifest.json">
   <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -47,8 +48,6 @@
 </header>
 
 {{ content }}
-
-<link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
 
 <script data-cfasync="false" src="{{site.url}}/assets/js/pwa-1.0.min.js"></script>
 {% include_cached analytics.html %}
