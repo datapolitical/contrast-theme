@@ -1,0 +1,12 @@
+input.search {
+  height: 1.5em;
+  width: 10em;
+  margin-left: 0em;
+  font-size: 12pt;
+  border:1px solid #ffffff;
+}
+ul.list {
+  list-style: none;
+  padding: 0;
+  margin-left: 0em;
+}
