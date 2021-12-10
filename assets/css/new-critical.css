@@ -1,0 +1,6 @@
+---
+---
+{% capture sass_critical %}
+{% include_cached critical.scss %}
+{% endcapture %}
+{{ sass_critical | scssify }}
