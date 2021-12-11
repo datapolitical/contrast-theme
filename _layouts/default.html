@@ -21,7 +21,6 @@
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <!-- {% project_version %} -->
 <head>
-  <meta charset="{{ site.encoding }}">
   <style>
   {% capture sass_critical %}
   {% include_cached critical.scss %}
@@ -35,15 +34,15 @@
   {% assign myrecipe = site.data.recipes | find:"name", page.title %}
   <meta property="og:image" content="assets/{{myrecipe.image_url}}" />
   {% endif %}
-
-  <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
-  <link rel="manifest" href="{{site.url}}/manifest.json">
-  <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
+  <meta charset="{{ site.encoding }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1C1D22"/>
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
+  <link rel="manifest" href="{{site.url}}/manifest.json">
+  <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
 
   {% seo %}
 </head>
