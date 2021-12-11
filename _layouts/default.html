@@ -33,7 +33,7 @@
   {% include meta-image.html %}
   {% elsif page.url contains "recipes" %}
   {% assign myrecipe = site.data.recipes | find:"name", page.title %}
-  <meta property="og:image" content="{{myrecipe.image_url}}" />
+  <meta property="og:image" content="assets/{{myrecipe.image_url}}" />
   {% endif %}
 
   <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
