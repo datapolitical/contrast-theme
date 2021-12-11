@@ -28,7 +28,14 @@
   {% endcapture %}
   {{ sass_critical | scssify }}
   </style>
-  {% if page.url == "/recipes/" %}<link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">{% endif %}
+  {% if page.url == "/recipes/" %}
+  <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
+  {% include meta-image.html %}
+  {% elsif page.url includes "/recipes/" %}
+  {% assign myrecipe = site.data.recipes | where:"name", page.name %}
+  <meta property="og:image" content="{{myrecipe.image_url}}" />
+  {% endif %}
+
   <link rel="stylesheet" href="{{ "/assets/css/index.css" | relative_url }}">
   <link rel="manifest" href="{{site.url}}/manifest.json">
   <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
