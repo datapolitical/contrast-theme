@@ -66,7 +66,7 @@ layout: page
 	{{ page.image_url }}
 {% endcapture %}
 
-<article class="post">
+<div class="post">
 	<meta property="og:title" content="{{page.source}}" />
 	<div class="photo">
 		{% if page.image_url and page.image_url != "" %}
@@ -166,4 +166,4 @@ layout: page
 	{% if site.comments %}
 		{% include comments.html %}
 	{% endif %}
-</article>
+</div>

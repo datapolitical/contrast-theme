@@ -31,8 +31,8 @@
   {% if page.url == "/recipes/" %}
   <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
   {% include meta-image.html %}
-  {% elsif page.url includes "/recipes/" %}
-  {% assign myrecipe = site.data.recipes | where:"name", page.name %}
+  {% elsif page.url contains "recipes" %}
+  {% assign myrecipe = site.data.recipes | find:"name", page.title %}
   <meta property="og:image" content="{{myrecipe.image_url}}" />
   {% endif %}
 
