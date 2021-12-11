@@ -8,5 +8,5 @@ layout: default
     <a href="{{ puzzle.link}}" target="puzzle">{{ puzzle.name }}</a>{% unless forloop.last %} | {% endunless %}
   {% endfor %}
   <br />
-  <iframe name="puzzle" style="height: 90vh; width: 100%;" src="{{page.link}}" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe>
+  <iframe name="puzzle" class="puzzle" src="{{page.link}}" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe>
 </article>
