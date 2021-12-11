@@ -1,6 +1,4 @@
----
----
 {% capture sass_critical %}
 {% include critical.scss %}
 {% endcapture %}
-{{ sass_critical | scssify }}
+{{ sass_critical | scssify | sha256 }}
