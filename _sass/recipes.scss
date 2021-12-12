@@ -254,6 +254,19 @@ div.stars {
   display: inline-block;
 }
 
+a#cancel-comment-reply-link {
+	display:none;
+}
+
+button#cancel-comment-reply-link.button
+{
+	display:none;
+}
+
+div#respond.comment__new svg {
+	display: none;
+}
+
 div.star-buttons {
 	float: left;
 }
