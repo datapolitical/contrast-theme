@@ -254,16 +254,20 @@ div.stars {
   display: inline-block;
 }
 
-a#cancel-comment-reply-link {
+label[for="comment-form-rating"] {
 	display:none;
 }
 
-button#cancel-comment-reply-link.button
+.button#cancel-comment-reply-link
 {
 	display:none;
 }
 
-div#respond.comment__new svg {
+svg.comment-box {
+	display:none;
+}
+
+div#respond.comment__new {
 	display: none;
 }
 
