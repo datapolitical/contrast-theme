@@ -7,7 +7,6 @@ name: Manual workflow
 on:
   push:
     branches:
-      - master
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -22,4 +21,11 @@ jobs:
     # Runs a single command using the runners shell
     - name: send
       run: |
-        curl -X POST "${{ secrets.CLOUDFLARE_PREVIEW }}"
+        if: github.ref_name == 'master' 
+          if: contains(github.event.commits[0].message, '[build]')
+            curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
+            
+          if: !(contains(github.event.commits[0].message, '[build]'))
+            curl -X POST "${{ secrets.CLOUDFLARE_THEME_DEPLOY }}"
+          
+          
