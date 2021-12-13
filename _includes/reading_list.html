@@ -1,5 +1,5 @@
 <div class="reading_list">
-{% for link in site.data.pocket | sort:"time_added" | reversed %}
+{% for link in site.data.pocket %}
 <span class="title"><a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span><br />
 <span class="domain">{{link[1].domain_metadata.name}}</span>
 <br />
