@@ -21,11 +21,13 @@ jobs:
     # Runs a single command using the runners shell
     - name: send
       run: |
-        if: github.ref_name == 'master' 
-          if: contains(github.event.commits[0].message, '[build]')
+        if (( ${{github.ref_name}} == 'master' )); then
+        
+          if ((${{github.event.commits[0].message}} == *'[build]'*)); then
             curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
             
-          if: !(contains(github.event.commits[0].message, '[build]'))
+          else
             curl -X POST "${{ secrets.CLOUDFLARE_THEME_DEPLOY }}"
-          
+          fi
+        fi
           
