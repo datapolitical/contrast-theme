@@ -20,12 +20,12 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: send
-      if: github.ref_name == 'master' && contains(github.event.commits[0].message,"[build]")
+      if: github.ref_name == 'master' && contains(github.event.commits[0].message,'[build]')
       run: |
         curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
       
     - name: send2
-      if: github.ref_name == 'master' && !(contains(github.event.commits[0].message,"[build]"))
+      if: github.ref_name == 'master' && !(contains(github.event.commits[0].message,'[build]'))
       run: |
         curl -X POST "${{ secrets.CLOUDFLARE_THEME_DEPLOY }}";;
           
