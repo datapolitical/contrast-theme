@@ -27,5 +27,4 @@ jobs:
     - name: send2
       if: github.ref_name == 'master' && !(contains(github.event.commits[0].message,'[build]'))
       run: |
-        curl -X POST "${{ secrets.CLOUDFLARE_THEME_DEPLOY }}";;
-          
+        curl -X POST "${{ secrets.CLOUDFLARE_THEME_DEPLOY }}"
