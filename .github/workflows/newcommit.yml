@@ -23,7 +23,8 @@ jobs:
       run: |
         if (( "${{github.ref_name}}" == 'master' )); then
         
-          if [["${{github.event.commits[0].message}}" == *'[build]'*]]; then
+          if [["${{github.event.commits[0].message}}" == *"[build]"*]];
+          then
             curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
             
           else
