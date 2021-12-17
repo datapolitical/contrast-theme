@@ -1,5 +1,5 @@
 <div class="reading_list">
-{% for link in site.data.pocket limit: page.article_count %}
+{% for link in site.data.pocket limit: page.article_count-1 %}
 <span class="title">><a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span><br />
 <span class="domain">{{link[1].domain_metadata.name}}</span>
 <br /> <br />
