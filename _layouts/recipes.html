@@ -1,8 +1,8 @@
 ---
 layout: page
 ---
-<link rel="stylesheet" media="screen" href="{{ site.url }}/assets/css/recipe-list.css">
-<link rel="preload" as="script" href="{{ site.url }}/assets/js/lazyload.min.js">
+<link rel="stylesheet" media="screen" href="/assets/css/recipe-list.css">
+<link rel="preload" as="script" href="/assets/js/lazyload.min.js">
 
 {% for category in site.data.recipe_categories %}
 <input type="radio" id="{{category.name}}" name="categories" value="{{category.name}}" {% if forloop.first %}checked{% endif %}>
