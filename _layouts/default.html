@@ -26,9 +26,8 @@
   {% include_cached critical.scss %}
   {% endcapture %}
   {{ sass_critical | scssify }}
-  {% if page.url == "/recipes/" %}
-  {% include tabs-css.html %}
   </style>
+  {% if page.url == "/recipes/" or page.url == "/recipes" %}
   <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
   {% include meta-image.html %}
   {% elsif page.url contains "recipes" %}
