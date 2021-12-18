@@ -1,5 +1,6 @@
 #!/bin/bash
 MESSAGE=git log -1 --pretty=%B
+echo $MESSAGE
 if [[ "$MESSAGE" != *"[build]"* ]]; then exit 1;fi
 source ~/.rvm/scripts/rvm
 rvm default
