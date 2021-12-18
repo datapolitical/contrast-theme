@@ -26,13 +26,16 @@
   {% include_cached critical.scss %}
   {% endcapture %}
   {{ sass_critical | scssify }}
-  </style>
   {% if page.url == "/recipes/" %}
+  {% include tabs-css.html %}
+  </style>
   <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
   {% include meta-image.html %}
   {% elsif page.url contains "recipes" %}
   {% assign myrecipe = site.data.recipes | find:"name", page.title %}
   <meta property="og:image" content="{{ site.url }}/assets/{{myrecipe.image_url}}" />
+  {% else %}
+  </style>
   {% endif %}
   <meta charset="{{ site.encoding }}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
