@@ -1,4 +1,6 @@
 #!/bin/bash
+MESSAGE=git log -1 --pretty=%B
+if [[ "$MESSAGE" != *"[build]"* ]]; then exit 1;fi
 source ~/.rvm/scripts/rvm
 rvm default
 git branch master
