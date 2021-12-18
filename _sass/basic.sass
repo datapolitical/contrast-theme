@@ -134,7 +134,27 @@ p.main-divider+hr
   height: .025rem
   margin-top: -0.25rem
   margin-bottom: -0.25rem
+  width: 50%
 
 .recently-read
   margin-top: .75rem
   margin-bottom: .75rem
+
+@media (min-width: 40em)
+  body > header, body > article, body > footer
+    padding: 1.75em calc(40% - 17em)
+    padding-top: 1em
+    padding-bottom: 1em
+
+body > header
+  box-shadow: 0 0 .6em rgba($dark, 0.04)
+  border-bottom: 0ppx solid reduce(14)
+
+body > footer
+  box-shadow: 0 0 .6em rgba($dark, 0.04) inset
+  border-top: 1px solid reduce(14)
+  opacity: .9
+
+iframe.puzzle
+  height: 90vh
+  width: 100%
