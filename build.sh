@@ -1,5 +1,5 @@
 #!/bin/bash
-MESSAGE=git log -1 --pretty=%B
+MESSAGE=$(git log -1 --pretty=%B)
 echo $MESSAGE
 if [[ "$MESSAGE" != *"[build]"* ]] && [[ "$CF_PAGES_BRANCH" == "master" ]]; then exit 1;fi
 source ~/.rvm/scripts/rvm
