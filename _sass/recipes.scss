@@ -163,6 +163,14 @@ ol li + li {
 				flex: 1;
 			}
 		}
+		.notes {
+			p {
+				font-size: .8rem;
+				strong {
+					font-size: 1rem;
+				}
+			}
+		}
 	}
 }
 
