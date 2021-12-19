@@ -5,7 +5,9 @@ name: Manual workflow
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  workflow_dispatch
+  push:
+    branches:
+      - master
 
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -24,6 +26,6 @@ jobs:
         curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
 
     - name: send2
-      if: github.ref_name == 'master' && !(contains(github.event.commits[0].message,'[build]')) && !(contains(github.event.commits[0].message,'[no build]'))
+      if: 1==0 && github.ref_name == 'master' && !(contains(github.event.commits[0].message,'[build]')) && !(contains(github.event.commits[0].message,'[no build]'))
       run: |
         curl -X POST "${{ secrets.CLOUDFLARE_THEME_DEPLOY }}"
