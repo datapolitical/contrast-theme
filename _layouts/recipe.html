@@ -22,7 +22,7 @@ layout: page
 		{% endif  %}
 	},
 	"description": "A recipe for {{page.title}}, with my rating and potentially some notes. Adapted from: {{page.source_url}}",
-	"image": "{{site.url}}/assets/{{page.image_url | replace:'.jpg','.webp'}}",
+	"image": "{{site.url}}/assets/{{page.image_url}}",
 	"url": "{{page.url}}",
 	{% if page.servings != "" %}
 	"recipeYield": "{{ page.servings }}",
