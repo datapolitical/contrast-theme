@@ -140,12 +140,15 @@ layout: page
             <ol>
             {% for item in page.directions %}
 							{% assign item_slice = item | slice: 0,2 %}
-							{% if item_slice == "**" or item_slice == "> " %}
+							{% if item_slice == "**" %}
 								<br>{{ item | markdownify }}
 							{% else %}
 								<li>{{ item | markdownify }}</li>
 							{% endif %}
             {% endfor %}
+            </ol>
+            <ol>
+            {{ page.notes | markdownify }}
             </ol>
 		</div>
 	</div>
