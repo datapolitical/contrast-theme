@@ -23,7 +23,7 @@ layout: page
 	},
 	"description": "A recipe for {{page.title}}, with my rating and potentially some notes. Adapted from: {{page.source_url}}",
 	"image": "{{site.url}}/assets/{{page.image_url}}",
-	"url": "{{page.url}}",
+	"url": "{{page.url | absolute_url }}",
 	{% if page.servings != "" %}
 	"recipeYield": "{{ page.servings }}",
 	{% endif %}
@@ -57,9 +57,9 @@ layout: page
 }
 </script>
 
-<link rel="stylesheet" media="screen" href="{{ site.baseurl }}/assets/css/screen.css">
+<link rel="stylesheet" media="screen" href="{{ site.url }}/assets/css/screen.css">
 {% if page.print_stylesheet %}
-	<link rel="stylesheet" media="print" href="{{ site.baseurl }}/assets/css/print.css">
+	<link rel="stylesheet" media="print" href="{{ site.url }}/assets/css/print.css">
 {% endif %}
 
 {% capture image_path %}
