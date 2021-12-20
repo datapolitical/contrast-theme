@@ -50,8 +50,9 @@
 <body>
 
 <header class="header">
-  <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a><br />
+  <div class="header"><a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a><br />
   {% include_cached menu-dynamic.html menu=site.navigation %}
+  <div>
 </header>
 
 {{ content }}
