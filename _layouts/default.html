@@ -53,8 +53,8 @@
 <body>
 
 <header>
-  <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a>
-  {% include_cached menu.html %}
+  <a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a><br />
+  {% include_cached menu-dynamic.html %}
 </header>
 
 {{ content }}
