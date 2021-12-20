@@ -33,8 +33,6 @@
   {% elsif page.url contains "recipes" %}
   {% assign myrecipe = site.data.recipes | find:"name", page.title %}
   <meta property="og:image" content="{{ site.url }}/assets/{{myrecipe.image_url}}" />
-  {% else %}
-  </style>
   {% endif %}
   <meta name="pageurl" content="{{page.url}}">
   <meta charset="{{ site.encoding }}">
