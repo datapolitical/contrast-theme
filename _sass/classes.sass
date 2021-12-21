@@ -168,6 +168,11 @@ a:hover .icon
 .header
   display: flex
   justify-content: space-between
+  flex-direction: column
   nav
     display: inline-block
     vertical-align: middle
+
+@media #{$desktop} {
+  .header
+    flex-direction: row
