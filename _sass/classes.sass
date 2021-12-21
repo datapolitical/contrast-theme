@@ -167,12 +167,13 @@ a:hover .icon
 
 .header
   display: flex
-  justify-content: space-between
-  flex-direction: column
+  justify-content: center
+  align-content: space-between
   nav
     display: inline-block
     vertical-align: middle
 
-@media #{$desktop} {
+@media only screen and (min-width: $desktop-width)
   .header
-    flex-direction: row
+    align-content: center
+    justify-content: space-between
