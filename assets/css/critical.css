@@ -8,7 +8,7 @@ body{background:#212228;color:#fff;font-family:-apple-system,"Helvetica Neue","S
 
 body > header {
     box-shadow: 0 0 .6em rgba(33, 34, 40, .04);
-    border-bottom:0 px solid rgba(144, 145, 148, .14)
+    border-bottom:1 px solid rgba(144, 145, 148, .14)
 }
 
 body > footer {
