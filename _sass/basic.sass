@@ -63,16 +63,13 @@ blockquote, figure
 
 img
   margin: .5em 0
-  .profile-photo
-  margin: 0
+  border-radius: 2px
+  max-width: 100%
+  height: auto
 
 li
   margin: .25em 0
 
-img
-  border-radius: 2px
-  max-width: 100%
-  height: auto
 
 table
   display: inline-block
@@ -141,9 +138,11 @@ p.main-divider+hr
 
 @media only screen and (min-width: $desktop-width)
   p.main-divider+hr
-    height: 0rem
-    border: .25rem
-    color: $light
+    height: 1px
+    border: 0rem
+    margin-top: 0rem
+    margin-bottom: 0rem
+    background-color: reduce(14)
 
 .recently-read
   margin-top: .75rem
@@ -153,11 +152,11 @@ p.main-divider+hr
   body > header, body > article, body > footer
     padding: 1.75em calc(40% - 17em)
     padding-top: 1em
-    padding-bottom: 1em
+    padding-bottom: 0em
 
 body > header
   box-shadow: 0 0 .6em rgba($dark, 0.04)
-  border-bottom: 0px solid reduce(14)
+  border-bottom: 1px solid reduce(14)
 
 body > footer
   box-shadow: 0 0 .6em rgba($dark, 0.04) inset
