@@ -49,12 +49,7 @@
 </head>
 <body>
 
-{% include sidebar.html %}
-
-<header class="header">
-  <nav class="name"><a href="{{ "/" | relative_url }}" class="title">{% picture images/profile.jpg 1:1 --img class="profile-photo" %}</a></nav>
-  {% include_cached menu-dynamic.html menu=site.navigation %}
-</header>
+{% include sidebar-new.html menu=site.navigation %}
 
 {{ content }}
 

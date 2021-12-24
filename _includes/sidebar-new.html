@@ -1,0 +1,14 @@
+<link rel="stylesheet" href="{{ "/assets/css/sidebar.css" | relative_url }}" media="screen and (min-width: 70em)">
+<aside style="display: none">
+  <nav>
+    <a href="{{ "/" | relative_url }}" class="title">{% picture images/profile.jpg 1:1 --img class="profile-photo" %}</a>
+    {%- for item in include.menu -%}
+      {%- assign node = site.pages | where: "name", item.file | first -%}
+      {%- assign url = item.url | default: node.url -%}
+      {%- assign title = item.title | default: node.title -%}
+      <a href="{{ url | relative_url }}" {% if url == page.url %}class="selected"{% endif %}>
+        {%- if item.icon == 11 -%}<svg aria-label="{{ title }}" class="icon"><use xlink:href="{{ "/assets/fontawesome/icons.svg" | relative_url }}#{{ item.icon }}"></use></svg>{%- else -%}{{ title }}{%- endif -%}
+      </a>
+    {%- endfor -%}
+  </nav>
+</aside>
