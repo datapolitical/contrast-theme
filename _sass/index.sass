@@ -10,4 +10,12 @@ $light: #ffffff !default
 @function reduce ($percent)
   @return rgba(mix($dark, $light), $percent / 100)
 
+// Breakpoints
+$tablet: "(min-width: 450px)"
+$mid-point: "(min-width: 620px)"
+$desktop: "(min-width: 768px)"
+$desktop-width: 768px
+
+$light-grey: #999
+
 // this needs to stay in sass because it's imported by other sass files.
