@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="{{ "/assets/css/sidebar.css" | relative_url }}" media="screen and (min-width: 768px)">
 <aside>
   <nav class="header">
-    <a href="{{ "/" | relative_url }}" class="title">{% picture images/profile.jpg 1:1 --img class="profile-photo" %}</a>
+    <a href="{{ "/" | relative_url }}" class="title">{% picture images/profile.jpg 1:1 %}</a>
   </nav>
   <nav class="header">
     {%- for item in include.menu -%}
