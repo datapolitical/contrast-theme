@@ -6,9 +6,9 @@ on:
     
 jobs:
   crittr:
-      name: crittr
       runs-on: ubuntu-latest
       steps:
+      - name: getcss
         run: |
           npm i crittr
           node contrast_theme_node.js
