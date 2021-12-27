@@ -11,4 +11,6 @@ jobs:
       - name: getcss
         run: |
           npm i crittr
+          ls -a
+          cat contrast_theme_node.js
           node contrast_theme_node.js
