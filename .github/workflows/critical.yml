@@ -20,3 +20,6 @@ jobs:
           ls -a
           cat contrast_theme_node.js
           node contrast_theme_node.js
+          cd assets/css
+          ls -a
+          cat generated-critical.css

@@ -21,5 +21,3 @@ Crittr({
         console.error(err);
     });
     
-
-const content = 'Some content!'
