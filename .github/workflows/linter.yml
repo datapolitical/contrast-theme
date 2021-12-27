@@ -21,5 +21,5 @@ jobs:
             github_token: ${{ secrets.github_token }}
             reporter: github-check # Change reporter.
             stylelint_input: '*.*'
-            packages: 'stylelint-config-sass-guidelines stylelint-order'
+            packages: 'stylelint-config-sass-guidelines stylelint-order stylelint stylelint-scss'
             workdir: '.'
