@@ -1,9 +1,9 @@
 <link rel="stylesheet" href="{{ "/assets/css/sidebar.css" | relative_url }}" media="screen and (min-width: 768px)">
 <aside>
-  <nav class="header">
+  <nav class="header header-photo">
     <a href="{{ "/" | relative_url }}" class="title">{% picture profile images/profile.jpg 1:1 %}</a>
   </nav>
-  <nav class="header">
+  <nav class="header header-links">
     {%- for item in include.menu -%}
       {%- assign node = site.pages | where: "name", item.file | first -%}
       {%- assign url = item.url | default: node.url -%}
