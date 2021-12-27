@@ -10,9 +10,9 @@ jobs:
       steps:
       
       - name: Checkout Code
-          uses: actions/checkout@v2
-          with:
-            persist-credentials: false
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
             
       - name: getcss
         run: |
