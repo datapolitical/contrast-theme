@@ -1,3 +1,5 @@
+const Crittr = require("crittr");
+
 Crittr({
     urls: ['https://www.chrisfnicholson.com'],
     device: {
