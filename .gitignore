@@ -11,3 +11,6 @@ _data/recipes.yaml
 _data/recipes_nutrition.yaml
 _data/puzzles.yaml
 assets/images/*
+
+package-lock.json
+package.json
