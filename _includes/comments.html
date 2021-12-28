@@ -1,45 +1,32 @@
 <section class="comments" id="comment-section">
-  <hr>
+  <hr />
 
-  {% assign urlslug = page.url | remove:'.html' | remove_first:'/' | split: '/' %}
-  {% assign urlfolder = urlslug[0] %}
-  {% assign urlfilename = urlslug[1] %}
+  {% assign urlslug = page.url | remove:'.html' | remove_first:'/' | split: '/'
+  %} {% assign urlfolder = urlslug[0] %} {% assign urlfilename = urlslug[1] %}
   <h2>{{post_slug}}</h2>
 
   {% if site.data.comments.recipes[urlfilename] %}
-        <!-- Start static comments -->
-        <div id="comments" class="js-comments">
-          <h2 class="page__section-label">
-            {% if site.data.comments.recipes[urlfilename].size > 1 %}
-              {{ site.data.comments.recipes[urlfilename] | size }}
-            {% endif %}
-            Comments
-          </h2>
-    {% assign count = 0 %}
-    {% assign comments = site.data.comments.recipes[urlfilename] %}
-    {% assign comments = (comments | sort) %}
-    {% for comment in comments %}
-      {% if comment[1].replying_to_uid == "" %}
-        {%- assign index       = (forloop.index | minus: count) %}
-        {%- assign email       = comment[1].email %}
-        {%- assign name        = comment[1].name %}
-        {%- assign replying_to_uid = comment[1].replying_to_uid | to_integer %}
-        {%- assign url         = comment[1].url %}
-        {%- assign date        = comment[1].date %}
-        {%- assign message     = comment[1].message %}
-        {%- assign rating      = comment[1].rating %}
-        {%- assign uid         = comment[1]._id %}
-        {% include comment.html index=index replying_to_uid=0 email=email name=name url=url date=date message=message rating=rating uid=uid %}
-      {% else %}
-        {% assign count = count | plus: 1 %}
-      {% endif %}
-    {% endfor %}
-    </div>
+  <!-- Start static comments -->
+  <div id="comments" class="js-comments">
+    <h2 class="page__section-label">
+      {% if site.data.comments.recipes[urlfilename].size > 1 %} {{
+      site.data.comments.recipes[urlfilename] | size }} {% endif %} Comments
+    </h2>
+    {% assign count = 0 %} {% assign comments =
+    site.data.comments.recipes[urlfilename] %} {% assign comments = (comments |
+    sort) %} {% for comment in comments %} {% if comment[1].replying_to_uid ==
+    "" %} {%- assign index = (forloop.index | minus: count) %} {%- assign email
+    = comment[1].email %} {%- assign name = comment[1].name %} {%- assign
+    replying_to_uid = comment[1].replying_to_uid | to_integer %} {%- assign url
+    = comment[1].url %} {%- assign date = comment[1].date %} {%- assign message
+    = comment[1].message %} {%- assign rating = comment[1].rating %} {%- assign
+    uid = comment[1]._id %} {% include comment.html index=index
+    replying_to_uid=0 email=email name=name url=url date=date message=message
+    rating=rating uid=uid %} {% else %} {% assign count = count | plus: 1 %} {%
+    endif %} {% endfor %}
+  </div>
 
   {% endif %}
-
-
-
 
   <!-- New comment form -->
   <div id="respond" class="comment__new">

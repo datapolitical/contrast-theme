@@ -3,17 +3,15 @@ name: critical CSS
 on:
   push:
     branches:
-    
+
 jobs:
   crittr:
-      runs-on: ubuntu-latest
-      steps:
-      
+    runs-on: ubuntu-latest
+    steps:
       - name: Checkout Code
         uses: actions/checkout@v2
         with:
           persist-credentials: false
-          
 
       - name: setup git config
         run: |
@@ -27,7 +25,7 @@ jobs:
           git remote -v
           echo "Git Pull:"
           git pull --ff-only origin master
-            
+
       - name: getcss
         run: |
           npm i crittr
@@ -37,7 +35,7 @@ jobs:
           cat assets/css/generated-critical.css
           git add assets/css/generated-critical.css
           git pull --ff-only origin master
-          
+
       - name: commit
         run: |
           git commit -am "Update critical css" || echo "::set-output name=status::Nothing to update"

@@ -2,31 +2,59 @@
 layout: page
 ---
 
-<link rel="stylesheet" media="screen" href="{{ site.baseurl }}/assets/css/screen.css">
-<link rel="stylesheet" media="screen" href="{{ site.baseurl }}/assets/css/drink-list.css">
+<link
+  rel="stylesheet"
+  media="screen"
+  href="{{ site.baseurl }}/assets/css/screen.css"
+/>
+<link
+  rel="stylesheet"
+  media="screen"
+  href="{{ site.baseurl }}/assets/css/drink-list.css"
+/>
 
 <div id="drinks">
-		<input class="search" type="text" name="search" placeholder="Type an ingredient" aria-label="Search"/>
-	<ul class="list">
-	{% for file in site.data.drinks %}
-		{% assign cocktail = file[1] %} {% assign cocktail_stub = file[0] %}  {% comment %} The assign is needed, because we have different json files!{% endcomment %}
-		<li>
-	  	<h3 class="name"><a href="{{ cocktail.name | datapage_url:'drinks' }}">{{ cocktail.name }}</a></h3>
-	  	<p class="description">{{ cocktail.description }}</p>
-	  	{% for item in cocktail.ingredients %}
-	  		<span class="ingredient"><b>{% unless item.quantity == blank %}{{ item.quantity }}{% endunless %}</b> {{item.measure}} {{item.ingredient}} </span><br />
-	  	{% endfor %}
-		</li>
-	{% endfor %}
-	</ul>
+  <input
+    class="search"
+    type="text"
+    name="search"
+    placeholder="Type an ingredient"
+    aria-label="Search"
+  />
+  <ul class="list">
+    {% for file in site.data.drinks %} {% assign cocktail = file[1] %} {% assign
+    cocktail_stub = file[0] %} {% comment %} The assign is needed, because we
+    have different json files!{% endcomment %}
+    <li>
+      <h3 class="name">
+        <a href="{{ cocktail.name | datapage_url:'drinks' }}"
+          >{{ cocktail.name }}</a
+        >
+      </h3>
+      <p class="description">{{ cocktail.description }}</p>
+      {% for item in cocktail.ingredients %}
+      <span class="ingredient"
+        ><b
+          >{% unless item.quantity == blank %}{{ item.quantity }}{% endunless
+          %}</b
+        >
+        {{item.measure}} {{item.ingredient}} </span
+      ><br />
+      {% endfor %}
+    </li>
+    {% endfor %}
+  </ul>
 </div>
 
-<script src="{{site.url}}/assets/js/list.min.js" type="text/javascript"></script>
+<script
+  src="{{site.url}}/assets/js/list.min.js"
+  type="text/javascript"
+></script>
 
 <script>
-	var options = {
-	  valueNames: [ 'name', 'description','ingredient' ]
-	};
+  var options = {
+    valueNames: ["name", "description", "ingredient"],
+  };
 
-	var userList = new List('drinks', options);
+  var userList = new List("drinks", options);
 </script>

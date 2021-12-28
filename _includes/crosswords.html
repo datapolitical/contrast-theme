@@ -1,8 +1,18 @@
 <article>
-{% include meta.html post=page %}
-<div class="puzzle-links">
-{% for puzzle in site.data.puzzles %}<span class="puzzle-link"><a href="{{ puzzle.link }}" target="puzzle">{{ puzzle.name }}</a></span>{% unless forloop.last %}<span class="divider"> | </span>{% endunless %}{% endfor %}
-</div>
-<br />
-<iframe name="puzzle" class="puzzle" src="{{site.data.puzzles[0].link}}" frameborder="0" allowfullscreen="true" allowtransparency="true"></iframe>
+  {% include meta.html post=page %}
+  <div class="puzzle-links">
+    {% for puzzle in site.data.puzzles %}<span class="puzzle-link"
+      ><a href="{{ puzzle.link }}" target="puzzle">{{ puzzle.name }}</a></span
+    >{% unless forloop.last %}<span class="divider"> | </span>{% endunless %}{%
+    endfor %}
+  </div>
+  <br />
+  <iframe
+    name="puzzle"
+    class="puzzle"
+    src="{{site.data.puzzles[0].link}}"
+    frameborder="0"
+    allowfullscreen="true"
+    allowtransparency="true"
+  ></iframe>
 </article>

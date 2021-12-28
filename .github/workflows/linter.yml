@@ -3,23 +3,22 @@ name: linter
 on:
   push:
     branches:
-    
+
 jobs:
   stylelint:
-      name: runner / stylelint
-      runs-on: ubuntu-latest
-      steps:
-            
-        - name: Checkout Code
-          uses: actions/checkout@v2
-          with:
-            persist-credentials: false
-            
-        - name: stylelint
-          uses: reviewdog/action-stylelint@v1
-          with:
-            github_token: ${{ secrets.github_token }}
-            reporter: github-check # Change reporter.
-            stylelint_input: '*.*'
-            packages: 'stylelint-config-sass-guidelines stylelint-order stylelint stylelint-scss'
-            workdir: '.'
+    name: runner / stylelint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: stylelint
+        uses: reviewdog/action-stylelint@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check # Change reporter.
+          stylelint_input: "*.*"
+          packages: "stylelint-config-sass-guidelines stylelint-order stylelint stylelint-scss"
+          workdir: "."

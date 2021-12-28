@@ -7,7 +7,7 @@ name: New Version Build Site
 on:
   push:
     tags:
-      - '*'
+      - "*"
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -18,8 +18,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Runs a single command using the runners shell
-    - name: send
-      run: |
-        curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
-        
+      # Runs a single command using the runners shell
+      - name: send
+        run: |
+          curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"

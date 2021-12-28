@@ -1,12 +1,16 @@
 <div class="reading_list">
-{% for link in site.data.pocket limit: page.article_count %}
-<span class="title">><a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span><br />
-<span class="domain">{{link[1].domain_metadata.name}}</span>
-<br /> <br />
-{% endfor %}
+  {% for link in site.data.pocket limit: page.article_count %}
+  <span class="title"
+    >><a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span
+  ><br />
+  <span class="domain">{{link[1].domain_metadata.name}}</span>
+  <br />
+  <br />
+  {% endfor %}
 </div>
 <div class="read_more">
-{% if page.url == "/" && site.data.pocket.size > 3 %}
-<span class="read_more"><a href="/newsfeed.html">Read More</a></span><br />
-{% endif %}
+  {% if page.url == "/" && site.data.pocket.size > 3 %}
+  <span class="read_more"><a href="/newsfeed.html">Read More</a></span
+  ><br />
+  {% endif %}
 </div>

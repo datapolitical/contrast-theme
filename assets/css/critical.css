@@ -1,18 +1,75 @@
-body{background:#212228;color:#fff;font-family:-apple-system,"Helvetica Neue","Segoe UI","Roboto",sans-serif;font-weight:400;font-size:16px;line-height:1.6;margin:0;min-height:100vh;-webkit-text-size-adjust:100%;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}@media (prefers-color-scheme:dark){body{background:#212228;color:#fff}}a{color:#68f;text-decoration:inherit}header a{color:inherit}body{display:flex;flex-direction:column}body>header{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between}body>header{padding:1.5em}nav{margin:.5em -1.2em}.title{font-size:1.25em}.icon{height:1.5em;width:1.5em;fill:currentColor;vertical-align:middle;margin-bottom:.15em}body>header{box-shadow:0 0 .6em rgba(33,34,40,.04);border-bottom:1px solid rgba(144,145,148,.14)}
+body {
+  background: #212228;
+  color: #fff;
+  font-family: -apple-system, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #212228;
+    color: #fff;
+  }
+}
+a {
+  color: #68f;
+  text-decoration: inherit;
+}
+header a {
+  color: inherit;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+body > header {
+  padding: 1.5em;
+}
+nav {
+  margin: 0.5em -1.2em;
+}
+.title {
+  font-size: 1.25em;
+}
+.icon {
+  height: 1.5em;
+  width: 1.5em;
+  fill: currentColor;
+  vertical-align: middle;
+  margin-bottom: 0.15em;
+}
+body > header {
+  box-shadow: 0 0 0.6em rgba(33, 34, 40, 0.04);
+  border-bottom: 1px solid rgba(144, 145, 148, 0.14);
+}
 
 @media (min-width: 40em) {
-    body > header, body > article, body > footer {
-        padding:1.75em calc(40% - 17em)
-    }
+  body > header,
+  body > article,
+  body > footer {
+    padding: 1.75em calc(40% - 17em);
+  }
 }
 
 body > header {
-    box-shadow: 0 0 .6em rgba(33, 34, 40, .04);
-    border-bottom: 1px solid rgba(144, 145, 148, .14)
+  box-shadow: 0 0 0.6em rgba(33, 34, 40, 0.04);
+  border-bottom: 1px solid rgba(144, 145, 148, 0.14);
 }
 
 body > footer {
-    box-shadow: 0 0 .6em rgba(33, 34, 40, .04) inset;
-    border-top: 0px solid rgba(144, 145, 148, .14);
-    opacity: .9
+  box-shadow: 0 0 0.6em rgba(33, 34, 40, 0.04) inset;
+  border-top: 0px solid rgba(144, 145, 148, 0.14);
+  opacity: 0.9;
 }
