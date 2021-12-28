@@ -44,7 +44,7 @@ jobs:
         # This part is also where you can pass other options. For example:
           only_changed: true
           dry: true
-          prettier_options: "--check --ignore-path .prettierignore --write ."
+          prettier_options: "--check --write ."
         # git add . goes here
 
       - name: commit

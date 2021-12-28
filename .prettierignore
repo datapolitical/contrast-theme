@@ -13,6 +13,15 @@ _data/puzzles.yaml
 assets/images/*
 _data
 node_modules/
+assets/js/pwa-1.0.min.js
 
 package-lock.json
 package.json
+
+_includes/comment.html
+_includes/menu-dynamic.html
+_includes/sidebar.html
+_includes/steps.html
+_layouts/default.html
+assets/css/new-critical.css
+assets/css/tabs.css
