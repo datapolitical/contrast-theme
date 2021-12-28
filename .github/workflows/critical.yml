@@ -41,7 +41,9 @@ jobs:
         uses: creyD/prettier_action@v4.1
         with:
         # This part is also where you can pass other options, for example:
-        only_changed: True
+          only_changed: True
+          dry: true
+          prettier_options: --check
         # git add . goes here
 
       - name: commit
