@@ -11,6 +11,7 @@ _data/recipes.yaml
 _data/recipes_nutrition.yaml
 _data/puzzles.yaml
 assets/images/*
+_data
 node_modules/
 
 package-lock.json

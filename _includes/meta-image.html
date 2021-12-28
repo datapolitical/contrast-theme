@@ -1,2 +1,6 @@
-{% assign sortedRecipes = site.data.recipes |  sort: "created" | reverse | find_exp:"recipe","recipe.categories contains 'Web' and recipe.image_url" %}
-<meta property="og:image" content="{{ site.url }}/assets/{{sortedRecipes.image_url}}" />
+{% assign sortedRecipes = site.data.recipes | sort: "created" | reverse |
+find_exp:"recipe","recipe.categories contains 'Web' and recipe.image_url" %}
+<meta
+  property="og:image"
+  content="{{ site.url }}/assets/{{sortedRecipes.image_url}}"
+/>

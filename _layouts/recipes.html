@@ -1,37 +1,55 @@
 ---
 layout: page
 ---
-<link rel="preload" as="script" href="/assets/js/lazyload.min.js">
+
+<link rel="preload" as="script" href="/assets/js/lazyload.min.js" />
 
 {% for category in site.data.recipe_categories %}
-<input type="radio" id="{{category.name}}" name="categories" value="{{category.name}}" {% if forloop.first %}checked{% endif %}>
+<input
+  type="radio"
+  id="{{category.name}}"
+  name="categories"
+  value="{{category.name}}"
+  {%
+  if
+  forloop.first
+  %}checked{%
+  endif
+  %}
+/>
 {% endfor %}
 <ol class="filters">
-	{% for category in site.data.recipe_categories %}
+  {% for category in site.data.recipe_categories %}
   <li>
     <label for="{{category.name}}">{{category.display}}</label>
   </li>
-	{% unless forloop.last %}
-	<li><span>&bull;</span></li>
-	{% endunless %}{% endfor %}
+  {% unless forloop.last %}
+  <li><span>&bull;</span></li>
+  {% endunless %}{% endfor %}
 </ol>
 
 <div class="image-grid">
-{% assign sortedRecipes = site.data.recipes | sort: "created" | reverse | where_exp:"recipe","recipe.categories contains 'Web' and recipe.image_url" %}
-{% for recipe in sortedRecipes %}
-	{% assign recipeCategories = "" %}
-	{% for category in recipe.categories %}
-		{% assign categoryNoSpace = category | replace: " ", "-" %}
-		{% assign recipeCategories = recipeCategories | append: " " | append: categoryNoSpace %}
-	{% endfor %}
-	<a class="image-container" data-category="{{ recipeCategories }}" href="{{ recipe.name | datapage_url:'recipes' }}">
-	{%if forloop.index < 2 %}
-		{% picture lazy {{ recipe.image_url  }} 1:1 --alt {{ recipe.name }} %}
-	{% else %}
-		{% picture lazy {{ recipe.image_url  }} 1:1 --img loading="lazy" --alt {{ recipe.name }} %}
-	{% endif %}
-	<div class="bottom-left"><h3 class="text-hover"><b>{{ recipe.name }}</b></h3></div>
-	</a>
-{% endfor %}
+  {% assign sortedRecipes = site.data.recipes | sort: "created" | reverse |
+  where_exp:"recipe","recipe.categories contains 'Web' and recipe.image_url" %}
+  {% for recipe in sortedRecipes %} {% assign recipeCategories = "" %} {% for
+  category in recipe.categories %} {% assign categoryNoSpace = category |
+  replace: " ", "-" %} {% assign recipeCategories = recipeCategories | append: "
+  " | append: categoryNoSpace %} {% endfor %}
+  <a
+    class="image-container"
+    data-category="{{ recipeCategories }}"
+    href="{{ recipe.name | datapage_url:'recipes' }}"
+  >
+    {%if forloop.index < 2 %} {% picture lazy {{ recipe.image_url }} 1:1 --alt
+    {{ recipe.name }} %} {% else %} {% picture lazy {{ recipe.image_url }} 1:1
+    --img loading="lazy" --alt {{ recipe.name }} %} {% endif %}
+    <div class="bottom-left">
+      <h3 class="text-hover"><b>{{ recipe.name }}</b></h3>
+    </div>
+  </a>
+  {% endfor %}
 </div>
-<script src="{{ site.url }}/assets/js/lazyload.min.js" type="text/javascript"></script>
+<script
+  src="{{ site.url }}/assets/js/lazyload.min.js"
+  type="text/javascript"
+></script>

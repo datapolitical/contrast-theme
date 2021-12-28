@@ -1,40 +1,39 @@
-
-main .container{
-	margin: 0;
-	max-width: 5000px;
+main .container {
+  margin: 0;
+  max-width: 5000px;
 }
 
 .text-hover {
-	font-size: 2vh;
-	color: white;
-	margin: 0px;
+  font-size: 2vh;
+  color: white;
+  margin: 0px;
 }
 
 .bottom-left {
-	/* position: absolute; */
-	/* bottom: 8px; */
-	/* left: 16px; */
-	height: 100%;
-	width: 100%;
+  /* position: absolute; */
+  /* bottom: 8px; */
+  /* left: 16px; */
+  height: 100%;
+  width: 100%;
 }
 
 .image-grid {
-	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
-	grid-gap: 1vh;
-	align-items: stretch;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
+  grid-gap: 1vh;
+  align-items: stretch;
 }
 
 .image-container {
-	float: left;
-	position: relative;
-	text-align: center;
+  float: left;
+  position: relative;
+  text-align: center;
 }
 
 .photo-large {
-	width: 100%;
-	height: 200px;
-	object-fit: cover;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
 }
 
 img:not([src]):not([srcset]) {
@@ -57,21 +56,21 @@ input[type="radio"] {
 }
 
 ol.filters {
-	padding-inline-start: 0px;
-	margin-block-start: 0px;
-	margin-block-end: 0px;
-	line-height: 0px;
-	margin-bottom: .25rem;
-    /* @media #{$desktop} {
+  padding-inline-start: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  line-height: 0px;
+  margin-bottom: 0.25rem;
+  /* @media #{$desktop} {
 		width: 50%;
 	} */
 }
 ol.filters li + li {
-	margin: 10px 0px 0px 0px;
+  margin: 10px 0px 0px 0px;
 }
 .filters {
   text-align: center;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .filters * {
@@ -80,9 +79,9 @@ ol.filters li + li {
 }
 
 @media only screen and (min-width: 768px) {
-	.filters * {
-		font-size: 1.5vw;
-	}
+  .filters * {
+    font-size: 1.5vw;
+  }
 }
 
 .filters span {
