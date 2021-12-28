@@ -45,6 +45,8 @@ jobs:
           only_changed: True
           dry: true
           prettier_options: --check
+          branch: "${{ github.head_ref }}"
+          file_pattern: "."
         # git add . goes here
 
       - name: commit
