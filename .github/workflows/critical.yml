@@ -12,6 +12,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           persist-credentials: false
+          fetch-depth: 0
 
       - name: setup git config
         run: |
@@ -35,6 +36,13 @@ jobs:
           cat assets/css/generated-critical.css
           git add assets/css/generated-critical.css
           git pull --ff-only origin master
+
+      - name: Prettify code
+        uses: creyD/prettier_action@v4.1
+        with:
+        # This part is also where you can pass other options, for example:
+        only_changed: True
+        # git add . goes here
 
       - name: commit
         run: |
