@@ -13,7 +13,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
-          
+
 
       - name: setup git config
         run: |
@@ -41,7 +41,7 @@ jobs:
       - name: Prettify code
         uses: creyD/prettier_action@v4.1
         with:
-        # This part is also where you can pass other options, for example:
+        # This part is also where you can pass other options. For example:
           only_changed: true
           dry: true
           prettier_options: "--check --write ."
