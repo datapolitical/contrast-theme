@@ -13,6 +13,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+          
 
       - name: setup git config
         run: |
@@ -25,7 +26,7 @@ jobs:
           echo "Git Setup Remotes:"
           git remote -v
           echo "Git Pull:"
-          git pull --ff-only origin master
+          git pull --ff-only origin ${{ github.ref_name }}
 
       - name: getcss
         run: |
@@ -35,7 +36,7 @@ jobs:
           node contrast_theme_node.js
           cat assets/css/generated-critical.css
           git add assets/css/generated-critical.css
-          git pull --ff-only origin master
+          git pull --ff-only origin ${{ github.ref_name }}
 
       - name: Prettify code
         uses: creyD/prettier_action@v4.1
