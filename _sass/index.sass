@@ -8,6 +8,6 @@ $dark: #0a0a0a !default
 $light: #ffffff !default
 
 @function reduce ($percent)
-  @return rgba(mix($dark, $light), $percent / 100)
+  @return rgba(mix($dark, $light), calc($percent / 100))
 
 // this needs to stay in sass because it's imported by other sass files.
