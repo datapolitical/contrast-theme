@@ -44,8 +44,7 @@ jobs:
         # This part is also where you can pass other options, for example:
           only_changed: true
           dry: true
-          prettier_options: "--check"
-          file_pattern: "."
+          prettier_options: "--check --write ."
         # git add . goes here
 
       - name: commit
