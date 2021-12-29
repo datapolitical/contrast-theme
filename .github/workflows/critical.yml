@@ -39,7 +39,7 @@ jobs:
           git pull --ff-only origin ${{ github.ref_name }}
 
       - name: Prettify code
-        uses: creyD/prettier_action@v4.1
+        uses: creyD/prettier_action@v4.1.1
         with:
         # This part is also where you can pass other options. For example:
           only_changed: true
