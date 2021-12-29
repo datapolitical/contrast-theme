@@ -27,15 +27,13 @@ article header h1 {
   margin: 0 0 .1em;
 }
 nav {
-  margin: .5em -1.2em;
-  margin-bottom: 0em;
+  margin-left: -1.2em;
+  margin-right: -1.2em;
+  margin-top: 0;
+  margin-bottom: 0;
   display: inline-block;
   .name,
   .header-photo {
-    margin-left: -1.2em;
-    margin-right: -1.2em;
-    margin-top: 0;
-    margin-bottom: 0;
   }
 }
 nav {
