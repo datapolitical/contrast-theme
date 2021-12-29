@@ -6,7 +6,7 @@ body {
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   color: rgb(255, 255, 255);
-  font-family: Raleway, -apple-system, "Helvetica Neue", "Segoe UI", Roboto,
+  font-family: raleway, -apple-system, "helvetica neue", "segoe ui", roboto,
     sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -23,7 +23,6 @@ body > header {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  box-shadow: rgba(33, 34, 40, 0.04) 0 0 0.6em;
   border-bottom: 1px solid rgba(144, 145, 148, 0.14);
   box-shadow: rgba(10, 10, 10, 0.04) 0 0 0.6em;
 }
@@ -141,7 +140,7 @@ p.main-divider + hr {
   font-display: fallback;
 }
 .title {
-  font-size: 1.25em;
+  font-size: 1.4em;
 }
 .header {
   display: flex;
