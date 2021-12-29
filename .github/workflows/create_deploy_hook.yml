@@ -6,15 +6,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: curl
-          run: |
-            curl -X GET "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/contrast-theme/deploy_hooks" \
-              -H "X-Auth-Email: {{ secrets.EMAIL }}" \
-              -H "X-Auth-Key: c2547eb745079dac9320b638f5e225cf483cc5cfdda41" \
-              -d '{"branch": "${{github.ref_name}}", "name": "${{github.ref_name}}"}' \
-              -o newhook.json
+        run: |
+          curl -X GET "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/contrast-theme/deploy_hooks" \
+          -H "X-Auth-Email: {{ secrets.EMAIL }}" \
+          -H "X-Auth-Key: c2547eb745079dac9320b638f5e225cf483cc5cfdda41" \
+          -d '{"branch": "${{github.ref_name}}", "name": "${{github.ref_name}}"}' \
+          -o newhook.json
       - name: set variable
         id: set_var
-          run: |
+        run: |
           echo "text"
           content=`cat ./newhook.json`
           # the following lines are only required for multi line json
@@ -24,5 +24,5 @@ jobs:
           # end of optional handling for multi line json
           echo "::set-output name=newhook::$content"
       - name: output
-          run: |
-            echo "${{fromJson(steps.set_var.outputs.newhook).results.hook_id}}"
+        run: |
+          echo "${{fromJson(steps.set_var.outputs.newhook).results.hook_id}}"
