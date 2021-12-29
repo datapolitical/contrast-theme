@@ -18,15 +18,11 @@
   font-display: fallback;
 }
 .title {
-  font-size: 1.4em;
+  font-size: 1.25em;
 }
 .header {
   display: flex;
   place-content: space-between center;
-}
-.header nav {
-  display: inline-block;
-  vertical-align: middle;
 }
 .no-split {
   display: inline-block;
@@ -60,9 +56,6 @@ a {
 }
 .my-net-diary {
   color: rgb(73, 214, 234) !important;
-}
-header a {
-  color: inherit;
 }
 hr {
   border: 1px solid rgba(133, 133, 133, 0.3);
@@ -108,12 +101,27 @@ p.main-divider + hr {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
-body > header {
-  box-shadow: rgba(10, 10, 10, 0.04) 0 0 0.6em;
+aside a {
+  color: inherit;
+}
+img {
+  margin: 0.5em 0;
+  border-radius: 2px;
+  max-width: 100%;
+  height: auto;
+}
+aside {
+  vertical-align: middle;
+  display: block !important;
+}
+aside nav {
+  display: block !important;
+}
+aside nav a {
+  display: inline-block !important;
 }
 @media (min-width: 40em) {
-  body > article,
-  body > header {
+  body > article {
     padding: 1em calc(40% - 17em);
   }
 }
@@ -125,6 +133,43 @@ body > header {
     height: 0;
     border: 0;
     color: rgba(133, 133, 133, 0.3);
+  }
+  html {
+    padding: 0;
+  }
+  body {
+    font-size: 1.06em;
+    margin: 0 0 0 14em;
+    max-width: inherit;
+    overscroll-behavior: none;
+  }
+  body > article {
+    margin: 0 5em;
+    padding: 2em 0;
+    max-width: 50em;
+  }
+  aside {
+    position: fixed;
+    overflow: auto;
+    background: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
+    padding: 1em;
+    width: 10em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block !important;
+  }
+  nav {
+    margin: 0;
+  }
+  nav a {
+    display: block;
+    margin: 0;
+    padding: 0.5em 2em;
+  }
+  nav a.title {
+    padding: 0.5em 0;
   }
 }
 @media (prefers-color-scheme: dark) {
