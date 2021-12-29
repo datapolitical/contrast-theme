@@ -13,5 +13,5 @@ _data/puzzles.yaml
 assets/images/*
 node_modules/
 
-package-lock.json
-package.json
+# package-lock.json
+# package.json
