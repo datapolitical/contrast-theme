@@ -34,7 +34,7 @@
 body {
   background: rgb(10, 10, 10);
   color: rgb(255, 255, 255);
-  font-family: Raleway, -apple-system, "Helvetica Neue", "Segoe UI", Roboto,
+  font-family: raleway, -apple-system, "helvetica neue", "segoe ui", roboto,
     sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -43,6 +43,28 @@ body {
   min-height: 100vh;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
+}
+article {
+  flex-grow: 1;
+}
+body > header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(144, 145, 148, 0.14);
+  box-shadow: rgba(10, 10, 10, 0.04) 0 0 0.6em;
+}
+body > article,
+body > header {
+  padding: 0.75rem 1.5rem 1.5rem;
+}
+nav {
+  margin: 0.5em -1.2em;
+  display: inline-block;
+}
+nav a {
+  margin: 0.5em 0.75em;
 }
 h3 {
   font-weight: 600;
@@ -108,8 +130,57 @@ p.main-divider + hr {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
-body > header {
-  box-shadow: rgba(10, 10, 10, 0.04) 0 0 0.6em;
+@font-face {
+  font-family: Quicksand;
+  src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
+      format("truetype supports variations"),
+    url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
+      format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+}
+@font-face {
+  font-family: Raleway;
+  src: url("/assets/fonts/Raleway-VariableFont_wght.ttf")
+      format("truetype supports variations"),
+    url("/assets/fonts/Raleway-VariableFont_wght.ttf")
+      format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: fallback;
+}
+@font-face {
+  font-family: quicksand;
+  src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
+      format("truetype supports variations"),
+    url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
+      format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+}
+@font-face {
+  font-family: raleway;
+  src: url("/assets/fonts/Raleway-VariableFont_wght.ttf")
+      format("truetype supports variations"),
+    url("/assets/fonts/Raleway-VariableFont_wght.ttf")
+      format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: fallback;
+}
+.title {
+  font-size: 1.4em;
+}
+.header {
+  display: flex;
+  place-content: space-between center;
+}
+.header nav {
+  display: inline-block;
+  vertical-align: middle;
+}
+.no-split {
+  display: inline-block;
 }
 @media (min-width: 40em) {
   body > article,

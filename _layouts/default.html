@@ -49,10 +49,7 @@
 </head>
 <body>
 
-<header class="header">
-  <nav class="name"><a href="{{ "/" | relative_url }}" class="title">{{ site.title | escape }}</a></nav>
-  {% include_cached menu-dynamic.html menu=site.navigation %}
-</header>
+{% include sidebar-new.html menu=site.navigation %}
 
 {{ content }}
 

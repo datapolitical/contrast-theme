@@ -21,6 +21,8 @@ package.json
 _includes/comment.html
 _includes/menu-dynamic.html
 _includes/sidebar.html
+_includes/sidebar-new.html
+_includes/sidebar-OLD.html
 _includes/steps.html
 _layouts/default.html
 assets/css/new-critical.css
