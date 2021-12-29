@@ -27,10 +27,6 @@ jobs:
           git remote -v
           echo "Git Pull:"
           git pull --ff-only origin ${{ github.ref_name }}
-          
-      - name: commit
-        run: |
-          git commit -am "Update critical css" || echo "::set-output name=status::Nothing to update"
 
       - name: getcss
         run: |
@@ -39,14 +35,23 @@ jobs:
           cat contrast_theme_node.js
           node contrast_theme_node.js
           cat assets/css/generated-critical.css
-          git add assets/css/generated-critical.css
           git pull --ff-only origin ${{ github.ref_name }}
 
       - name: Prettify code
         if: steps.get_data.outputs.status != 'Nothing to update' && ${{ !env.ACT }}
-        uses: creyD/prettier_action@v4.1.1
+        uses: datapolitical/prettier_action@v4.1.1
         with:
         # This part is also where you can pass other options. For example:
           file_pattern: "assets/css/generated-critical.css"
-          prettier_options: "--check --write assets/css/generated-critical.css"
+          dry: true
+          prettier_options: "--write assets/css/generated-critical.css"
         # git add . goes here
+
+      - name: amend and commit
+        run: |
+          git add assets/css/generated-critical.css
+          git commit -m "Update critical css" || echo "::set-output name=status::Nothing to update"
+
+      - name: push
+        run: |
+          git push "https://${{github.actor}}:${{github.token}}@github.com/${{github.repository}}.git" "HEAD:${{github.ref_name}}"
