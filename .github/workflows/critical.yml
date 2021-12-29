@@ -45,7 +45,7 @@ jobs:
           file_pattern: "assets/css/generated-critical.css"
           dry: true
           prettier_options: "--check --write assets/css/generated-critical.css"
-        # git add . goes here
+        # git add . goes here 
 
       - name: amend and commit
         run: |
