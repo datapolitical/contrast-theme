@@ -17,6 +17,25 @@
   font-style: normal;
   font-display: fallback;
 }
+@font-face {
+  font-family: Quicksand;
+  src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
+      format("truetype supports variations"),
+    url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
+      format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+}
+@font-face {
+  font-family: Raleway;
+  src: url("/assets/fonts/Raleway-VariableFont_wght.ttf")
+      format("truetype supports variations"),
+    url("/assets/fonts/Raleway-VariableFont_wght.ttf")
+      format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: fallback;
+}
 .title {
   font-size: 1.25em;
 }
@@ -29,13 +48,15 @@
 }
 body {
   background: rgb(10, 10, 10);
+  margin: 0;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
   color: rgb(255, 255, 255);
-  font-family: raleway, -apple-system, "helvetica neue", "segoe ui", roboto,
+  font-family: Raleway, -apple-system, "Helvetica Neue", "Segoe UI", Roboto,
     sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
-  margin: 0;
   min-height: 100vh;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -95,11 +116,22 @@ p.main-divider + hr {
   height: 0.025rem;
   margin-top: -0.25rem;
   margin-bottom: -0.25rem;
+  color: rgb(255, 255, 255);
   width: 50%;
 }
 .recently-read {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
+}
+.profile-photo {
+  border-radius: 50% !important;
+  width: 5em !important;
+  height: 5em !important;
+  border: 0.25em solid rgb(255, 255, 255) !important;
+  margin: 0 !important;
+}
+.header-links {
+  margin: 0;
 }
 aside a {
   color: inherit;
@@ -125,14 +157,25 @@ aside nav a {
     padding: 1em calc(40% - 17em);
   }
 }
+@media (min-width: 768px) {
+  body > article {
+    padding: 1em calc(40% - 17em) 0;
+  }
+}
 @media only screen and (min-width: 768px) {
   .header {
     place-content: center space-between;
   }
   p.main-divider + hr {
-    height: 0;
-    border: 0;
     color: rgba(133, 133, 133, 0.3);
+    height: 2px;
+    border: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: rgba(133, 133, 133, 0.14);
+  }
+  .title {
+    margin: 1em 0 0 1em;
   }
   html {
     padding: 0;
