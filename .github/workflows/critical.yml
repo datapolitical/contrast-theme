@@ -42,7 +42,7 @@ jobs:
         uses: creyD/prettier_action@v4.1.1
         with:
         # This part is also where you can pass other options. For example:
-          file_pattern: assets/css/generated-critical.css
+          file_pattern: "assets/css/generated-critical.css"
           dry: true
           prettier_options: "--check --write ."
         # git add . goes here
