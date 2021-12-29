@@ -2,7 +2,7 @@ name: create new deploy hook
 on: create
 
 jobs:
-  create deploy hook:
+  create_deploy_hook:
     runs-on: ubuntu-latest
     steps:
       - name: curl
@@ -12,7 +12,7 @@ jobs:
           -H "X-Auth-Key: c2547eb745079dac9320b638f5e225cf483cc5cfdda41" \
           -d '{"branch": "${{github.ref_name}}", "name": "${{github.ref_name}}"}' \
           -o newhook.json
-      - name: set variable
+      - name: set_variable
         id: set_var
         run: |
           echo "text"
