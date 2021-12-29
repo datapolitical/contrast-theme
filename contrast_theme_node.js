@@ -1,7 +1,7 @@
 const Crittr = require("crittr");
 
 Crittr({
-  urls: ["https://www.chrisfnicholson.com"],
+  urls: ["https://theme.chrisfnicholson.com"],
   device: {
     width: 600,
     height: 1000,
