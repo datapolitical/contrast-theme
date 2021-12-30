@@ -19,6 +19,8 @@ jobs:
           cat ./newhook.json
           jq ' .result.hook_id' newhook.json | gh secret set "CF_${{ github.ref_name }}_HOOK"
           # echo "::set-output name=newhook::$content"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: test
         run: |
           curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[format('CF_{0}_HOOK', github.ref_name)] }}"
