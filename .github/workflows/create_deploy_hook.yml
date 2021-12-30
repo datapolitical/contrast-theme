@@ -14,16 +14,14 @@ jobs:
           -o newhook.json
       - name: gh_login
         run: |
-          gh auth login --with-token <<< ${{ github.token }}
+          gh auth login --with-token <<< ${{ secrets.SECRET_CREATION_TOKEN }}
       - name: set_variable
         id: set_var
         run: |
           sudo apt-get install jq
           cat ./newhook.json
-          jq ' .result.hook_id' newhook.json | gh secret set --repo "datapolitical/contrast-theme" "CF_${{ github.ref_name }}_HOOK"
+          gh secret set --repo "datapolitical/contrast-theme" "CF_${{ github.ref_name }}_HOOK" --body "`jq ' .result.hook_id' newhook.json`"
           # echo "::set-output name=newhook::$content"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: test
         run: |
           curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[format('CF_{0}_HOOK', github.ref_name)] }}"
