@@ -17,7 +17,7 @@ jobs:
         run: |
           sudo apt-get install jq
           cat ./newhook.json
-          jq '.result.' newhook.json
+          jq '.result.hook_id' newhook.json
           echo "::set-output name=newhook::$content"
       - name: output
         run: |
