@@ -1,0 +1,15 @@
+name: test deploy hook
+on: push
+
+jobs:
+  test_deploy_hook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set_variable
+        id: set_var
+        run: |
+          echo "hookname=secrets.CF_${{ github.ref_name }}_HOOK" >> $GITHUB_ENV
+          echo ${{ secrets[format('{0}', env.HOOKNAME)] }}
+      - name: test
+        run: |
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[steps.set_var.outputs.hookname] }}"
