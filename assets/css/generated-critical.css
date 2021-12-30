@@ -1,5 +1,5 @@
 @font-face {
-  font-family: Quicksand;
+  font-family: quicksand;
   src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
       format("truetype supports variations"),
     url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
@@ -8,7 +8,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: Raleway;
+  font-family: raleway;
   src: url("/assets/fonts/Raleway-VariableFont_wght.ttf")
       format("truetype supports variations"),
     url("/assets/fonts/Raleway-VariableFont_wght.ttf")
@@ -42,7 +42,7 @@ body {
   flex-direction: column;
   background: rgb(10, 10, 10);
   color: rgb(255, 255, 255);
-  font-family: Raleway, -apple-system, "Helvetica Neue", "Segoe UI", Roboto,
+  font-family: raleway, -apple-system, "helvetica neue", "segoe ui", roboto,
     sans-serif;
   font-weight: 400;
   font-size: 16px;
