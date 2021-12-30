@@ -5,9 +5,6 @@ jobs:
   create_deploy_hook:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v2
-
       - name: curl
         run: |
           curl -X POST "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/contrast-theme/deploy_hooks" \
@@ -15,6 +12,11 @@ jobs:
           -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
           -d '{"branch": "${{github.ref_name}}", "name": "${{github.ref_name}}"}' \
           -o newhook.json
+      - name: gh_login
+        run: |
+          gh auth login --with-token < ${{github.token}}
+      - name: Checkout Code
+        uses: actions/checkout@v2
       - name: set_variable
         id: set_var
         run: |
