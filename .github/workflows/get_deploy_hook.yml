@@ -16,4 +16,4 @@ jobs:
           echo "${{ secrets[env.HOOKNAME] }}"
       - name: test
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets.CF_TEST_22 }}"
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[env.HOOKNAME] }}"
