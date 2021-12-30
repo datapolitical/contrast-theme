@@ -8,12 +8,12 @@ jobs:
       - name: set_variable
         id: set_var
         run: |
-          # echo "hookname=secrets.CF_${{ github.ref_name }}_HOOK" >> $GITHUB_ENV
-          echo "hookname=secrets.CF_TEST22_HOOK" >> $GITHUB_ENV
+          # echo "HOOKNAME2=CF_${{ github.ref_name }}_HOOK" >> $GITHUB_ENV
+          echo "HOOKNAME=CF_TEST22_HOOK" >> $GITHUB_ENV
       - name: demo
         run: |
-          echo "${{env.HOOKNAME}}"
+          echo "${{ env.HOOKNAME }}"
           echo "${{ secrets[env.HOOKNAME] }}"
       - name: test
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[env.HOOKNAME] }}"
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets.CF_TEST_22 }}"
