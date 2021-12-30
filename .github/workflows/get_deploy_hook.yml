@@ -12,4 +12,4 @@ jobs:
           echo ${{ secrets[format('{0}', env.HOOKNAME)] }}
       - name: test
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[steps.set_var.outputs.hookname] }}"
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ steps.set_var.outputs.hookname }}"
