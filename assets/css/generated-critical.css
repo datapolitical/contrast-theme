@@ -17,8 +17,27 @@
   font-style: normal;
   font-display: fallback;
 }
+@font-face {
+  font-family: Quicksand;
+  src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
+      format("truetype supports variations"),
+    url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
+      format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+}
+@font-face {
+  font-family: Raleway;
+  src: url("/assets/fonts/Raleway-VariableFont_wght.ttf")
+      format("truetype supports variations"),
+    url("/assets/fonts/Raleway-VariableFont_wght.ttf")
+      format("truetype-variations");
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: fallback;
+}
 .title {
-  font-size: 1.4em;
+  font-size: 1.25em;
 }
 .header {
   display: flex;
@@ -41,13 +60,17 @@ body {
   display: flex;
   flex-direction: column;
   background: rgb(10, 10, 10);
+  margin: 0;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
   color: rgb(255, 255, 255);
-  font-family: raleway, -apple-system, "helvetica neue", "segoe ui", roboto,
+  font-family: Raleway, -apple-system, "Helvetica Neue", "Segoe UI", Roboto,
     sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
-  margin: 0;
   min-height: 100vh;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -96,12 +119,12 @@ img {
   height: auto;
 }
 :not(pre) > code {
-  font-size: 0.9em;
   background: rgba(133, 133, 133, 0.15);
-  opacity: 0.7;
   border-radius: 2px;
   margin: 0 0.1em;
   padding: 0.2em 0.4em;
+  font-size: 0.9em;
+  opacity: 0.7;
 }
 div.reading_list br {
   display: none;
@@ -155,15 +178,12 @@ aside nav a {
   .header {
     place-content: center space-between;
   }
-  .title {
-    margin: 1em 0 0 1em;
-  }
   p.main-divider + hr {
+    background-color: rgba(133, 133, 133, 0.14);
     height: 2px;
     border: 0;
     margin-top: 0;
     margin-bottom: 0;
-    background-color: rgba(133, 133, 133, 0.14);
   }
   html {
     padding: 0;
@@ -179,8 +199,20 @@ aside nav a {
     padding: 2em 0;
     max-width: 50em;
   }
+  nav {
+    margin: 0;
+  }
+  nav a {
+    display: block;
+    margin: 0;
+    padding: 0.5em 2em;
+  }
+  .title {
+    margin: 1em 0 0 1em;
+  }
   aside {
     position: fixed;
+    vertical-align: middle;
     overflow: auto;
     background: rgb(5, 5, 5);
     color: rgb(255, 255, 255);
@@ -191,13 +223,11 @@ aside nav a {
     left: 0;
     display: block !important;
   }
-  nav {
-    margin: 0;
+  aside nav {
+    display: block !important;
   }
-  nav a {
-    display: block;
-    margin: 0;
-    padding: 0.5em 2em;
+  aside nav a {
+    display: inline-block !important;
   }
   nav a.title {
     padding: 0.5em 0;
