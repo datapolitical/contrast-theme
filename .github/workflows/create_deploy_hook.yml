@@ -24,4 +24,6 @@ jobs:
           # echo "::set-output name=newhook::$content"
       - name: test
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[format('CF_{0}_HOOK', github.ref_name)] }}"
+          echo "BRANCH = ${{ github.ref_name }}"
+          HOOK_ID="GH_${{ secrets[env.BRANCH] }}_HOOK"
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[env.HOOK_ID] }}"
