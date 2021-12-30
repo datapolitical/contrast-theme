@@ -22,6 +22,8 @@ jobs:
           cat ./newhook.json
           gh secret set --repo "datapolitical/contrast-theme" "CF_${{ github.ref_name }}_HOOK" --body "`jq ' .result.hook_id' newhook.json`"
           echo "HOOKNAME=CF_${{ github.ref_name }}_HOOK" >> $GITHUB_ENV
+          echo format('CF_{0}_TEST', env.HOOKNAME)
+          echo ${{ secrets[format('{0}', env.ENVIRONMENT)] }} 
       - name: test
         run: |
           curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[env.HOOKNAME] }}"
