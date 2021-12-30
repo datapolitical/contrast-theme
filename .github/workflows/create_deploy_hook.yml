@@ -14,7 +14,7 @@ jobs:
           -o newhook.json
       - name: gh_login
         run: |
-          gh auth login
+          gh auth login --with-token <<< ${{ github.token }}
       - name: set_variable
         id: set_var
         run: |
