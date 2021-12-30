@@ -25,7 +25,7 @@
   {% capture sass_critical %}
   {% include_cached critical.scss %}
   {% endcapture %}
-  {% unless site.dev_build %}
+  {% unless site.dev_build_DISABLED %}
   {{ sass_critical | scssify }}
   {% endunless %}
   </style>
