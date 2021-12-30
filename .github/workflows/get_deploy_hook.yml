@@ -8,11 +8,11 @@ jobs:
       - name: set_variable
         id: set_var
         run: |
-          echo "hookname=secrets.CF_${{ github.ref_name }}_HOOK" >> $GITHUB_ENV
-          echo "::set-env HOOKNAME=CF_TEST22_HOOK"
+          # echo "hookname=secrets.CF_${{ github.ref_name }}_HOOK" >> $GITHUB_ENV
+          echo "hookname=secrets.CF_TEST22_HOOK" >> $GITHUB_ENV
       - name: demo
         run: |
-          echo "${HOOKNAME}"
+          echo "${{HOOKNAME}}"
           echo "${{ secrets[env.HOOKNAME] }}"
       - name: test
         run: |
