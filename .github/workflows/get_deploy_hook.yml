@@ -12,7 +12,7 @@ jobs:
           echo "hookname=secrets.CF_TEST22_HOOK" >> $GITHUB_ENV
       - name: demo
         run: |
-          echo "${{HOOKNAME}}"
+          echo "${{env.HOOKNAME}}"
           echo "${{ secrets[env.HOOKNAME] }}"
       - name: test
         run: |
