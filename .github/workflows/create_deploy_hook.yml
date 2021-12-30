@@ -17,8 +17,8 @@ jobs:
         run: |
           sudo apt-get install jq
           cat ./newhook.json
-          jq '.result.hook_id' newhook.json
-          echo "::set-output name=newhook::$content"
-      - name: output
+          jq '.result.hook_id' newhook.json | gh secret set "CF_${{ github.ref_name }}_HOOK"
+          # echo "::set-output name=newhook::$content"
+      - name: test
         run: |
-          echo "${{fromJson(steps.set_var.outputs.newhook).results.hook_id}}"
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[format('CF_{0}_HOOK', github.ref_name)] }}"
