@@ -37,10 +37,11 @@
   font-display: fallback;
 }
 .title {
-  font-size: 1.25em;
+  font-size: 1.4em;
 }
 .header {
-  display: flex;
+  place-content: space-between center;
+  display: inline-block;
   place-content: space-between center;
 }
 .no-split {
@@ -57,10 +58,10 @@
   margin: 0;
 }
 body {
-  display: flex;
-  flex-direction: column;
   background: rgb(10, 10, 10);
   margin: 0;
+  display: flex;
+  flex-direction: column;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   display: flex;
@@ -177,6 +178,8 @@ aside nav a {
 @media only screen and (min-width: 768px) {
   .header {
     place-content: center space-between;
+    display: flex;
+    place-content: center space-between;
   }
   p.main-divider + hr {
     background-color: rgba(133, 133, 133, 0.14);
@@ -207,9 +210,6 @@ aside nav a {
     margin: 0;
     padding: 0.5em 2em;
   }
-  .title {
-    margin: 1em 0 0 1em;
-  }
   aside {
     position: fixed;
     vertical-align: middle;
@@ -228,6 +228,9 @@ aside nav a {
   }
   aside nav a {
     display: inline-block !important;
+  }
+  .title {
+    margin: 1em 0 0 1em;
   }
   nav a.title {
     padding: 0.5em 0;
