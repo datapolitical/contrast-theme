@@ -234,16 +234,13 @@ a:hover .icon {
   color: reduce(100);
 }
 .header {
-  display: flex;
+  display: inline-block;
   justify-content: center;
   align-content: space-between;
-  nav {
-    display: block;
-    vertical-align: middle;
-  }
 }
 @media only screen and (min-width: $desktop-width) {
   .header {
+    display: flex;
     align-content: center;
     justify-content: space-between;
   }
