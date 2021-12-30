@@ -3,16 +3,6 @@
 
 @import "index";
 
-aside {
-  display: block !important;
-  vertical-align: middle;
-  nav {
-    display: block !important;
-    a {
-      display: inline-block !important;
-    }
-  }
-}
 @media only screen and (min-width: $desktop-width) {
   html {
     padding: 0;
@@ -35,6 +25,7 @@ aside {
   aside {
     display: block !important;
     position: fixed;
+    vertical-align: middle;
     overflow: auto;
     background: darken($dark, 2%);
     color: #fff;
@@ -43,6 +34,13 @@ aside {
     top: 0;
     bottom: 0;
     left: 0;
+
+    nav {
+      display: block !important;
+      a {
+        display: inline-block !important;
+      }
+    }
   }
   article header h1 {
     font-size: 2em;
