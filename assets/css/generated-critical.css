@@ -229,11 +229,11 @@ aside nav a {
   aside nav a {
     display: inline-block !important;
   }
-  .title {
-    margin: 1em 0 0 1em;
-  }
   nav a.title {
     padding: 0.5em 0;
+  }
+  .title {
+    margin: 1em 0 0 1em;
   }
 }
 @media (prefers-color-scheme: dark) {
