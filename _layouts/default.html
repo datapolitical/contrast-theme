@@ -25,9 +25,9 @@
   {% capture sass_critical %}
   {% include_cached critical.scss %}
   {% endcapture %}
-  {% if site.dev_build_DISABLED %}
+  {% if site.show_critical_css %}
   {{ sass_critical | scssify }}
-  {% endunless %}
+  {% endif %}
   </style>
   {% if page.url == "/recipes/" or page.url == "/recipes.html" %}
   <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
