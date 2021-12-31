@@ -234,7 +234,7 @@ a:hover .icon {
   color: reduce(100);
 }
 .header {
-  display: inline-block;
+  display: flex;
   justify-content: center;
   align-content: space-between;
 }
