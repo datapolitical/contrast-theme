@@ -27,7 +27,7 @@
   {% endcapture %}
   {% if site.show_critical_css %}
   {{ sass_critical | scssify }}
-  {% endif %}
+  {% endunless %}
   </style>
   {% if page.url == "/recipes/" or page.url == "/recipes.html" %}
   <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
