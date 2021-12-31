@@ -1,0 +1,68 @@
+@import "index";
+
+@media only screen and (min-width: $desktop-width) {
+  html {
+    padding: 0;
+  }
+  body {
+    font-size: 1.06em;
+    margin: 0 0 0 14em;
+    max-width: inherit;
+    overscroll-behavior: none;
+  }
+  body > header,
+  body > footer {
+    display: none;
+  }
+  body > article {
+    margin: 0 5em;
+    padding: 2em 0;
+    max-width: 50em;
+  }
+  aside {
+    display: block !important;
+    position: fixed;
+    vertical-align: middle;
+    overflow: auto;
+    background: darken($dark, 2%);
+    color: #fff;
+    padding: 1em;
+    width: 10em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    nav {
+      display: block !important;
+      a {
+        display: inline-block !important;
+      }
+    }
+  }
+  article header h1 {
+    font-size: 2em;
+  }
+  nav {
+    margin: 0 0;
+  }
+  nav a {
+    display: block;
+    margin: 0;
+    padding: .5em 2em;
+  }
+  nav a.title {
+    padding: .5em 0em;
+  }
+  nav a:hover,
+  nav a.selected {
+    background: lighten($dark, 2%);
+    text-decoration: inherit;
+  }
+  .icon {
+    margin-right: 1.2em;
+    color: inherit !important;
+  }
+  .description {
+    margin: 2em 0;
+  }
+};
