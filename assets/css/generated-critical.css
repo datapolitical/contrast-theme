@@ -1,23 +1,4 @@
 @font-face {
-  font-family: quicksand;
-  src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
-      format("truetype supports variations"),
-    url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
-      format("truetype-variations");
-  font-weight: 100 1000;
-  font-style: normal;
-}
-@font-face {
-  font-family: raleway;
-  src: url("/assets/fonts/Raleway-VariableFont_wght.ttf")
-      format("truetype supports variations"),
-    url("/assets/fonts/Raleway-VariableFont_wght.ttf")
-      format("truetype-variations");
-  font-weight: 100 1000;
-  font-style: normal;
-  font-display: fallback;
-}
-@font-face {
   font-family: Quicksand;
   src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
       format("truetype supports variations"),
@@ -40,8 +21,7 @@
   font-size: 1.4em;
 }
 .header {
-  place-content: space-between center;
-  display: inline-block;
+  display: flex;
   place-content: space-between center;
 }
 .no-split {
@@ -58,20 +38,16 @@
   margin: 0;
 }
 body {
+  display: flex;
+  flex-direction: column;
   background: rgb(10, 10, 10);
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased;
-  display: flex;
-  flex-direction: column;
   color: rgb(255, 255, 255);
   font-family: Raleway, -apple-system, "Helvetica Neue", "Segoe UI", Roboto,
     sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
+  margin: 0;
   min-height: 100vh;
   text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
@@ -120,12 +96,12 @@ img {
   height: auto;
 }
 :not(pre) > code {
+  font-size: 0.9em;
   background: rgba(133, 133, 133, 0.15);
+  opacity: 0.7;
   border-radius: 2px;
   margin: 0 0.1em;
   padding: 0.2em 0.4em;
-  font-size: 0.9em;
-  opacity: 0.7;
 }
 div.reading_list br {
   display: none;
@@ -160,16 +136,6 @@ p.main-divider + hr {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
-aside {
-  vertical-align: middle;
-  display: block !important;
-}
-aside nav {
-  display: block !important;
-}
-aside nav a {
-  display: inline-block !important;
-}
 @media (min-width: 768px) {
   body > article {
     padding: 1em calc(40% - 17em) 0;
@@ -177,63 +143,18 @@ aside nav a {
 }
 @media only screen and (min-width: 768px) {
   .header {
-    place-content: center space-between;
     display: flex;
     place-content: center space-between;
   }
+  .title {
+    margin: 1em 0 0 1em;
+  }
   p.main-divider + hr {
-    background-color: rgba(133, 133, 133, 0.14);
     height: 2px;
     border: 0;
     margin-top: 0;
     margin-bottom: 0;
-  }
-  html {
-    padding: 0;
-  }
-  body {
-    font-size: 1.06em;
-    margin: 0 0 0 14em;
-    max-width: inherit;
-    overscroll-behavior: none;
-  }
-  body > article {
-    margin: 0 5em;
-    padding: 2em 0;
-    max-width: 50em;
-  }
-  nav {
-    margin: 0;
-  }
-  nav a {
-    display: block;
-    margin: 0;
-    padding: 0.5em 2em;
-  }
-  aside {
-    position: fixed;
-    vertical-align: middle;
-    overflow: auto;
-    background: rgb(5, 5, 5);
-    color: rgb(255, 255, 255);
-    padding: 1em;
-    width: 10em;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    display: block !important;
-  }
-  aside nav {
-    display: block !important;
-  }
-  aside nav a {
-    display: inline-block !important;
-  }
-  nav a.title {
-    padding: 0.5em 0;
-  }
-  .title {
-    margin: 1em 0 0 1em;
+    background-color: rgba(133, 133, 133, 0.14);
   }
 }
 @media (prefers-color-scheme: dark) {
