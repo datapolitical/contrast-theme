@@ -1,3 +1,10 @@
+html, body {
+    // -webkit-text-size-adjust: none;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
 body {
   background: $dark;
   color: $light;
