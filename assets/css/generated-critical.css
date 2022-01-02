@@ -1,5 +1,5 @@
 @font-face {
-  font-family: quicksand;
+  font-family: Quicksand;
   src: url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
       format("truetype supports variations"),
     url("/assets/fonts/Quicksand-VariableFont_wght.ttf")
@@ -8,7 +8,7 @@
   font-style: normal;
 }
 @font-face {
-  font-family: raleway;
+  font-family: Raleway;
   src: url("/assets/fonts/Raleway-VariableFont_wght.ttf")
       format("truetype supports variations"),
     url("/assets/fonts/Raleway-VariableFont_wght.ttf")
@@ -42,7 +42,7 @@ body {
   flex-direction: column;
   background: rgb(10, 10, 10);
   color: rgb(255, 255, 255);
-  font-family: raleway, -apple-system, "helvetica neue", "segoe ui", roboto,
+  font-family: Raleway, -apple-system, "Helvetica Neue", "Segoe UI", Roboto,
     sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -155,6 +155,50 @@ p.main-divider + hr {
     margin-top: 0;
     margin-bottom: 0;
     background-color: rgba(133, 133, 133, 0.14);
+  }
+  html {
+    padding: 0;
+  }
+  body {
+    font-size: 1.06em;
+    margin: 0 0 0 14em;
+    max-width: inherit;
+    overscroll-behavior: none;
+  }
+  body > article {
+    margin: 0 5em;
+    padding: 2em 0;
+    max-width: 50em;
+  }
+  aside {
+    position: fixed;
+    vertical-align: middle;
+    overflow: auto;
+    background: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
+    padding: 1em;
+    width: 10em;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: block !important;
+  }
+  aside nav {
+    display: block !important;
+  }
+  aside nav a {
+    display: inline-block !important;
+  }
+  nav {
+    margin: 0;
+  }
+  nav a {
+    display: block;
+    margin: 0;
+    padding: 0.5em 2em;
+  }
+  nav a.title {
+    padding: 0.5em 0;
   }
 }
 @media (prefers-color-scheme: dark) {
