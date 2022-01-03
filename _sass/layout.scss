@@ -40,6 +40,9 @@ nav {
   a {
     margin: .5em .75em;
   }
+  a.title picture img {
+    display: block;
+  }
   a.name {
     margin: 0em 0em 0em 0em;
   }
