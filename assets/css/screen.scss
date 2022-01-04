@@ -1,7 +1,4 @@
 ---
 ---
 
-@import "variables";
-@import "recipes";
-@import "pinterest";
-@import "comment-styles";
+@import "sitewide", "menu", "sidebar", "homepage", "reading-list", "post";
