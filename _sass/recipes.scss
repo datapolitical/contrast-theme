@@ -1,307 +1,109 @@
-#YUMMLY-YUM-IFRAME {
-  width: 40px;
-  height: 40px;
-}
-
-.photo {
+table {
+  display: inline-block;
   max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
+  overflow-y: scroll;
+  border-spacing: 1px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px reduce(12) inset;
 }
 
-.writeup-photo {
-  max-width: 80%;
-  @media #{$desktop} {
-    width: 50%;
-  }
-  height: auto;
-  margin-left: auto;
-  margin-right: auto;
-  display: block;
+//from recipe-list.scss
+
+main .container {
+  margin: 0;
+  max-width: 5000px;
 }
 
-.wide {
-  float: left;
-  max-width: 300px;
-  max-height: 300px;
-  width: auto;
-  height: auto;
+.text-hover {
+  font-size: 3vh;
+  color: white;
+  margin: 0px;
+}
+
+.bottom-left {
+    // position: absolute;
+	// bottom: 8px;
+	// left: 16px;
+  height: 100%;
   width: 100%;
 }
 
-.button,
-input[type="submit"] {
-  background: #fff;
-  cursor: pointer;
-  border: 1px solid #666;
-  color: #000;
-  text-decoration: none;
-  padding: 5px 10px;
-  display: inline-flex;
-  align-items: flex-end;
-  margin: 0;
-  font-size: 0.8em;
-
-  &:hover {
-    background: #000;
-    color: #fff;
-  }
-
-  &:focus {
-    outline: none;
-  }
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
+  grid-gap: 1vh;
+  align-items: stretch;
 }
 
-.button {
-  border-color: #000;
-
-  a {
-    color: #000;
-
-    &:hover {
-      color: #fff;
-    }
-  }
-}
-
-ol li + li {
-  margin: 20px 0 0 0;
-}
-
-.post {
-  h1 a {
-    color: #fff;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-  time {
-    padding: 0 0 20px 0;
-    display: block;
-  }
-  .recipe-author {
-    padding: 0;
-    margin: 0;
-    margin-bottom: -0.5em;
-    font-size: small;
-  }
-  .recipe-overview {
-    padding: 0;
-    margin: 0;
-
-    svg {
-      position: relative;
-      top: 6px;
-    }
-
-    span {
-      margin: 0 18px 0 3px;
-    }
-
-    li {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-
-      @media #{$desktop} {
-        display: inline-block;
-      }
-    }
-  }
-
-  .recipe-contents {
-    @media #{$desktop} {
-      display: flex;
-    }
-
-    ul {
-      padding: 0;
-      li {
-        list-style-type: none;
-        &:before {
-          content: "\00bb";
-          color: #59abe3;
-          padding-right: 0.5em;
-        }
-      }
-    }
-
-    ol {
-      padding: 0;
-      li {
-        counter-increment: step-counter;
-        list-style-type: none;
-        position: relative;
-        margin-left: 34px;
-
-        &:before {
-          content: counter(step-counter);
-          margin-right: 0px;
-          background-color: #59abe3;
-          color: white;
-          /* padding: 1px 7px; */
-          font-size: 0.7em;
-          position: absolute;
-          left: -34px;
-          top: 3px;
-          width: 25px;
-          text-align: center;
-        }
-      }
-    }
-    .ingredients {
-      width: 250px;
-      padding: 0 43px 0 0;
-    }
-
-    .directions {
-      @media #{$desktop} {
-        flex: 1;
-      }
-    }
-    .notes {
-      p {
-        font-size: 0.8rem;
-        strong {
-          font-size: 1rem;
-        }
-      }
-    }
-  }
-}
-
-.sharing {
-  margin: 50px 0 0 0;
-  text-align: center;
-  font-size: 0;
-
-  a {
-    text-decoration: none;
-    text-align: center;
-    position: relative;
-    width: 56px;
-    display: inline-block;
-    height: 44px;
-    line-height: 0;
-    padding: 0;
-    margin: 0;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    &:hover {
-      &:before {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        background: rgba(0, 0, 0, 0.25);
-        content: "";
-      }
-    }
-
-    svg {
-      fill: #fff;
-    }
-
-    &.email {
-      background-color: #ff9d09;
-    }
-
-    &.facebook {
-      background-color: #3b5998;
-    }
-
-    &.twitter {
-      background-color: #55acee;
-    }
-
-    &.google-plus {
-      background-color: #db4437;
-    }
-
-    &.youtube {
-      background-color: #cd201f;
-    }
-
-    &.instagram {
-      background-color: #f167f5;
-    }
-
-    &.linkedin {
-      background-color: #0077b5;
-    }
-
-    &.pinterest {
-      background-color: #c92228;
-    }
-
-    &.pinterest-icon:hover svg {
-      fill: #bd081c;
-    }
-  }
-}
-
-.cta {
-  text-align: center;
-  padding: 50px 0 0 0;
-}
-
-.rating {
-  color: #c9f227;
-}
-
-div.stars {
-  width: 200px;
-  display: inline-block;
-}
-
-label[for="comment-form-rating"] {
-  display: none;
-}
-
-.button#cancel-comment-reply-link {
-  display: none;
-}
-
-svg.comment-box {
-  display: none;
-}
-
-div#respond.comment__new {
-  display: none;
-}
-
-div.star-buttons {
+.image-container {
   float: left;
+  position: relative;
+  text-align: center;
 }
 
-input.star {
+.photo-large {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+img:not([src]):not([srcset]) {
+  visibility: hidden;
+}
+
+// input[type="radio"]
+  // position: absolute;
+  // left: -9999px;
+
+input[type="radio"] {
   display: none;
 }
-
-label.star {
-  float: right;
-  padding: 2px;
-  font-size: 20px;
-  color: #fff;
-  transition: all 0.2s;
+\:root {
+  black: #1a1a1a;
+  white: #fff;
+  green: #49b293;
 }
 
-input.star:checked ~ label.star {
-  color: #fd4;
-  transition: all 0.25s;
+ol.filters {
+  padding-inline-start: 0px;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  line-height: 0px;
+  margin-bottom: .25rem;
+}
+ol.filters li + li {
+  margin: 10px 0px 0px 0px;
 }
 
-input.star-5:checked ~ label.star {
-  color: #fe7;
-  text-shadow: 0 0 20px #952;
+.filters {
+  text-align: center;
+  margin-bottom: .5rem;
 }
 
-input.star-1:checked ~ label.star {
-  color: #f62;
+.filters * {
+  display: inline-block;
+  font-size: 4vw;
+}
+
+@media only screen and (min-width: 768px) {
+  .filters * {
+    font-size: 1.5vw;
+  }
+}
+
+.filters span {
+  padding: 0.25rem 0.25vw 0.5rem 0.25vw;
+  margin-bottom: 0.25rem;
+  line-height: 1.6rem;
+}
+
+.filters label {
+  padding: 0.25rem 0.25vw 0.25rem 0.25vw;
+  margin-bottom: 0rem;
+  border-bottom: 0.25rem transparent;
+  // border-radius: 2rem;
+  // min-width: 50px;
+  // line-height: normal;
+  // cursor: pointer;
+  transition: all 0.5s;
 }
