@@ -1,0 +1,23 @@
+.my-net-diary {
+  color: #49D6EA !important;
+}
+
+p.main-divider {
+  margin-bottom: .75rem;
+}
+p.main-divider + hr {
+  height: .025rem;
+  margin-top: -0.25rem;
+  margin-bottom: -0.25rem;
+  color: $light;
+  width: 50%;
+}
+@media only screen and (min-width: $desktop-width) {
+  p.main-divider + hr {
+    height: 2px;
+    border: 0rem;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    background-color: reduce(14);
+  }
+}

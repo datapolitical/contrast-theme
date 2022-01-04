@@ -39,11 +39,14 @@ nav {
 nav {
   a {
     margin: .5em .75em;
-  }
-  a.title picture img {
-    display: block;
-  }
-  a.name {
-    margin: 0em 0em 0em 0em;
+    .title {
+      margin: .75em .75em;
+      picture img {
+        display: block;
+      }
+    }
+    .links {
+      margin: 0em .75em;
+    }
   }
 }
