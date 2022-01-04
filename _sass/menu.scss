@@ -5,7 +5,8 @@ nav {
   margin-bottom: 0;
   display: inline-block;
   .name,
-  .header-photo {
+  .header {
+    margin-top: 1vh;
   }
 }
 nav {
@@ -18,6 +19,7 @@ nav {
       }
     }
     .links {
+      font-size: 1.75vw;
       margin: 0em .75em;
     }
   }
