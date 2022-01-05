@@ -1,8 +1,9 @@
 var branch = process.argv[2];
+var branchurl = "https://${branch}.contrast-theme.pages.dev";
 const Crittr = require("crittr");
 
 Crittr({
-  urls: ["https://${branch}.contrast-theme.pages.dev"],
+  urls: branchurl,
   device: {
     width: 600,
     height: 1000,
