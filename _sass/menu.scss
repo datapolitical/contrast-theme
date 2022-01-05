@@ -19,15 +19,15 @@ nav {
       margin: 0em .75em;
     }
   }
-  .header-photo {
-    padding-top: 1vw;
-  }
 }
 //header CSS
 .header nav {
   display: flex;
   justify-content: center;
   align-content: space-between;
+  .header-photo {
+    padding-top: 2vh;
+  }
   .header-links {
     margin: 0em;
   }
