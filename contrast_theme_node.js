@@ -3,7 +3,7 @@ var branchurl = "https://${branch}.contrast-theme.pages.dev";
 const Crittr = require("crittr");
 
 Crittr({
-  urls: branchurl,
+  urls: [branchurl],
   device: {
     width: 600,
     height: 1000,
