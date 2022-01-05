@@ -90,7 +90,7 @@ nav {
 nav a {
   margin: 0.5em 0.75em;
 }
-.header {
+.header nav {
   display: flex;
   justify-content: center;
   align-content: space-between;
@@ -101,9 +101,6 @@ nav a {
   height: 5em !important;
   border: 0.25em solid #fff !important;
   margin: 0 !important;
-}
-.header-links {
-  margin: 0;
 }
 .my-net-diary {
   color: #49d6ea !important;
