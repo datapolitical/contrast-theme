@@ -1,5 +1,4 @@
-var branch = process.argv[2];
-var branchurl = "https://${branch}.contrast-theme.pages.dev";
+var branchurl = "https://" + process.argv[2] + ".contrast-theme.pages.dev";
 const Crittr = require("crittr");
 
 Crittr({
