@@ -33,7 +33,7 @@ jobs:
           npm i crittr
           ls -a
           cat contrast_theme_node.js
-          node contrast_theme_node.js
+          node contrast_theme_node.js ${{ github.ref_name }}
           echo "Raw generated File"
           cat assets/css/generated-critical.css
           git pull --ff-only origin ${{ github.ref_name }}
