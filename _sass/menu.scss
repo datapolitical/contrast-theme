@@ -24,10 +24,13 @@ nav {
   }
 }
 //header CSS
-.header {
+.header nav {
   display: flex;
   justify-content: center;
   align-content: space-between;
+  .header-links {
+    margin: 0em;
+  }
 }
 
 .profile-photo {
@@ -36,7 +39,4 @@ nav {
   height: 5em !important;
   border: .25em solid #ffffff !important;
   margin: 0em !important;
-}
-.header-links {
-  margin: 0em;
 }
