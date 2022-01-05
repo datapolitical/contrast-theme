@@ -3,7 +3,7 @@ const Crittr = require("crittr");
 
 Crittr({
   urls: [branchurl],
-  css: '../stylesheet.css'
+  css: '../stylesheet.css',
   device: {
     width: 600,
     height: 1000,
