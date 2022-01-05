@@ -30,6 +30,7 @@ jobs:
 
       - name: getcss
         run: |
+          wget https://${{github.ref_name}}.contrast-theme.pages.dev -P ../
           npm i crittr
           ls -a
           cat contrast_theme_node.js
