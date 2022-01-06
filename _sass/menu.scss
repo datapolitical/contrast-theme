@@ -25,13 +25,14 @@ nav {
   display: flex;
   justify-content: center;
   align-content: space-between;
-  .header-photo {
-    padding-top: 2vh;
-  }
-  .header-links {
-    margin: 0em;
-  }
 }
+nav.header-photo {
+    padding-top: 2vh;
+}
+nav.header-links {
+    margin: 0em;
+}
+
 
 .profile-photo {
   border-radius: 50% !important;
