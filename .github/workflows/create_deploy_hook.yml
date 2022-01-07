@@ -16,7 +16,7 @@ jobs:
           echo $branch
           echo "::set-output name=final_branch::${branch}"
       - name: curl
-        env: 
+        env:
           BRANCH: ${{steps.vars.outputs.final_branch}}
         run: |
           echo ${{steps.vars.outputs.final_branch}}
@@ -31,7 +31,7 @@ jobs:
           gh auth login --with-token <<< ${{ secrets.SECRET_CREATION_TOKEN }}
       - name: set_variable
         id: set_var
-        env: 
+        env:
           BRANCH: ${{ steps.vars.outputs.final_branch }}
         run: |
           sudo apt-get install jq
@@ -41,7 +41,7 @@ jobs:
           echo "::set-output name=hookid::`jq ' .result.hook_id' newhook.json`"
       - name: curl_hook
         env:
-          HOOKID: ${{steps.set_var.outputs.outputhook}}
+          HOOKID: ${{steps.set_var.outputs.hookid}}
         run: |
           echo ${{ env.HOOKID }}
           curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ env.HOOKID }}"
