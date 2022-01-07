@@ -11,10 +11,12 @@ jobs:
         run: |
           echo "HOOKNAME2=CF_${{ github.ref_name^^ }}_HOOK" >> $GITHUB_ENV
           echo "HOOKNAME=CF_TESTNEWBRANCH_HOOK" >> $GITHUB_ENV
+          echo "::set-output name=outputhook2::CF_${{ github.ref_name^^ }}_HOOK"
+          echo "::set-output name=outputhook::CF_TESTNEWBRANCH_HOOK"
       - name: curl_hook
         env:
-          HOOKNAME: ${{steps.set_var.outputs.HOOKNAME}}
-          HOOKNAME2: ${{steps.set_var.outputs.HOOKNAME2}}
+          HOOKNAME: ${{steps.set_var.outputs.outputhook}}
+          HOOKNAME2: ${{steps.set_var.outputs.outputhook2}}
         run: |
-          echo ${{ secrets[env.CF_TESTNEWBRANCH_HOOK] }}
+          echo ${{ secrets[env.HOOKNAME] }}
           curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[env.HOOKNAME] }}"
