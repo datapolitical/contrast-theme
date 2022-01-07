@@ -1,4 +1,4 @@
-name: temp deploy hook
+name: delete deploy hook
 on: delete
 
 jobs:
