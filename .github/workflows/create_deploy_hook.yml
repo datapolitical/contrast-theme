@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: curl
-        run:|
+        run: |
           export rawbranch=${{ steps.set_var.outputs.branch }}
           export branch="`$rawbranch//[-]/___}`"
           curl -X POST "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/contrast-theme/deploy_hooks" \
