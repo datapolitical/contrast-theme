@@ -17,8 +17,6 @@ jobs:
         env:
           HOOKNAME: ${{steps.set_var.outputs.outputhook}}
         run: |
-          export secret=${{ secrets[env.HOOKNAME] }}
-          echo "BRANCHCHECK=$(echo $SECRET)" >> $GITHUB_ENV
           echo "::set-output name=secret::${{ secrets[env.HOOKNAME] }}"
       - name: curl_hook
         if: steps.test_var.outputs.secret
