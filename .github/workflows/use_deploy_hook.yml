@@ -16,7 +16,7 @@ jobs:
           export secret=${{ secrets[env.BRANCHFUL] }}
           echo "BRANCHCHECK=$(echo $SECRET)" >> $GITHUB_ENV
       - name: curl_hook
-        if: secrets[env.BRANCHCHECK]
+        if: env.BRAINCHECK
         env:
           HOOKNAME: ${{steps.set_var.outputs.outputhook}}
         run: |
