@@ -13,6 +13,7 @@ jobs:
           export branch="${rawbranch//[-]/___}"
           echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
       - name: curl_hook
+        if: secrets[env.HOOKNAME]
         env:
           HOOKNAME: ${{steps.set_var.outputs.outputhook}}
         run: |
