@@ -8,7 +8,8 @@ jobs:
       - name: set_variable
         id: set_var
         run: |
-          branch=${{ github.ref_name }}
+          eventref = ${{ github.event.ref }}
+          branch=${eventref##*/}
           echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
       - name: echo_hook
         env:
