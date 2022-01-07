@@ -1,0 +1,279 @@
+//Index.scss
+
+$font-size: 16px !default;
+$font-weight: 400 !default;
+$font-family: "Raleway", -apple-system, "Helvetica Neue", "Segoe UI", "Roboto", sans-serif !default;
+$heading-weight: 600 !default;
+$line-height: 1.6 !default;
+$link-color: #68f !default;
+$dark: #0a0a0a !default;
+$light: #ffffff !default;
+
+@function reduce ($percent) {
+  @return rgba(mix($dark, $light), calc($percent / 100));
+};
+
+// Breakpoints
+$tablet: "(min-width: 450px)";
+$mid-point: "(min-width: 620px)";
+$desktop: "(min-width: 768px)";
+$desktop-width: 768px;
+
+$light-grey: #999;
+
+
+// Fonts.scss
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url('/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype supports variations'), url('/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 1000;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Raleway';
+  src: url('/assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype supports variations'), url('/assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
+  font-weight: 100 1000;
+  font-style: normal;
+  font-display: fallback;
+};
+
+// Start of basic.scss
+html, body {
+    // -webkit-text-size-adjust: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: none;
+}
+
+body {
+  background: $dark;
+  color: $light;
+  font-family: $font-family;
+  font-weight: $font-weight;
+  font-size: $font-size;
+  line-height: $line-height;
+  margin: 0;
+  min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $heading-weight;
+  margin-top: .3em;
+  margin-bottom: .3em;
+}
+
+b,
+strong,
+th {
+  font-weight: $font-weight + 200;
+}
+p {
+  text-align: left;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
+}
+a {
+  color: $link-color;
+  text-decoration: inherit;
+  &:hover {
+    text-decoration: underline;
+  }
+  menu:hover {
+    text-decoration: none;
+  }
+}
+
+header a,
+footer a,
+aside a {
+  color: inherit;
+}
+header time {
+  color: reduce(100);
+}
+hr {
+  border: 1px solid reduce(30);
+  margin: 2em 0;
+}
+article:not(:last-of-type) {
+  border-bottom: 1px solid reduce(14);
+}
+blockquote {
+  background: reduce(6);
+  border-left: 3px solid reduce(90);
+  padding: 1px 1.5em;
+  opacity: .75;
+}
+blockquote,
+figure {
+  margin: 1em 0;
+}
+img {
+  margin: .5em 0;
+  border-radius: 2px;
+  max-width: 100%;
+  height: auto;
+}
+li {
+  margin: .25em 0;
+}
+
+th,
+td {
+  padding: .5em 1em;
+  box-shadow: 0 0 0 1px reduce(12);
+}
+tr:hover,
+tr:nth-child(odd) td {
+  background: reduce(4);
+}
+
+body > header {
+  box-shadow: 0 0 .6em rgba($dark, 0.04);
+  border-bottom: 1px solid reduce(14);
+}
+body > footer {
+  box-shadow: 0 0 .6em rgba($dark, 0.04) inset;
+  border-top: 1px solid reduce(14);
+  opacity: .9;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background: $dark;
+    color: $light;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  body > header,
+  body > article,
+  body > footer {
+    padding: 1.75em calc(40% - 17em);
+    padding-top: 1em;
+    padding-bottom: 0em;
+  }
+}
+
+//Start of Elements.scss
+
+ol li + li {
+  margin: 20px 0 0 0;
+}
+
+
+//Start of classes.scss
+.title {
+  font-size: 1.25em;
+}
+
+.more {
+  margin: 2em 0 1em;
+}
+.more a {
+  border-radius: 2px;
+  border: 1.5px solid $link-color;
+  padding: .4em .8em;
+  transition: .2s background, .2s color;
+}
+.more a:hover {
+  color: #fff;
+  background: $link-color;
+  text-decoration: inherit;
+}
+.archive {
+  font-size: 1.1em;
+}
+.archive time {
+  display: inline-block;
+  min-width: 10ch;
+  min-height: 1.75em;
+  margin: 0 .2em;
+}
+.icon {
+  height: 1.5em;
+  width: 1.5em;
+  fill: currentColor;
+  transition: .2s color;
+  vertical-align: middle;
+  margin-bottom: .15em;
+}
+a:hover .icon {
+  color: reduce(100);
+}
+.full table {
+  display: table;
+  width: 100%;
+}
+
+.title {
+  font-size: 1.4em;
+}
+.archive {
+  font-size: 1.1em;
+}
+.archive time {
+  display: inline-block;
+  min-width: 10ch;
+  margin: 0 .2em;
+}
+.archive li {
+  list-style: none;
+}
+.icon {
+  height: 1.5em;
+  width: 1.5em;
+  fill: currentColor;
+  transition: .2s color;
+  vertical-align: middle;
+  margin-bottom: .15em;
+}
+a:hover .icon {
+  color: reduce(100);
+}
+
+.no-split {
+  display: inline-block;
+}
+
+//from layout.scss
+body {
+  display: flex;
+  flex-direction: column;
+}
+article {
+  flex-grow: 1;
+}
+body > header,
+body > footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+body > header,
+body > article,
+body > footer {
+  padding: 1.5rem;
+  padding-bottom: 0.75rem;
+  padding-top: 0.75rem;
+}
+article header {
+  margin-bottom: 1.5em;
+}
+article header h1 {
+  font-size: 1.7em;
+  margin: 0 0 .1em;
+}

@@ -1,7 +1,9 @@
+var branchurl = "https://" + process.argv[2] + ".contrast-theme.pages.dev";
 const Crittr = require("crittr");
 
 Crittr({
-  urls: ["https://theme.chrisfnicholson.com"],
+  urls: [branchurl],
+  css: './stylesheet.css',
   device: {
     width: 600,
     height: 1000,

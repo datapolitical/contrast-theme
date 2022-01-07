@@ -1,0 +1,43 @@
+nav {
+  margin-left: -1.2em;
+  margin-right: -1.2em;
+  margin-top: 0;
+  margin-bottom: 0;
+  display: inline-block;
+}
+nav {
+  a {
+    margin: .5em .75em;
+    .title {
+      margin: .75em .75em;
+      picture img {
+        display: block;
+      }
+    }
+    .links {
+      font-size: 1.75vw;
+      margin: 0em .75em;
+    }
+  }
+}
+//header CSS
+.header nav {
+  display: flex;
+  justify-content: center;
+  align-content: space-between;
+}
+nav.header-photo {
+    padding-top: 2vh;
+}
+nav.header-links {
+    margin: 0em;
+}
+
+
+.profile-photo {
+  border-radius: 50% !important;
+  width: 5em !important;
+  height: 5em !important;
+  border: .25em solid #ffffff !important;
+  margin: 0em !important;
+}

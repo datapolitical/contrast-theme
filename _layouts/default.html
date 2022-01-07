@@ -19,7 +19,7 @@
   /______wwww  wwww  __/
 <![endif]-->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-<!-- {% project_version %} -->
+<!-- {% project_version_theme %} -->
 <head>
   <style>
   {% capture sass_critical %}
@@ -34,7 +34,7 @@
   {% include meta-image.html %}
   {% elsif page.url contains "recipes" %}
   {% assign myrecipe = site.data.recipes | find:"name", page.title %}
-  <meta property="og:image" content="{{ site.url }}/assets/{{myrecipe.image_url}}" />
+  <meta property="og:image" content="/assets/{{myrecipe.image_url}}" />
   {% endif %}
   <meta name="pageurl" content="{{page.url}}">
   <meta charset="{{ site.encoding }}">
@@ -44,8 +44,8 @@
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
   <link rel="stylesheet" href="{{ "/assets/css/stylesheet.css" | relative_url }}">
-  <link rel="manifest" href="{{site.url}}/manifest.json">
-  <link rel="apple-touch-icon" href="{{site.url}}/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   {% seo %}
 </head>

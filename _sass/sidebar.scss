@@ -1,0 +1,88 @@
+@media only screen and (min-width: $desktop-width) {
+  .header nav {
+    display: flex;
+    align-content: center;
+    justify-content: space-between;
+  }
+  .profile-photo {
+    border-radius: 50% !important;
+    width: 9vw !important;
+    height: 9vw !important;
+    border: .5vw solid #ffffff !important;
+    margin: 0em !important;
+  }
+}
+@media only screen and (min-width: $desktop-width) {
+  html {
+    padding: 0;
+    padding-top: .25em;
+  }
+  body {
+    font-size: 1.5vw;
+    margin: 0 0 0 14vw;
+    max-width: inherit;
+    overscroll-behavior: none;
+  }
+  body > header,
+  body > footer {
+    display: none;
+  }
+  body > article {
+    margin: 0 5em;
+    padding: 2em 0;
+    max-width: 50em;
+  }
+  aside {
+    display: block !important;
+    position: fixed;
+    vertical-align: middle;
+    overflow: auto;
+    background: darken($dark, 2%);
+    color: #fff;
+    padding: 2em;
+    width: 12vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    nav {
+      display: block !important;
+      a {
+        display: inline-block !important;
+      }
+    }
+  }
+  article header h1 {
+    font-size: 2em;
+  }
+  nav {
+    margin: 0 0;
+    .header-photo {
+      text-align: center;
+    }
+    .header-links {
+      text-align: left;
+    }
+  }
+  nav a {
+    display: block;
+    margin: 0;
+    padding: .5em 1vw;
+  }
+  nav a.title {
+    padding: 0em 0em;
+    margin-left: 0em;
+  }
+  nav a:hover,
+  nav a.selected {
+    background: lighten($dark, 2%);
+    text-decoration: inherit;
+  }
+  .icon {
+    margin-right: 1.2em;
+    color: inherit !important;
+  }
+  .description {
+    margin: 2em 0;
+  }
+};
