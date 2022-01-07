@@ -8,11 +8,15 @@ jobs:
       - name: curl
         run: |
           export rawbranch=${{ github.ref_name }}
-          export branch="${rawbranch//[-]/___}"
+          echo $rawbranch
+          export branchstep="${rawbranch//[-]/___}"
+          echo $branchstep
+          export branch="${branch^^}"
+          echo $branch
           curl -X POST "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/contrast-theme/deploy_hooks" \
           -H "X-Auth-Email: ${{ secrets.EMAIL }}" \
           -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
-          -d '{"branch": "${{github.ref_name}}", "name": "github-${branch^^}"}' \
+          -d '{"branch": "${{github.ref_name}}", "name": "github-${branch}"}' \
           -o newhook.json
       - name: gh_login
         run: |
@@ -22,8 +26,8 @@ jobs:
         run: |
           sudo apt-get install jq
           cat ./newhook.json
-          gh secret set --repo "datapolitical/contrast-theme" "CF_${branch^^}_HOOK" --body "`jq ' .result.hook_id' newhook.json`"
-          echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
+          gh secret set --repo "datapolitical/contrast-theme" "CF_${branch}_HOOK" --body "`jq ' .result.hook_id' newhook.json`"
+          echo "::set-output name=outputhook::CF_${branch}_HOOK"
       - name: curl_hook
         env:
           HOOKNAME: ${{steps.set_var.outputs.outputhook}}
