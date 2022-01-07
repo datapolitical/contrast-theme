@@ -43,16 +43,6 @@ jobs:
           cat assets/css/generated-critical.css
           git pull --ff-only origin ${{ github.ref_name }}
 
-      - name: Prettify code
-        if: steps.get_data.outputs.status != 'Nothing to update' && ${{ !env.ACT }}
-        uses: datapolitical/prettier_action@master
-        with:
-        # This part is also where you can pass other options. For example:
-          file_pattern: "assets/css/generated-critical.css"
-          dry: true
-          prettier_options: "--check --write assets/css/generated-critical.css"
-        # git add . goes here
-
       - name: amend and commit
         run: |
           echo "Committed Generated File"
