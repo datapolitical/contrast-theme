@@ -16,7 +16,8 @@ jobs:
         id: set_var
         env:
           BRANCH: ${{ steps.set_step1.outputs.branch }}
-        echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
+        run: |
+          echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
       - name: curl_hook
         env:
           HOOKNAME: ${{steps.set_var.outputs.outputhook}}
