@@ -12,8 +12,8 @@ jobs:
           export rawbranch=${{ github.ref_name }}
           export branch="${rawbranch//[-]/___}"
           echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
+          echo secrets[${OUTPUTHOOK}]
       - name: curl_hook
-        if: ${{secrets[env.HOOKNAME]}}
         env:
           HOOKNAME: ${{steps.set_var.outputs.outputhook}}
         run: |
