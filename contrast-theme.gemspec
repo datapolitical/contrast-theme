@@ -29,6 +29,6 @@ Gem::Specification.new do |spec|
   spec.add_runtime_dependency 'jekyll_version_plugin'
 
   spec.add_development_dependency "jekyll", "~> 3.3"
-  spec.add_dependency "bundler", ">= 2.2.33"
+  spec.add_development_dependency "bundler", "~> 1.12"
 
 end
