@@ -9,7 +9,8 @@ jobs:
       - name: set_variable
         id: set_var
         run: |
-          branch=${{ github.ref_name }}
+          rawbranch=${{ github.ref_name }}
+          branch=${rawbranch//[-]/___}
           echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
       - name: curl_hook
         env:
