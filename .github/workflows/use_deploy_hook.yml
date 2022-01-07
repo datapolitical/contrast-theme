@@ -7,10 +7,15 @@ jobs:
     if: "!contains(github.event.commits[0].message, '[no-ci]')"
     steps:
       - name: set_variable
-        id: set_var
+        id: set_step1
+        env:
+          RAWBRANCH: {{ github.ref_name }}
         run: |
-          rawbranch=${{ github.ref_name }}
-          branch=${rawbranch//[-]/___}
+          echo "::set-output name=branch::${rawbranch//[-]/___}"
+      - name: set_var
+        id: set_var
+        env:
+          BRANCH: ${{ steps.set_step1.outputs.branch }}
           echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
       - name: curl_hook
         env:

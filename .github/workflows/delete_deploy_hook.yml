@@ -5,10 +5,18 @@ jobs:
   delete_deploy_hook:
     runs-on: ubuntu-latest
     steps:
+    
+      - name: set_step1
+        env:
+          RAWBRANCH: ${{github.ref_name}}
+        run: |
+          echo "::set-output name=branch::${rawbranch//[-]/___}"
       - name: set_variable
         id: set_var
+        env:
+          BRANCH : ${{ steps.set_step1.outputs.branch }}
+          EVENTREF: ${{ github.event.ref }}
         run: |
-          eventref=${{ github.event.ref }}
           rawbranch=${eventref##*/}
           branch=${rawbranch//[-]/___}
           echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
