@@ -13,4 +13,4 @@ jobs:
           echo "HOOKNAME=CF_TestNewBranch_HOOK" >> $GITHUB_ENV
       - name: curl_hook
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[steps.set_var.outputs.hookname] }}
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[steps.set_var.outputs.hookname] }}"
