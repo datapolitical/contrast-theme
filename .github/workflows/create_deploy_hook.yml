@@ -8,7 +8,7 @@ jobs:
       - name: curl
         run: |
           export rawbranch=${{ github.ref_name }}
-          export branch="`$rawbranch//[-]/___}`"
+          export branch="${rawbranch//[-]/___}"
           curl -X POST "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/contrast-theme/deploy_hooks" \
           -H "X-Auth-Email: ${{ secrets.EMAIL }}" \
           -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_TOKEN }}" \
