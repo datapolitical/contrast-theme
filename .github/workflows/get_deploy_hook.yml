@@ -1,5 +1,5 @@
 name: test deploy hook
-on: push
+on: workflow_dispatch
 
 jobs:
   test_deploy_hook:
