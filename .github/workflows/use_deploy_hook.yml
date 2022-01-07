@@ -13,7 +13,8 @@ jobs:
           export branch="${rawbranch//[-]/___}"
           echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
           export branchful="${branch^^}"
-          echo "BRANCHCHECK=$(echo $BRANCHFUL)" >> $GITHUB_ENV
+          export secret=${{ secrets[env.BRANCHFUL] }}
+          echo "BRANCHCHECK=$(echo $SECRET)" >> $GITHUB_ENV
       - name: curl_hook
         if: secrets[env.BRANCHCHECK]
         env:
