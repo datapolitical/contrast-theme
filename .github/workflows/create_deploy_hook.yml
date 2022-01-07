@@ -38,9 +38,10 @@ jobs:
           cat ./newhook.json
           gh secret set --repo "datapolitical/contrast-theme" "CF_${{env.BRANCH}}_HOOK" --body "`jq ' .result.hook_id' newhook.json`"
           echo "::set-output name=outputhook::CF_${{env.BRANCH}}_HOOK"
+          echo "::set-output name=hookid::`jq ' .result.hook_id' newhook.json`"
       - name: curl_hook
         env:
-          HOOKNAME: ${{steps.set_var.outputs.outputhook}}
+          HOOKID: ${{steps.set_var.outputs.outputhook}}
         run: |
-          echo ${{ secrets[env.HOOKNAME] }}
-          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[env.HOOKNAME] }}"
+          echo ${{ env.HOOKID }}
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ env.HOOKID }}"
