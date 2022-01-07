@@ -1,5 +1,5 @@
 name: temp deploy hook
-on: create
+on: push
 
 jobs:
   create_deploy_hook:
