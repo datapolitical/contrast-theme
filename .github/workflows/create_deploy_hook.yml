@@ -11,7 +11,7 @@ jobs:
           echo $rawbranch
           export branchstep="${rawbranch//[-]/___}"
           echo $branchstep
-          export branch="${branch^^}"
+          export branch="${branchstep^^}"
           echo "set-output name=branch::${branch}"
       - name: curl
         run: |
