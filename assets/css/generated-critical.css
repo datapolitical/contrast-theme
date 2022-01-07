@@ -21,7 +21,6 @@ body,
 html {
   padding: 0;
   margin: 0;
-  width: 100%;
   overflow-x: hidden;
   -webkit-text-size-adjust: none;
 }
@@ -41,6 +40,8 @@ body {
   display: flex;
   flex-direction: column;
 }
+h1,
+h2,
 h3 {
   font-weight: 600;
   margin-top: 0.3em;
@@ -51,123 +52,7 @@ p {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
 }
-a {
-  color: #68f;
-  text-decoration: inherit;
-}
-aside a {
-  color: inherit;
-}
-hr {
-  border: 1px solid rgba(133, 133, 133, 0.3);
-  margin: 2em 0;
-}
-img {
-  margin: 0.5em 0;
-  border-radius: 2px;
-  max-width: 100%;
-  height: auto;
-}
-.title {
-  font-size: 1.4em;
-}
-.no-split {
-  display: inline-block;
-}
-article {
-  flex-grow: 1;
-}
-body > article {
-  padding: 0.75rem 1.5rem;
-}
-nav {
-  margin-left: -1.2em;
-  margin-right: -1.2em;
-  margin-top: 0;
-  margin-bottom: 0;
-  display: inline-block;
-}
-nav a {
-  margin: 0.5em 0.75em;
-}
-.header nav {
-  display: flex;
-  justify-content: center;
-  align-content: space-between;
-}
-nav.header-photo {
-  padding-top: 2vh;
-}
-nav.header-links {
-  margin: 0;
-}
-.profile-photo {
-  border-radius: 50% !important;
-  width: 5em !important;
-  height: 5em !important;
-  border: 0.25em solid #fff !important;
-  margin: 0 !important;
-}
-.my-net-diary {
-  color: #49d6ea !important;
-}
-p.main-divider {
-  margin-bottom: 0.75rem;
-}
-p.main-divider + hr {
-  height: 0.025rem;
-  margin-top: -0.25rem;
-  margin-bottom: -0.25rem;
-  color: #fff;
-  width: 50%;
-}
-div.reading_list {
-  text-color: #fff;
-}
-div.reading_list br {
-  display: none;
-}
-div.reading_list .title {
-  font-size: 0.9em;
-  max-width: 20em;
-  overflow: wrap;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-}
-div.reading_list .title a {
-  color: #29b6f6;
-}
-div.reading_list .domain {
-  max-width: 19em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 0.8em;
-}
-.recently-read {
-  margin-top: 0.75rem;
-  margin-bottom: 0.75rem;
-}
-@media (min-width: 768px) {
-  body > article {
-    padding: 1.75em calc(40% - 17em);
-    padding-top: 1em;
-    padding-bottom: 0;
-  }
-}
 @media only screen and (min-width: 768px) {
-  .header {
-    display: flex;
-    align-content: center;
-    justify-content: space-between;
-  }
-  .profile-photo {
-    border-radius: 50% !important;
-    width: 9vw !important;
-    height: 9vw !important;
-    border: 0.5vw solid #fff !important;
-    margin: 0 !important;
-  }
   html {
     padding: 0.25em 0 0;
   }
@@ -175,50 +60,7 @@ div.reading_list .domain {
     font-size: 1.5vw;
     margin: 0 0 0 14vw;
     max-width: inherit;
-    overscroll-behavior: none;
-  }
-  body > article {
-    margin: 0 5em;
-    padding: 2em 0;
-    max-width: 50em;
-  }
-  aside {
-    display: block !important;
-    position: fixed;
-    vertical-align: middle;
-    overflow: auto;
-    background: #050505;
-    color: #fff;
-    padding: 2em;
-    width: 12vw;
-    top: 0;
-    bottom: 0;
-    left: 0;
-  }
-  aside nav {
-    display: block !important;
-  }
-  aside nav a {
-    display: inline-block !important;
-  }
-  nav {
-    margin: 0;
-  }
-  nav a {
-    display: block;
-    margin: 0;
-    padding: 0.5em 1vw;
-  }
-  nav a.title {
-    padding: 0;
-    margin-left: 0;
-  }
-  p.main-divider + hr {
-    height: 2px;
-    border: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    background-color: rgba(133, 133, 133, 0.14);
+    overscroll-behavior-x: none;
   }
 }
 @media (prefers-color-scheme: dark) {
