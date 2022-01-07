@@ -6,6 +6,11 @@ source ~/.rvm/scripts/rvm
 rvm default
 git branch master
 git checkout master
+cat _headers > assets/css/test-headers.txt
+echo -n "style-src " >> assets/css/test-headers.txt
+inline_hash=`echo `cat assets/css/generated-critical.css` | openssl dgst -binary -sha256 | base64 `
+echo -n "'$inline_hash'" >> assets/css/test-headers.txt
+echo -n ";" >> assets/css/test-headers.txt
 cd ..
 git clone https://github.com/datapolitical/chrisfnicholson
 cd chrisfnicholson
