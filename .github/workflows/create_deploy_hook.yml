@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: vars
+        id: vars
         run: |
           export rawbranch=${{ github.ref_name }}
           echo $rawbranch
