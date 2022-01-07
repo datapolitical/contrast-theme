@@ -12,7 +12,8 @@ jobs:
           export branchstep="${rawbranch//[-]/___}"
           echo $branchstep
           export branch="${branchstep^^}"
-          echo "set-output name=branch::${branch}"
+          echo $branch
+          echo "::set-output name=branch::${branch}"
       - name: curl
         env: 
           BRANCH: ${{ steps.vars.outputs.branch }}
