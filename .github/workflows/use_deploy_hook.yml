@@ -4,7 +4,7 @@ on: push
 jobs:
   test_deploy_hook:
     runs-on: ubuntu-latest
-    if: "!contains(github.event.commits[0].message, '[no-ci]')"
+    if: "!contains(github.event.commits[0].message, '[no-ci]')" && github.event_name != "create"
     steps:
       - name: set_variable
         id: set_var
