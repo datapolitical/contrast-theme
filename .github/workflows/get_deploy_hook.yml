@@ -9,8 +9,8 @@ jobs:
       - name: set_variable
         id: set_var
         run: |
-          branch = ${{ github.ref_name }}
-          echo "HOOKNAME2=CF_${{ github.ref_name^^ }}_HOOK" >> $GITHUB_ENV
+          branch=${{ github.ref_name }}
+          echo "HOOKNAME2=CF_${branch^^}_HOOK" >> $GITHUB_ENV
           echo "HOOKNAME=CF_TESTNEWBRANCH_HOOK" >> $GITHUB_ENV
           echo "::set-output name=outputhook2::CF_${branch^^}_HOOK"
           echo "::set-output name=outputhook::CF_TESTNEWBRANCH_HOOK"
