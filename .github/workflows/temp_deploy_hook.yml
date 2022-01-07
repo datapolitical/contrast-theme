@@ -1,9 +1,10 @@
 name: temp deploy hook
-on: push
+on: workflow_dispatch
 
 jobs:
   create_deploy_hook:
     runs-on: ubuntu-latest
+    if: !contains(github.event.commits[0].message,'[no-ci]')
     steps:
       - name: Set outputs
         id: vars

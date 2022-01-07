@@ -1,19 +1,16 @@
-name: test deploy hook
-on: workflow_dispatch
+name: use deploy hook
+on: push
 
 jobs:
   test_deploy_hook:
     runs-on: ubuntu-latest
+    if: !contains(github.event.commits[0].message,'[no-ci]')
     steps:
       - name: set_variable
         id: set_var
         run: |
           # echo "HOOKNAME2=CF_${{ github.ref_name }}_HOOK" >> $GITHUB_ENV
           echo "HOOKNAME=CF_TEST22_HOOK" >> $GITHUB_ENV
-      - name: demo
-        run: |
-          echo "${{ env.HOOKNAME }}"
-          echo "${{ secrets[env.HOOKNAME] }}"
-      - name: test
+      - name: curl_hook
         run: |
           curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[env.HOOKNAME] }}"
