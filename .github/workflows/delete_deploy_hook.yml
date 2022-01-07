@@ -1,0 +1,24 @@
+name: temp deploy hook
+on: delete
+
+jobs:
+  delete_deploy_hook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set_variable
+        id: set_var
+        run: |
+          branch=${{ github.ref_name }}
+          echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
+      - name: echo_hook
+        env:
+          HOOKID: ${{steps.set_var.outputs.outputhook}}
+        run: |
+          echo ${{ secrets[env.HOOKID] }}
+      - name: delete
+        env:
+          HOOKID: ${{steps.set_var.outputs.outputhook}}
+        run: |
+          curl -X DELETE "https://api.cloudflare.com/client/v4/accounts/${{ secrets.CLOUDFLARE_ACCOUNT_ID }}/pages/projects/contrast-theme/deploy_hooks/${{ secrets[env.HOOKID] }}" \
+          -H "X-Auth-Email: ${{ secrets.EMAIL }}" \
+          -H "X-Auth-Key: ${{ secrets.CLOUDFLARE_API_TOKEN }}"
