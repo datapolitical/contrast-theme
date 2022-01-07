@@ -23,8 +23,10 @@ jobs:
           sudo apt-get install jq
           cat ./newhook.json
           gh secret set --repo "datapolitical/contrast-theme" "CF_${branch}_HOOK" --body "`jq ' .result.hook_id' newhook.json`"
-          echo "hookname=secrets.CF_${branch}_HOOK" >> $GITHUB_ENV
-          echo ${{ secrets[format('{0}', env.HOOKNAME)] }}
-      - name: test
+          echo "::set-output name=outputhook::CF_${branch^^}_HOOK"
+      - name: curl_hook
+        env:
+          HOOKNAME: ${{steps.set_var.outputs.outputhook}}
         run: |
-          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[steps.set_var.outputs.hookname] }}"
+          echo ${{ secrets[env.HOOKNAME] }}
+          curl -X POST "https://api.cloudflare.com/client/v4/pages/webhooks/deploy_hooks/${{ secrets[env.HOOKNAME] }}"
