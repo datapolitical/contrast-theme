@@ -6,6 +6,7 @@ source ~/.rvm/scripts/rvm
 rvm default
 git branch master
 git checkout master
+pwd
 echo "/*" > _headers
 echo "Content-Security-Policy-Report-Only: default-src 'none'; " >> _headers
 # echo -n "style-src " >> _headers
@@ -19,4 +20,4 @@ bundle config set local.contrast-theme $HOME/repo
 bundle install --verbose
 bundle exec jekyll build --config _config.yml,_config_dev.yml
 cp -r gh-pages $HOME/repo/gh-pages
-cp $HOME/_headers $HOME/gh-pages/
+cp $HOME/repo/_headers $HOME/repo/gh-pages/
