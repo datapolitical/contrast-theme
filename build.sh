@@ -6,11 +6,12 @@ source ~/.rvm/scripts/rvm
 rvm default
 git branch master
 git checkout master
-echo -n "/*\nContent-Security-Policy-Report-Only: default-src 'none'; " > _headers
-echo -n "style-src " >> _headers
-inline_hash=$(echo `cat assets/css/generated-critical.css` | openssl dgst -binary -sha256 | base64)
-echo -n "'$inline_hash'" >> _headers
-echo -n ";" >> _headers
+echo "/*" > _headers
+echo "Content-Security-Policy-Report-Only: default-src 'none'; " >> _headers
+# echo -n "style-src " >> _headers
+# inline_hash=$(echo `cat assets/css/generated-critical.css` | openssl dgst -binary -sha256 | base64)
+# echo -n "'$inline_hash'" >> _headers
+# echo -n ";" >> _headers
 cd ..
 git clone https://github.com/datapolitical/chrisfnicholson
 cd chrisfnicholson
