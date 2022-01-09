@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <!--[if RABBIT]>
-{% project_version commit short %}
+site: {% project_version commit short %}
+theme: {% project_version_theme %}
        /\      |\
       |  \    / |
       |   \  |  /
@@ -19,7 +20,6 @@
   /______wwww  wwww  __/
 <![endif]-->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
-<!-- {% project_version_theme %} -->
 <head>
   <style>{% capture sass_critical %}{% include critical.scss %}{% endcapture %}{% if site.show_critical_css %}{{ sass_critical | scssify }}{% endif %}</style>
   {% if page.url == "/recipes/" or page.url == "/recipes.html" %}
