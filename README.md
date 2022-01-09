@@ -4,7 +4,9 @@ permalink: "/about/"
 layout: page
 ---
 
-This is my fork of the theme. Many changes have been made and I need to update this page to credit the people.
+Friendly is a theme for my personal website at https://www.chrisfnicholson.com. It's kept separate from the actual website code so that the main repository can focus entirely on content updates. It also makes re-using the code a lot easier because this repo is designed to be forked.
+
+This theme is a fork of [Contrast](https://github.com/niklasbuschmann/contrast), by Niklas Buschmann. I'm very grateful to him for the wonderful codebase that formed the foundation of this site.
 
 ## Installation
 
@@ -25,11 +27,13 @@ Just fork this [repository](https://github.com/niklasbuschmann/contrast) and adj
 
 ## Based on
 
+
+- [Contrast](https://github.com/niklasbuschmann/contrast)
+- [Shane Starcher's recipe page](https://www.github.com/sstarcher/sstarcher.github.io)
 - [Hyde](https://github.com/poole/hyde)
 - [Minima](https://github.com/jekyll/minima)
 - [Lagrange](https://github.com/LeNPaul/Lagrange)
 - [Font Awesome](http://fontawesome.io/)
-- [KaTeX](https://katex.org/)
 - [Pygments](https://github.com/richleland/pygments-css)
 
 ## Installation (jekyll-remote-theme method)
@@ -37,13 +41,13 @@ Just fork this [repository](https://github.com/niklasbuschmann/contrast) and adj
 You can use this theme with the `jekyll-remote-theme` plugin. Just create an empty repo, copy over the `index.html` file and add this to your `_config.yml`:
 
 ```yaml
-remote_theme: niklasbuschmann/contrast@v2.11
+remote_theme: datapolitical/friendly@v3.0.30
 
 plugins:
   - jekyll-remote-theme
 ```
 
-Note: to enable icons you also need to copy over the `_data` folder.
+The recipes, drinks, crosswords, and health modules are all optional and require additional information in the _data folder to function properly.
 
 ## Config
 
@@ -58,11 +62,6 @@ lang: "en"
 excerpt_separator: "\n\n\n"
 date_format: "%B %d, %Y"
 
-# Layout
-
-show_excerpts: true # show article excerpts on the home page
-show_frame: true # adds a gray frame to the site
-show_sidebar: false # show a sidebar instead of the usual header
 
 # Menu
 
@@ -91,22 +90,14 @@ plugins:
   - jekyll-feed
 ```
 
-## MathJax
-
-Contrast comes preinstalled with a leightweight alternative to MathJax called [KaTeX](https://katex.org/). To display equations in a post simply set `mathjax: true` in the article's front matter.
-
 ## License
 
 [public domain](http://unlicense.org/)
 
-## Screenshots
+## Screenshots - contrast
 
 ![screenshot](https://user-images.githubusercontent.com/4943215/109431850-cd711780-7a08-11eb-8601-2763f2ee6bb4.png)
 
 ![screenshot](https://user-images.githubusercontent.com/4943215/109431832-b6cac080-7a08-11eb-9c5e-a058680c23a1.png)
 
 ![screenshot](https://user-images.githubusercontent.com/4943215/73125194-5f0b8b80-3fa4-11ea-805c-8387187503ad.png)
-
-m19
-
-echo `cat assets/css/generated-critical.css` | openssl dgst -binary -sha256 | base64
