@@ -150,7 +150,7 @@ layout: page
         <li>{{ item | markdownify }}</li>
         {% endif %} {% endfor %}
       </ol>
-      {% if page.notes == "" %}
+      {% if page.notes != "" %}
       <div class="notes">
         <h2>Notes</h2>
         {{ page.notes | markdownify }}
