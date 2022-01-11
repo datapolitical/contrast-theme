@@ -75,6 +75,10 @@ ol.filters li + li {
   margin: 10px 0px 0px 0px;
 }
 
+ol.filters li label {
+  cursor: pointer;
+}
+
 .filters {
   text-align: center;
   margin-bottom: .5rem;
