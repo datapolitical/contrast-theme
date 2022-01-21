@@ -38,7 +38,7 @@ layout: page
   <a
     class="image-container"
     data-category="{{ recipeCategories }}"
-    href="{{ recipe.name | datapage_url:'recipes' }}"
+    href="/{{ recipe.name | datapage_url:'recipes' }}"
   >
     {%if forloop.index < 2 %} {% picture lazy {{ recipe.image_url }} 1:1 --alt
     {{ recipe.name }} %} {% else %} {% picture lazy {{ recipe.image_url }} 1:1

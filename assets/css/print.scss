@@ -20,7 +20,7 @@ body {
 .sharing,
 footer,
 .recipe-body,
-nav,
+nav.header-links,
 img,
 time,
 .take-me,
@@ -28,9 +28,14 @@ time,
   display: none;
 }
 
+div.photo {
+  height: 20em;
+}
+
 .recipe-overview {
   padding: 0;
   margin: 0 0 30px 0;
+  page-break-before: always;
 
   svg {
     position: relative;
