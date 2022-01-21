@@ -116,7 +116,7 @@ layout: page
       {% endif %}
     </li>
   </ul>
-  <ul class="recipe-overview">
+  <ul class="recipe-nutrition">
     {% assign myvariable = page.servings | split: " " %} {% assign finished =
     false %} {% for item in myvariable %} {% assign isnum = item | times: 1 %}
     {% if isnum > 0 and finished == false %} {% assign total_servings = item |
