@@ -1,12 +1,3 @@
-table {
-  display: inline-block;
-  max-width: 100%;
-  overflow-y: scroll;
-  border-spacing: 1px;
-  border-radius: 2px;
-  box-shadow: 0 0 0 1px reduce(12) inset;
-}
-
 //from recipe-list.scss
 
 main .container {
@@ -31,7 +22,7 @@ main .container {
 .image-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
-  grid-gap: 1vh;
+  grid-gap: 1vw;
   align-items: stretch;
 }
 
@@ -45,6 +36,8 @@ main .container {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  border-radius: 10px;
+
 }
 
 img:not([src]):not([srcset]) {
@@ -91,7 +84,7 @@ ol.filters li label {
 
 @media only screen and (min-width: 768px) {
   .filters * {
-    font-size: 1.5vw;
+    font-size: 2vw;
   }
 }
 
