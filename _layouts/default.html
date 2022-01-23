@@ -21,16 +21,8 @@ theme: {% project_version_theme %}
 <![endif]-->
 <html lang="{{ page.lang | default: site.lang | default: "en" }}">
 <head>
-  <style>{% capture sass_critical %}{% include critical.scss %}{% endcapture %}{% if site.show_critical_css %}{{ sass_critical | scssify }}{% endif %}</style>
-  {% if page.url == "/recipes/" or page.url == "/recipes.html" %}
-  <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
-  {% include meta-image.html %}
-  {% elsif page.url contains "recipes" %}
-  {% assign myrecipe = site.data.recipes | find:"name", page.title %}
-  <meta property="og:image" content="/assets/{{myrecipe.image_url}}" />
-  {% endif %}
-  <meta name="pageurl" content="{{page.url}}">
   <meta charset="{{ site.encoding }}">
+  <meta name="pageurl" content="{{page.url}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#1C1D22"/>
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
@@ -39,7 +31,14 @@ theme: {% project_version_theme %}
   <link rel="stylesheet" href="{{ "/assets/css/stylesheet.css" | relative_url }}">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
+  <style>{% capture sass_critical %}{% include critical.scss %}{% endcapture %}{% if site.show_critical_css %}{{ sass_critical | scssify }}{% endif %}</style>
+  {% if page.url == "/recipes/" or page.url == "/recipes.html" %}
+  <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
+  {% include meta-image.html %}
+  {% elsif page.url contains "recipes" %}
+  {% assign myrecipe = site.data.recipes | find:"name", page.title %}
+  <meta property="og:image" content="/assets/{{myrecipe.image_url}}" />
+  {% endif %}
   {% seo %}
 </head>
 <body>
