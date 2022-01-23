@@ -4,11 +4,11 @@
 {% assign urlslug = page.url | remove:'.html' | remove_first:'/' | split: '/' %}
 {% assign urlfolder = urlslug[0] %}
 {% assign urlfilename = urlslug[1] %}
-<article id="{{ comment_id }}" class="{{ article_class }}" uid="{{ include.uid }}">
+<article id="{{ comment_id }}" class="{{ article_class }}">
 
   <div class="comment__author">
     <span class="comment__name">
-    {{- include.name | strip_html -}}
+    <h3>{{- include.name | strip_html -}}</h3>
     </span> — 
     <span class="comment__date">
       {%- if include.date -%}
@@ -34,7 +34,7 @@
 </article>
 {% else %}
     <div class="comment__meta">
-      <a rel="nofollow" class="comment__reply-link" onclick="return addComment.moveForm('{{ comment_id }}', 'respond', '{{ include.uid }}')">↪&#xFE0E; Reply to {{ include.name }}</a>
+      <a rel="nofollow" class="comment__reply-link" href="#comment-{{ include.uid }}" onclick="return addComment.moveForm('{{ comment_id }}', 'respond', '{{ include.uid }}')">↪&#xFE0E; Reply to {{ include.name }}</a>
     </div>
 </article>
 

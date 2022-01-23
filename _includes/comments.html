@@ -3,7 +3,6 @@
 
   {% assign urlslug = page.url | remove:'.html' | remove_first:'/' | split: '/'
   %} {% assign urlfolder = urlslug[0] %} {% assign urlfilename = urlslug[1] %}
-  <h2>{{post_slug}}</h2>
 
   {% if site.data.comments.recipes[urlfilename].size > 0 %}
   <!-- Start static comments {{ site.data.comments.recipes[urlfilename].size }} -->
