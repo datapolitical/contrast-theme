@@ -5,12 +5,11 @@
   %} {% assign urlfolder = urlslug[0] %} {% assign urlfilename = urlslug[1] %}
   <h2>{{post_slug}}</h2>
 
-  {% if site.data.comments.recipes[urlfilename] %}
+  {% if site.data.comments.recipes[urlfilename].size > 0 %}
   <!-- Start static comments -->
   <div id="comments" class="js-comments">
     <h2 class="page__section-label">
-      {% if site.data.comments.recipes[urlfilename].size > 1 %} {{
-      site.data.comments.recipes[urlfilename] | size }} {% endif %} Comments
+      {% if site.data.comments.recipes[urlfilename].size > 1 %}{{ site.data.comments.recipes[urlfilename] | size }} Comments{% else %}1 Comment{% endif %}
     </h2>
     {% assign count = 0 %} {% assign comments =
     site.data.comments.recipes[urlfilename] %} {% assign comments = (comments |
