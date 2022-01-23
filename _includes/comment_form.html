@@ -25,9 +25,6 @@
     name="options[slug]"
     value="{{ include.url | remove:'.html' | remove_first:'/' }}"
   />
-
-  <div class="stars">
-    <label for="comment-form-rating">
       <span class="rating-label">
         Rate this recipe!
         <small>
@@ -40,7 +37,7 @@
           </a>
         </small>
       </span>
-    </label>
+  <div class="stars">
     <div class="star-buttons">
       <input
         class="radio__input star star-5"
@@ -136,10 +133,6 @@
       />
     </label>
   </div>
-
-  <button type="button" class="button" id="cancel-comment-reply-link" style="display: none">
-    Cancel Reply
-  </button>
 
   <button class="button" id="comment-form-submit">Submit</button>
 </form>
