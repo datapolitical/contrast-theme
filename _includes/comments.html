@@ -6,7 +6,7 @@
   <h2>{{post_slug}}</h2>
 
   {% if site.data.comments.recipes[urlfilename].size > 0 %}
-  <!-- Start static comments -->
+  <!-- Start static comments {{ site.data.comments.recipes[urlfilename].size }} -->
   <div id="comments" class="js-comments">
     <h2 class="page__section-label">
       {% if site.data.comments.recipes[urlfilename].size > 1 %}{{ site.data.comments.recipes[urlfilename] | size }} Comments{% else %}1 Comment{% endif %}
