@@ -10,6 +10,8 @@ div.reading_list {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  	overflow: hidden;
     a {
       color: #29b6f6;
     }
