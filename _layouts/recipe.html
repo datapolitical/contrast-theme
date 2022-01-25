@@ -9,9 +9,9 @@ layout: page
     "author": {
   		{% if page.source_url == "" %}
   		"@type": "Person",
-  		{% if page.source == "Me" or page.source == "Chris Nicholson" or page.source == "Chris F. Nicholson" or page.source == "" %}
-  		"name": "Chris F Nicholson",
-  		"url": "https://www.chrisfnicholson.com"
+  		{% if page.source == "Me" or page.source == author.short or page.source == site.author or page.source == "" %}
+  		"name": "{{author.short}}",
+  		"url": "{{ site.url }}"
   		{% else %}
   		"name": {{page.source}},
   		"url": ""
