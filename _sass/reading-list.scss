@@ -1,14 +1,17 @@
 div.reading_list {
   text-color: $light;
   br {
-    height: 0rem;
+    line-height: 1rem;
+  }
+  .break {
+    line-height: 1.5rem;
   }
   .title {
     font-size: .9em;
     max-width: 20em;
-    margin-bottom: -0.5rem;
+    margin-bottom: -0.2rem;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     text-overflow: ellipsis;
   	overflow: hidden;

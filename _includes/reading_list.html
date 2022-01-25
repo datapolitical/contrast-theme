@@ -1,9 +1,9 @@
 <div class="reading_list">
   {% for link in site.data.pocket limit: page.article_count %}
   {% if link[1].resolved_title != "" %}
-  <span class="title">><a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span>
+  <span class="title">> <a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span>
   <span class="domain">{{link[1].domain_metadata.name | default:"&ZeroWidthSpace;"}}</span>
-  <br />
+  <span class="break"><br /></span>
   {% endif %}
   {% endfor %}
 </div>
