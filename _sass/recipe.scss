@@ -265,6 +265,7 @@ ol li + li {
 div.stars {
   width: 200px;
   display: inline-block;
+  padding: .5rem;
 }
 
 /*
@@ -289,6 +290,7 @@ div#respond.comment__new {
 
 div.rating-header {
   display: flex;
+  align-items: center;
 }
 div.star-buttons {
   float: left;
