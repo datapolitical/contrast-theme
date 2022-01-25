@@ -287,6 +287,9 @@ div#respond.comment__new {
 
 */
 
+div.rating-header {
+  display: flex;
+
 div.star-buttons {
   float: left;
 }
@@ -301,6 +304,7 @@ label.star {
   font-size: 20px;
   color: #fff;
   transition: all 0.2s;
+  align-content: bottom;
 }
 
 input.star:checked ~ label.star {
