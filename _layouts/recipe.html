@@ -77,6 +77,15 @@ layout: page
     {% if page.image_url and page.image_url != "" %} {% picture {{
     page.image_url }} 1:1 --alt {{ page.title }} %} {% endif %}
   </div>
+  {% assign path = page.uid | prepend: '/recipes/writeups/' | append: ".md"  %}
+  {% assign path_part = page.uid | prepend: 'writeups/' | append: ".md"  %}
+  {% assign file_exists = site.static_files | where: "path", path  %}
+  {% if file_exists.size != 0 %}
+  {% capture writeup_include %}{% include_relative writeups/{{ page.uid }}.md %}{% endcapture %}
+  {{ writeup_include |
+  replace: '"<img', '<img' | replace: '""', '"' | replace: 'img>"', 'img>' |
+  markdownify }}
+  {% endif %}
   {% for category in page.categories %} {% if category == "Writeup" %} {%
   capture my_include %}{% include_relative writeups/{{ page.name | downcase |
   replace: " ", "-" | replace: "á", "a" | remove: "(" | remove: ")" | remove:
