@@ -38,6 +38,8 @@ theme: {% project_version_theme %}
   {% elsif page.url contains "recipes" %}
   {% assign myrecipe = site.data.recipes | find:"name", page.title %}
   <meta property="og:image" content="/assets/{{myrecipe.image_url}}" />
+  {% else %}
+  <meta property="og:image" content="/assets/images/profile/profile.jpg" />
   {% endif %}
   {% seo %}
 </head>
