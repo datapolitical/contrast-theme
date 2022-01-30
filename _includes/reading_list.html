@@ -1,8 +1,15 @@
 <div class="reading_list">
   {% for link in site.data.pocket limit: page.article_count %}
   {% if link[1].resolved_title != "" %}
-  <span class="title"><a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span>
-  <span class="domain">{% if link[1].domain_metadata.name %}-{{link[1].domain_metadata.name | default:"&ZeroWidthSpace;"}}{% endif %}</span>
+  <div class="heading">
+    <img class="photo" src="{{link[1].top_image_url}}">
+    <span class="title"><a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span>
+  </div>
+  <div class="byline">
+    <span class="date">{{link[1].time_added | date: "%a, %b %d, %Y" }}</span>
+    <span class="domain">{% if link[1].domain_metadata.name %}- {{link[1].domain_metadata.name | default:"&ZeroWidthSpace;"}}{% endif %}</span>
+  <div>
+  <div class="excerpt">{{link[1].excerpt}}</div>
   <span class="break"><br /></span>
   {% endif %}
   {% endfor %}

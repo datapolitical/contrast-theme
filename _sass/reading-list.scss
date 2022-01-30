@@ -6,10 +6,23 @@ div.reading_list {
   .break {
     line-height: 1.5rem;
   }
+  .photo{
+    display: block;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @media only screen and (min-width: $desktop-width) {
+      .photo {
+        float: right;
+        width: 225px;
+        margin-left: 50px;
+      }
+    }
   .title {
-    font-size: .9em;
-    max-width: 20em;
-    margin-bottom: -0.2rem;
+    font-size: 1rem;
+    max-width: 90%;
+    margin-bottom: .1rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -23,10 +36,13 @@ div.reading_list {
     max-width: 19em;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: .8em;
+    font-size: .8rem;
     a {
       color: #aaaaaa;
     }
+  }
+  .excerpt {
+    font-size: 1rem;
   }
 }
 
