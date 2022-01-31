@@ -1,44 +1,65 @@
 div.reading_list {
-  text-color: $light;
-  br {
-    line-height: 1rem;
-  }
-  .break {
-    line-height: 1.5rem;
-  }
-  .photo{
-    display: block;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  @media only screen and (min-width: $desktop-width) {
-      .photo {
-        float: right;
-        width: 225px;
-        margin-left: 50px;
+  .reading_list_item {
+    // max-height: 50vh;
+    padding-top: .5vh;
+    padding-bottom: .5vh;
+    text-color: $light;
+    br {
+      line-height: 1rem;
+    }
+    .break {
+      line-height: 1.5rem;
+    }
+    .photo{
+      display: block;
+      max-width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      float: none;
+    }
+    @media only screen and (min-width: $desktop-width) {
+        display: inline-block;
+        height: 100%;
+        padding-top: 3vh;
+        padding-bottom: 3vh;
+        .photo {
+          float: right;
+          height: 10rem;
+          max-width: 35%;
+          max-height: 100%;
+          margin-left: 50px;
+        }
+      }
+    .title {
+      vertical-align: top;
+      font-size: 1rem;
+      max-width: 100%;
+      margin-bottom: .1rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    	overflow: hidden;
+      a {
+        color: #29b6f6;
       }
     }
-  .title {
-    font-size: 1rem;
-    max-width: 90%;
-    margin-bottom: .1rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    text-overflow: ellipsis;
-  	overflow: hidden;
-    a {
-      color: #29b6f6;
+    .domain {
+      max-width: 19em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      font-size: 1rem;
+      a {
+        color: #aaaaaa;
+      }
     }
-  }
-  .domain {
-    max-width: 19em;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: .8rem;
-    a {
-      color: #aaaaaa;
+    .excerpt {
+      font-size: .85rem;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
   }
   .excerpt {
