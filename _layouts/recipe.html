@@ -10,7 +10,17 @@ layout: page
    whisk.shoppingList.defineWidget("XKUR-HJSN-YIXQ-GJGF", {
       styles: {
         type: "save-recipe",
-        size: "large"
+        size: "large",
+        linkColor: "#FFF",
+        button: {
+          borderRadius: 10
+        }
+        .AddToListBlock {
+          display: none;
+        }
+        .FooterLink {
+          display: none;
+        }
       }
     })
    });
@@ -155,7 +165,7 @@ layout: page
   <div class="recipe-contents">
     <div class="ingredients">
       <h2>Ingredients</h2>
-      
+
       <ul>
         {% for item in page.ingredients %} {% assign item_slice = item | slice:
         0,2 %} {% if item_slice == "**" %}
