@@ -2,21 +2,21 @@
 ---
 
 body {
-  font-family: Raleway, HelveticaNeue, sans-serif;
+  font-family: Verdana, system-ui, Helvetica, sans-serif !default;
   font-size: 16px;
   color: #34302e;
   margin: 0.25in;
 }
 .name {
   font-size: 18px;
-  font-family: Raleway, Futura, Helvetica, sans-serif;
+  font-family: Verdana, system-ui, Helvetica, sans-serif !default;
   font-weight: normal;
   margin: 0 0 10px 0;
 }
 .categories {
   color: #605d5d;
   font-size: 14px;
-  font-family: Raleway, Helvetica, sans-serif;
+  font-family: Verdana, system-ui, Helvetica, sans-serif !default;
   font-style: italic;
 }
 .rating {
