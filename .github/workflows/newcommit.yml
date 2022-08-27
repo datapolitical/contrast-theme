@@ -19,12 +19,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
-      - name: send
-        if: github.ref_name == 'master' && contains(github.event.commits[0].message,'[build]')
+      - name: build site
         run: |
           curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
-
-      - name: send2
-        if: github.ref_name == 'master' && !(contains(github.event.commits[0].message,'[build]')) && !(contains(github.event.commits[0].message,'[no build]'))
-        run: |
-          curl -X POST "${{ secrets.CLOUDFLARE_THEME_DEPLOY }}"
