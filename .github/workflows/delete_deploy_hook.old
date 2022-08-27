@@ -1,5 +1,6 @@
 name: delete deploy hook
-on: delete
+# on: delete
+on: workflow_dispatch
 
 jobs:
   delete_deploy_hook:

@@ -1,0 +1,13 @@
+name: deploy production theme
+on: 
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy_theme:
+    runs-on: ubuntu-latest
+    if: (contains(github.event.commits[0].message, '[theme]'))
+    steps:
+        run: |
+          curl -X POST "${{ secrets.CLOUDFLARE_THEME_DEPLOY }}"  
