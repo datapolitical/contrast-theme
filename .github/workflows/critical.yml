@@ -31,7 +31,7 @@ jobs:
       - name: getcss
         run: |
           if [[ ${{github.ref_name}} == 'master' ]]; then
-            wget https://contrast-theme.pages.dev/assets/css/stylesheet.css
+            wget https://www.chrisfnicholson.com/assets/css/stylesheet.css
           else
             wget https://${{github.ref_name}}.contrast-theme.pages.dev/assets/css/stylesheet.css
           fi
