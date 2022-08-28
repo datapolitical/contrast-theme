@@ -10,6 +10,7 @@ _data/drinks/*
 _data/recipes.yaml
 _data/recipes_nutrition.yaml
 _data/puzzles.yaml
+assets/css/generated-critical.css
 assets/images/*
 node_modules/
 
