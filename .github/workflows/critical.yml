@@ -1,8 +1,7 @@
 name: critical CSS
 
 on:
-  push:
-    branches:
+  workflow_dipatch:
 
 jobs:
   crittr:
