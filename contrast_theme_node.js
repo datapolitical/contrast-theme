@@ -10,6 +10,7 @@ Crittr({
   },
 })
   .then(({ critical, rest }) => {
+    console.log(branchurl)
     console.log(critical);
     const fs = require("fs");
     fs.writeFile("assets/css/generated-critical.css", critical, (err) => {
