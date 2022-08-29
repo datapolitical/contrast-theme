@@ -26,9 +26,29 @@ jobs:
           git remote -v
           echo "Git Pull:"
           git pull --ff-only origin ${{ github.ref_name }}
-      - uses: ruby/setup-ruby@v1
+
+      - name: checkout gh-pages
+        uses: actions/checkout@v2
         with:
-          ruby-version: '2.7.0' # Not needed with a .ruby-version file
+          ref: "gh-pages"
+          path: "gh-pages"
+
+      - name: setup ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+
+      - name: Clean install dependencies
+        run: |
+          sudo apt-get update && sudo apt-get install -y libvips42
+
+      - name: cache gems
+        uses: actions/cache@v2
+        with:
+          path: vendor/bundle
+          key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
+          restore-keys: ${{ runner.os }}-gems-
+
       - name: getcss
         run: |
           cd ..
@@ -37,8 +57,21 @@ jobs:
           cd chrisfnicholson
           echo "reached config"
           bundle config set local.contrast-theme $GITHUB_WORKSPACE
-          bundle install --verbose
-          bundle exec jekyll build --config _config.yml,_config_dev.yml
+
+      - name: bundle install
+        run: |
+          bundle install --path=vendor/bundle --jobs 4 --retry 3 --verbose
+          convert --version
+
+      - name: jekyll build
+        run: bundle exec jekyll build --profile --destination gh-pages --config _config.yml,_config_dev.yml
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 17
+        
+      - name: get css
+        run:
           npm i crittr
           ls -a
           cat contrast_theme_node.js
@@ -49,12 +82,14 @@ jobs:
 
       - name: amend and commit
         run: |
+          cd ..
+          cp chrisfnicholson/assets/css/generated-critical.css contrast-theme/assets/css/generated-critical.css
+          cd contrast-theme
           echo "Committed Generated File"
           cat assets/css/generated-critical.css
           git add assets/css/generated-critical.css
-          git add package-lock.json
           git commit -m "Update critical css" || echo "::set-output name=status::Nothing to update"
 
       - name: push
         run: |
-          git push "https://${{github.actor}}:${{github.token}}@github.com/${{github.repository}}.git" "HEAD:${{github.ref_name}}"
+          git push --dry-run "https://${{github.actor}}:${{github.token}}@github.com/${{github.repository}}.git" "HEAD:${{github.ref_name}}"
