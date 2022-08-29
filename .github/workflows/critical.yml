@@ -1,7 +1,7 @@
 name: critical CSS
 
 on:
-  workflow_dipatch:
+  push:
 
 jobs:
   crittr:
@@ -29,11 +29,12 @@ jobs:
 
       - name: getcss
         run: |
-          if [[ ${{github.ref_name}} == 'master' ]]; then
-          wget https://contrast-theme.pages.dev/assets/css/stylesheet.css
-          else
-            wget https://${{github.ref_name}}.contrast-theme.pages.dev/assets/css/stylesheet.css
-          fi
+          cd ..
+          git clone https://github.com/datapolitical/chrisfnicholson
+          cd chrisfnicholson
+          bundle config set local.contrast-theme $GITHUB_WORKSPACE
+          bundle install --verbose
+          bundle exec jekyll build --config _config.yml,_config_dev.yml
           npm i crittr
           ls -a
           cat contrast_theme_node.js
