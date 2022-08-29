@@ -15,7 +15,7 @@ jobs:
 
 
       - name: setup git config
-      - run: |
+        run: |
           git config --local user.name ${{ secrets.USERNAME_GITHUB }}
           git config --local user.email ${{ secrets.EMAIL }}
           echo "Git Setup Status:"
@@ -26,13 +26,12 @@ jobs:
           git remote -v
           echo "Git Pull:"
           git pull --ff-only origin ${{ github.ref_name }}
-
-      - name: getcss
       - uses: ruby/setup-ruby@v1
         with:
-            ruby-version: '2.7.0' # Not needed with a .ruby-version file
-            bundler-cache: true # runs 'bundle install' and caches installed gems automatically
-      - run: |
+          ruby-version: '3.0' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+      - name: getcss
+        run: |
           cd ..
           git clone https://github.com/datapolitical/chrisfnicholson
           cd chrisfnicholson
@@ -48,7 +47,7 @@ jobs:
           git pull --ff-only origin ${{ github.ref_name }}
 
       - name: amend and commit
-      - run: |
+        run: |
           echo "Committed Generated File"
           cat assets/css/generated-critical.css
           git add assets/css/generated-critical.css
@@ -56,5 +55,5 @@ jobs:
           git commit -m "Update critical css" || echo "::set-output name=status::Nothing to update"
 
       - name: push
-      - run: |
+        run: |
           git push "https://${{github.actor}}:${{github.token}}@github.com/${{github.repository}}.git" "HEAD:${{github.ref_name}}"
