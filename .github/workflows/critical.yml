@@ -27,12 +27,6 @@ jobs:
           echo "Git Pull:"
           git pull --ff-only origin ${{ github.ref_name }}
 
-      - name: checkout gh-pages
-        uses: actions/checkout@v2
-        with:
-          ref: "gh-pages"
-          path: "gh-pages"
-
       - name: setup ruby
         uses: actions/setup-ruby@v1
         with:
