@@ -32,8 +32,10 @@ jobs:
       - name: getcss
         run: |
           cd ..
+          pwd
           git clone https://github.com/datapolitical/chrisfnicholson
           cd chrisfnicholson
+          echo "reached config"
           bundle config set local.contrast-theme $GITHUB_WORKSPACE
           bundle install --verbose
           bundle exec jekyll build --config _config.yml,_config_dev.yml
