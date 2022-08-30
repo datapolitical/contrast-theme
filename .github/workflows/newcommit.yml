@@ -5,16 +5,7 @@ name: Deploy main site check
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  workflow_call:
-    inputs:
-      commit_message:
-        required: true
-        type: string
   workflow_dispatch:
-    inputs:
-      commit_message: 
-        required: false
-        default: 'workflow dispatch'
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -22,10 +13,10 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    if: (contains(${{ inputs.commit_message }}, '[no-build]')) == false
+    if: (contains(github.event.commits[0].message, '[no-build]')) == false
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Runs a single command using the runners shell
       - name: build site
         run: |
-          curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
+		  curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"

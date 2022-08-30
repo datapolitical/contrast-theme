@@ -100,7 +100,8 @@ jobs:
           git push "https://${{github.actor}}:${{github.token}}@github.com/${{github.repository}}.git" "HEAD:${{github.ref_name}}"
         working-directory: /home/runner/work/contrast-theme/contrast-theme
 
-      - name: build site
-        uses: datapolitical/contrast-theme/.github/workflows/newcommit.yml@master
-        with:
-          commit_message: github.event.commits[0].message
+      - name: build site 
+		if: (contains(github.event.commits[0].message, '[no-build]')) == false
+        run: |
+		  curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
+        
