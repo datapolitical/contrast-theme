@@ -34,7 +34,7 @@ jobs:
 
       - name: Clean install dependencies
         run: |
-          sudo apt-get update && sudo apt-get install -y libvips-dev
+          sudo apt-get update && sudo apt-get install -y libvips-tools
 
       - name: cache gems
         uses: actions/cache@v2
