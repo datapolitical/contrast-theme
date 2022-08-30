@@ -54,18 +54,22 @@ jobs:
 
       - name: bundle install
         run: |
+          pwd
           bundle install --path=vendor/bundle --jobs 4 --retry 3 --verbose
           convert --version
 
       - name: jekyll build
-        run: bundle exec jekyll build --destination gh-pages --config _config.yml,_config_dev.yml
+        run: |
+          pwd
+          bundle exec jekyll build --destination gh-pages --config _config.yml,_config_dev.yml
 
       - uses: actions/setup-node@v3
         with:
           node-version: 17
-        
+
       - name: get css
-        run:
+        run: |
+          pwd
           npm i crittr
           ls -a
           cat contrast_theme_node.js
