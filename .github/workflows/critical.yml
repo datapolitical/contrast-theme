@@ -67,9 +67,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 17
-          cache: 'npm'
-          cache-dependency-path: /home/runner/work/contrast-theme/chrisfnicholson/package-lock.json
-
+  
       - name: get css
         run: |
           pwd
