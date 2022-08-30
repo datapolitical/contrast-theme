@@ -49,7 +49,7 @@ jobs:
           cd chrisfnicholson
           echo "reached config"
           bundle config set local.contrast-theme $GITHUB_WORKSPACE
-        working-directory: /home/runner/work/contrast-theme/chrisfnicholson
+        working-directory: /home/runner/work/contrast-theme
 
       - name: bundle install
         run: |
