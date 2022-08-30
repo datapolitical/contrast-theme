@@ -19,4 +19,4 @@ jobs:
       # Runs a single command using the runners shell
       - name: build site
         run: |
-		  curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
+          curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"

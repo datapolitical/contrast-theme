@@ -99,9 +99,9 @@ jobs:
         run: |
           git push "https://${{github.actor}}:${{github.token}}@github.com/${{github.repository}}.git" "HEAD:${{github.ref_name}}"
         working-directory: /home/runner/work/contrast-theme/contrast-theme
-
+        
       - name: build site 
-		if: (contains(github.event.commits[0].message, '[no-build]')) == false
+        if: (contains(github.event.commits[0].message, '[no-build]')) == false
         run: |
-		  curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
+          curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
         
