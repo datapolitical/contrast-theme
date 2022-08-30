@@ -45,35 +45,33 @@ jobs:
 
       - name: getcss
         run: |
-          cd ..
-          pwd
           git clone https://github.com/datapolitical/chrisfnicholson
           cd chrisfnicholson
           echo "reached config"
           bundle config set local.contrast-theme $GITHUB_WORKSPACE
+        working-directory: /home/runner/work/contrast-theme/chrisfnicholson
 
       - name: bundle install
         run: |
-          cd ../chrisfnicholson
           pwd
           bundle install --path=vendor/bundle --jobs 4 --retry 3 --verbose
           convert --version
+        working-directory: /home/runner/work/contrast-theme/chrisfnicholson
 
       - name: jekyll build
         run: |
-          cd ../chrisfnicholson
           pwd
           bundle exec jekyll build --destination gh-pages --config _config.yml
+        working-directory: /home/runner/work/contrast-theme/chrisfnicholson
 
       - uses: actions/setup-node@v3
         with:
           node-version: 17
           cache: 'npm'
-          cache-dependency-path: ../chrisfnicholson/package-lock.json
+          cache-dependency-path: /home/runner/work/contrast-theme/chrisfnicholson/package-lock.json
 
       - name: get css
         run: |
-          cd ../chrisfnicholson
           pwd
           npm i crittr
           ls -a
@@ -82,6 +80,8 @@ jobs:
           echo "Raw generated File"
           cat assets/css/generated-critical.css
           git pull --ff-only origin ${{ github.ref_name }}
+        working-directory: /home/runner/work/contrast-theme/chrisfnicholson
+
 
       - name: amend and commit
         run: |
@@ -92,7 +92,10 @@ jobs:
           cat assets/css/generated-critical.css
           git add assets/css/generated-critical.css
           git commit -m "Update critical css" || echo "::set-output name=status::Nothing to update"
+        working-directory: /home/runner/work/contrast-theme/chrisfnicholson
+
 
       - name: push
         run: |
           git push --dry-run "https://${{github.actor}}:${{github.token}}@github.com/${{github.repository}}.git" "HEAD:${{github.ref_name}}"
+        working-directory: /home/runner/work/contrast-theme/chrisfnicholson
