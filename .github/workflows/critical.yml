@@ -90,6 +90,7 @@ jobs:
           cat assets/css/generated-critical.css
           git add assets/css/generated-critical.css
           git add assets/css/generated-critical-hash
+          git diff --staged
           git commit -m "Update critical css" || echo "::set-output name=status::Nothing to update"
         working-directory: /home/runner/work/contrast-theme
 
