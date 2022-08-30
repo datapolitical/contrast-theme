@@ -101,6 +101,6 @@ jobs:
         working-directory: /home/runner/work/contrast-theme/contrast-theme
 
       - name: build site
-        uses: datapolitical/contrast-theme/blob/master/.github/workflows/newcommit.yml@master
+        uses: datapolitical/contrast-theme/.github/workflows/newcommit.yml@master
         with:
           commit_message: github.event.commits[0].message
