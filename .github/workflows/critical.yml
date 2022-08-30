@@ -58,7 +58,7 @@ jobs:
           convert --version
 
       - name: jekyll build
-        run: bundle exec jekyll build --profile --destination gh-pages --config _config.yml,_config_dev.yml
+        run: bundle exec jekyll build --destination gh-pages --config _config.yml,_config_dev.yml
 
       - uses: actions/setup-node@v3
         with:
