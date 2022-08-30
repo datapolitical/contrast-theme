@@ -43,7 +43,7 @@ jobs:
           key: ${{ runner.os }}-gems-${{ hashFiles('**/Gemfile.lock') }}
           restore-keys: ${{ runner.os }}-gems-
 
-      - name: getcss
+      - name: get repo
         run: |
           git clone https://github.com/datapolitical/chrisfnicholson
           cd chrisfnicholson
@@ -70,7 +70,6 @@ jobs:
   
       - name: get css
         run: |
-          pwd￼
           mkdir -p assets/generated
           npm i crittr
           ls -a
