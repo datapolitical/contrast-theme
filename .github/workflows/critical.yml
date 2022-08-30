@@ -70,7 +70,7 @@ jobs:
   
       - name: get css
         run: |
-          mkdir -p assets/generated
+          mkdir -p assets/css/generated
           npm i crittr
           ls -a
           cat contrast_theme_node.js
