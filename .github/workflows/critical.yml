@@ -54,21 +54,26 @@ jobs:
 
       - name: bundle install
         run: |
+          cd ../chrisfnicholson
           pwd
           bundle install --path=vendor/bundle --jobs 4 --retry 3 --verbose
           convert --version
 
       - name: jekyll build
         run: |
+          cd ../chrisfnicholson
           pwd
-          bundle exec jekyll build --destination gh-pages --config _config.yml,_config_dev.yml
+          bundle exec jekyll build --destination gh-pages --config _config.yml
 
       - uses: actions/setup-node@v3
         with:
           node-version: 17
+          cache: 'npm'
+          cache-dependency-path: ../chrisfnicholson/package-lock.json
 
       - name: get css
         run: |
+          cd ../chrisfnicholson
           pwd
           npm i crittr
           ls -a
