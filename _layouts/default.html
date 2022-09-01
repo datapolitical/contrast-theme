@@ -31,7 +31,7 @@ theme: {% project_version_theme %}
   <link rel="stylesheet" href="{{ "/assets/css/stylesheet.css" | relative_url }}">
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <style>{% capture sass_critical %}{% include critical.scss %}{% endcapture %}{% if site.show_critical_css %}{{ sass_critical | scssify }}{% endif %}</style>
+  <style>{% capture sass_critical %}{% include critical.scss %}{% endcapture %}{% if site.show_critical_css %}{{ sass_critical }}{% endif %}</style>
   {% if page.url == "/recipes/" or page.url == "/recipes.html" %}
   <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
   {% include meta-image.html %}
