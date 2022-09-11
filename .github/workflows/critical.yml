@@ -71,6 +71,7 @@ jobs:
       - name: get css
         run: |
           npm i crittr
+          npm i inline-csp-hash
           ls -a
           cat contrast_theme_node.js
           node contrast_theme_node.js ${{ github.ref_name }}
