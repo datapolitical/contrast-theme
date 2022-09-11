@@ -75,6 +75,7 @@ jobs:
           ls -a
           cat contrast_theme_node.js
           node contrast_theme_node.js ${{ github.ref_name }}
+          echo "body {display: flex;}" > critical.scss
           echo "Raw generated File"
           cat critical.scss
           git pull --ff-only origin main
