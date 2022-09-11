@@ -70,30 +70,24 @@ jobs:
   
       - name: get css
         run: |
-          mkdir -p assets/css/generated
           npm i crittr
           ls -a
           cat contrast_theme_node.js
           node contrast_theme_node.js ${{ github.ref_name }}
           echo "Raw generated File"
-          cat assets/css/generated-critical.css
+          cat critical.scss
           git pull --ff-only origin main
         working-directory: /home/runner/work/contrast-theme/chrisfnicholson
 
-
       - name: amend and commit
         run: |
-          cp chrisfnicholson/assets/css/generated-critical.css contrast-theme/assets/css/generated-critical.css
-          cp chrisfnicholson/assets/css/generated-critical-hash contrast-theme/assets/css/generated-critical-hash
+          cp chrisfnicholson/critical.scss contrast-theme/_includes/critical.scss
           cd contrast-theme
           echo "Committed Generated File"
-          cat assets/css/generated-critical.css
-          git add assets/css/generated-critical.css
-          git add assets/css/generated-critical-hash
+          git add _includes/critical.scss
           git diff --staged
           git commit -m "Update critical css" || echo "::set-output name=status::Nothing to update"
         working-directory: /home/runner/work/contrast-theme
-
 
       - name: push
         run: |
