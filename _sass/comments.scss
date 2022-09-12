@@ -1,8 +1,8 @@
 // comment styles from
 // https://github.com/willymcallister/willymcallister.github.io/blob/fbc7f396fbe80186b1abc63e436ec509190c1b3a/assets/main.scss
 
-$base-font-family: Quicksand, sans-serif !default;
-$base-font-size: 16pt !default;
+$base-font-family: $font-family !default;
+$base-font-size: $font-size !default;
 $base-font-weight: $font-weight !default;
 $small-font-size: 0.8 * $base-font-size !default;
 $base-line-height: $line-height !default;
@@ -13,6 +13,8 @@ $grey-color-light: #f2f2f2;
 //
 // Staticman new comment form
 //
+
+//this needs to be limited to the comments page only
 input,
 select,
 textarea,
