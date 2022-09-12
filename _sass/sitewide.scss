@@ -2,7 +2,7 @@
 
 $font-size: 16px !default;
 $font-weight: 100 !default;
-$font-family: Quicksand, Verdana, system-ui, Helvetica, sans-serif !default;
+$font-family: Urbanist, Verdana, system-ui, Helvetica, sans-serif !default;
 $heading-weight: 400 !default;
 $line-height: 1.6 !default;
 $link-color: #68f !default;
@@ -25,17 +25,30 @@ $light-grey: #999;
 // Fonts.scss
 
 @font-face {
+  font-family: 'Urbanist';
+  src: url('/assets/fonts/Urbanist.ttf') format('truetype supports variations'), url('/assets/fonts/Urbanist.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal italic;
+}
+
+i, em, .italic {
+	/* Should be font-style: italic; */
+	font-variation-settings: 'ital' 1;
+}
+
+
+@font-face {
   font-family: 'Quicksand';
   src: url('/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype supports variations'), url('/assets/fonts/Quicksand-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 1000;
+  font-weight: 300 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Raleway';
   src: url('/assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype supports variations'), url('/assets/fonts/Raleway-VariableFont_wght.ttf') format('truetype-variations');
-  font-weight: 100 1000;
-  font-style: normal;
+  font-weight: 100 900;
+  font-style: normal italic;
   font-display: fallback;
 };
 
