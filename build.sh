@@ -13,6 +13,8 @@ echo "Content-Security-Policy-Report-Only: default-src 'none'; " >> _headers
 cd ..
 git clone https://github.com/datapolitical/chrisfnicholson
 cd chrisfnicholson
+mkdir -p gh-pages/assets/generated
+cp -R _assets/generated/* gh-pages/assets/generated
 bundle config set local.contrast-theme $HOME/repo
 bundle install --verbose
 bundle exec jekyll build --config _config.yml,_config_dev.yml
