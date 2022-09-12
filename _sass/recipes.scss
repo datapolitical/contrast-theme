@@ -24,6 +24,7 @@ main .container {
   grid-template-columns: repeat(auto-fill, minmax(200px, 3fr));
   grid-gap: 1vw;
   align-items: stretch;
+  line-height: 1;
 }
 
 .image-container {
@@ -37,6 +38,7 @@ main .container {
   height: 200px;
   object-fit: cover;
   border-radius: 10px;
+  margin 0;
 
 }
 
