@@ -2,6 +2,8 @@ name: critical CSS
 
 on:
   push:
+    branches:
+      - master
 
 jobs:
   crittr:
@@ -54,6 +56,7 @@ jobs:
       - name: bundle install
         run: |
           pwd
+          bundle config disable_local_branch_check true
           bundle install --path=vendor/bundle --jobs 4 --retry 3 --verbose
           convert --version
         working-directory: /home/runner/work/contrast-theme/chrisfnicholson
@@ -97,7 +100,7 @@ jobs:
         working-directory: /home/runner/work/contrast-theme/contrast-theme
         
       - name: build site 
-        if: (contains(github.event.commits[0].message, '[no-build]')) == false
+        if: (contains(github.event.commits[0].message, '[no-build]') || github.ref_name != 'master' ) == false
         run: |
           curl -X POST "${{ secrets.CLOUDFLARE_DEPLOY }}"
         
