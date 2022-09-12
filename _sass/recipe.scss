@@ -303,6 +303,7 @@ div.rating-header {
 }
 div.star-buttons {
   float: left;
+  white-space: nowrap;
 }
 //from recipe.scss
 input.star {
