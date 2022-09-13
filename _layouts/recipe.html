@@ -1,26 +1,6 @@
 ---
 layout: page
 ---
-<script async="true" src="https://cdn.whisk.com/sdk/shopping-list.js" type="text/javascript"></script>
-<script>
-  var whisk = whisk || {};
-  whisk.queue = whisk.queue || [];
-
-  whisk.queue.push(function () {
-   whisk.shoppingList.defineWidget("GJZN-WDYB-USBK-RIMR", {
-      styles: {
-        type: "add-to-list",
-        size: "large",
-        linkColor: "#FFF",
-        button: {
-          borderRadius: 10,
-          text: "Save to Whisk"
-        }
-      }
-    })
-   });
-
-</script>
 <script type="application/ld+json">
   {
   	"@context": "https://schema.org",
@@ -168,13 +148,6 @@ layout: page
         <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
         {% endif %} {% endfor %}
       </ul>
-      <div id="GJZN-WDYB-USBK-RIMR">
-        <script>
-          whisk.queue.push(function () {
-            whisk.display("GJZN-WDYB-USBK-RIMR");
-          });
-        </script>
-      </div>
     </div>
 
     <div class="directions">
