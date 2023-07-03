@@ -24,7 +24,7 @@ theme: {% project_version_theme %}
   <meta charset="{{ site.encoding }}">
   <meta name="pageurl" content="{{page.url}}">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#1C1D22"/>
+  <meta name="theme-color" content="#1C1D22">
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
@@ -37,9 +37,9 @@ theme: {% project_version_theme %}
   {% include meta-image.html %}
   {% elsif page.url contains "recipes" %}
   {% assign myrecipe = site.data.recipes | find:"name", page.title %}
-  <meta property="og:image" content="{{site.url}}/assets/{{myrecipe.image_url}}" />
+  <meta property="og:image" content="{{site.url}}/assets/{{myrecipe.image_url}}">
   {% else %}
-  <meta property="og:image" content="{{site.url}}/assets/images/profile/profile-static.jpg" />
+  <meta property="og:image" content="{{site.url}}/assets/images/profile/profile-static.jpg">
   {% endif %}
   {% seo %}
 </head>
