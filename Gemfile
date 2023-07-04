@@ -15,7 +15,7 @@ gem 'jekyll-paginate', group: :jekyll_plugins
 gem "jekyll-datapage-generator", github: 'datapolitical/jekyll-datapage_gen'
 gem 'jekyll-sitemap'
 gem 'jekyll-seo-tag'
-gem 'jekyll-pwa-workbox'
+# gem 'jekyll-pwa-workbox'
 gem 'jekyll_picture_tag', group: :jekyll_plugins
 gem 'jekyll-include-cache'
 gem 'jekyll_version_plugin'
