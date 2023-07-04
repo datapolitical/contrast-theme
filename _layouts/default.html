@@ -28,10 +28,11 @@ theme: {% project_version_theme %}
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="stylesheet" href="{{ "/assets/css/stylesheet.css" | relative_url }}">
+  <link rel="preload" href="href="{{ "/assets/css/stylesheet.css" | relative_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="href="{{ "/assets/css/stylesheet.css" | relative_url }}"></noscript>
   <link rel="manifest" href="/manifest.json">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <style>{% capture sass_critical %}{% include critical.scss %}{% endcapture %}{% if site.show_critical_css %}{{ sass_critical }}{% endif %}</style>
+  <style type="text/css">{% capture sass_critical %}{% include critical.scss %}{% endcapture %}{% if site.show_critical_css %}{{ sass_critical }}{% endif %}</style>
   {% if page.url == "/recipes/" or page.url == "/recipes.html" %}
   <link rel="stylesheet" href="{{ "/assets/css/tabs.css" | relative_url }}">
   {% include meta-image.html %}
