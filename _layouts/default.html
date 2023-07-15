@@ -63,7 +63,7 @@ theme: {% project_version_theme %}
 {% endunless %}{% endfor %} {
   display: none;
 }</style>
-
+  {% include tabs-css.html %}
   {% include meta-image.html %}
   {% elsif page.url contains "recipes" %}
   {% assign myrecipe = site.data.recipes | find:"name", page.title %}
