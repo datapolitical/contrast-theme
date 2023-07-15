@@ -3,7 +3,7 @@ name: critical CSS
 on:
   push:
     branches:
-      - master
+      - disabled
 
 jobs:
   crittr:
