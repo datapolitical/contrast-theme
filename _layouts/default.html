@@ -28,7 +28,7 @@ theme: {% project_version_theme %}
   <meta name="author" content="{{ page.author | default: site.author | escape }}">
   <meta name="generator" content="Jekyll v{{ jekyll.version }}">
   <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="manifest" href='data:application/manifest+json,{% include_relative manifest.json %}'>
+  <link rel="manifest" href='data:application/manifest+json,{{ site.data.manifest }}'>
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
   <style>{% capture sass_critical %}{% include critical.scss %}{% endcapture %}{% if site.show_critical_css %}{{ sass_critical | scssify }}{% endif %}</style>
   
