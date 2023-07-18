@@ -168,13 +168,9 @@ layout: page
         <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' }}</li>
         {% endif %} {% endfor %}
       </ul>
-      <div id="GJZN-WDYB-USBK-RIMR">
-        <script>
-          whisk.queue.push(function () {
-            whisk.display("GJZN-WDYB-USBK-RIMR");
-          });
-        </script>
-      </div>
+      {% if site.whisk %}
+      {% include whisk.html %}
+      {% endif %}
     </div>
 
     <div class="directions">
