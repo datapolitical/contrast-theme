@@ -52,7 +52,12 @@ theme: {% project_version_theme %}
 {% comment %}
 <script data-cfasync="false" src="{{site.url}}/assets/js/pwa-1.0.min.js" defer></script>
 
-{% include_cached analytics_4.html %}
 {% endcomment %}
+
+{% if site.google_analytics.enabled == true %}
+
+{% include_cached analytics_4.html %}
+
+{% endif %}
 </body>
 </html>
