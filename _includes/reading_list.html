@@ -1,5 +1,5 @@
 <div>
-{% assign reads = site.data.reads.rss.channel.item | sort: 'title' %}
+{% assign reads = site.data.reads | sort: 'title' %}
 {% for item in reads %}
   {{item.title}} <br />
 {% endfor %}
