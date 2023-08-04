@@ -1,4 +1,11 @@
-{( site.data.reads )}
+<div>
+{% assign reads = site.data.reads.rss.channel.item | sort: 'title' %}
+{% for item in reads %}
+  {{item.title}} <br />
+{% endfor %}
+
+</div>
+
 <div class="reading_list">
   {% for link in site.data.pocket limit: page.article_count %}
   {% if link[1].resolved_title != "" %}
