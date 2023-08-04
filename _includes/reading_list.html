@@ -1,22 +1,14 @@
-<div>
-{% assign reads = site.data.reads | sort: 'title' %}
-{% for item in reads %}
-  {{item.title}} <br />
-{% endfor %}
-
-</div>
-
 <div class="reading_list">
-  {% for link in site.data.pocket limit: page.article_count %}
-  {% if link[1].resolved_title != "" %}
-  <span class="title"><a href="{{link[1].resolved_url}}">{{link[1].resolved_title}}</a></span>
-  <span class="domain">{% if link[1].domain_metadata.name %}-{{link[1].domain_metadata.name | default:"&ZeroWidthSpace;"}}{% endif %}</span>
+  {% for link in site.data.reads limit: page.article_count %}
+  {% if link.title != "" %}
+  <span class="title"><a href="{{link.url}}">{{link.title}}</a></span>
+  <span class="preview">{% if link.summary %}-{{link.summary | strip_html }}{% endif %}</span>
   <span class="break"><br></span>
   {% endif %}
   {% endfor %}
 </div>
 <div class="read_more">
-  {% if page.url == "/" && site.data.pocket.size > 3 %}
+  {% if page.url == "/" && site.data.reads.size > 3 %}
   <span class="read_more"><a href="/newsfeed.html">More Articles</a></span><br>
   {% endif %}
 </div>
