@@ -7,8 +7,8 @@ div.reading_list {
     line-height: 1.5rem;
   }
   .title {
-    font-size: .9em;
-    max-width: 20em;
+    font-size: .9rem;
+    max-width: 20rem;
     margin-bottom: -0.2rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -20,11 +20,11 @@ div.reading_list {
     }
   }
   .preview {
-    max-width: 19em;
+    max-width: 19rem;
     overflow: hidden;
     text-overflow: ellipsis;
-    font-size: 1em;
-    line-height: 10%;
+    font-size: .85rem;
+    line-height: 1.2;
     a {
       color: #aaaaaa;
     }
