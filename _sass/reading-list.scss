@@ -9,7 +9,7 @@ div.reading_list {
   .title {
     font-size: .9rem;
     max-width: 20rem;
-    margin-bottom: -0.2rem;
+    margin-bottom: -0.1rem;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -24,7 +24,7 @@ div.reading_list {
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: .8rem;
-    line-height: 1.05;
+    line-height: 1.15;
     display: inline-block;
     a {
       color: #aaaaaa;
