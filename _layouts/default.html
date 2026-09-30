@@ -49,6 +49,12 @@ theme: {% project_version_theme %}
 
 {{ content }}
 
+{% if site.operator_statement %}
+<footer class="site-operator">
+  <p>{{ site.operator_statement }}</p>
+</footer>
+{% endif %}
+
 {% comment %}
 <script data-cfasync="false" src="{{site.url}}/assets/js/pwa-1.0.min.js" defer></script>
 
