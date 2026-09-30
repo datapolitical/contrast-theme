@@ -303,6 +303,11 @@ body > footer {
   padding-bottom: 0.75rem;
   padding-top: 0.75rem;
 }
+// .site-operator keeps the operator statement visible at desktop widths
+// (sidebar.scss hides the generic body > header / body > footer chrome there).
+body > footer.site-operator {
+  display: flex;
+}
 article header {
   margin-bottom: 1.5em;
 }
