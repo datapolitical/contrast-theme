@@ -33,6 +33,12 @@ main .container {
   text-align: center;
 }
 
+.image-container .recipe-name {
+  display: block;
+  padding: 0.4em 0 0.8em;
+  line-height: 1.3;
+}
+
 .photo-large {
   width: 100%;
   height: 200px;

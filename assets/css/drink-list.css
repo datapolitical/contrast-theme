@@ -10,3 +10,14 @@ ul.list {
   padding: 0;
   margin-left: 0em;
 }
+
+/* Names only. Descriptions and ingredients stay in the page, hidden,
+   so the search box still matches them. */
+ul.list .description,
+ul.list .ingredient,
+ul.list br {
+  display: none;
+}
+ul.list h3.name {
+  margin: 0.35em 0;
+}

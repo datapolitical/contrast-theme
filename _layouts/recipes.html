@@ -44,6 +44,7 @@ layout: page
     {%if forloop.index < 2 %} {% picture lazy {{ recipe.image_url }} 1:1 --alt
     {{ recipe.name }} %} {% else %} {% picture lazy {{ recipe.image_url }} 1:1
     --img loading="lazy" --alt {{ recipe.name }} %} {% endif %}
+    <span class="recipe-name">{{ recipe.name }}</span>
   </a>
   {% endfor %}
 </div>
